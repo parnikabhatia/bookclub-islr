@@ -1,5 +1,8 @@
 introduction
-slide-1
-slide-2
+what-is-statistical-learning
+why-islr
+notation
+what-have-we-gotten-ourselves-into
+wheres-the-data
 meeting-videos
 cohort-1
