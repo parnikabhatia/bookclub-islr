@@ -6,3 +6,6 @@ what-have-we-gotten-ourselves-into
 wheres-the-data
 meeting-videos
 cohort-1
+statistical-learning
+slide-1
+slide-2
