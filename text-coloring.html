@@ -219,12 +219,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6.1" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html#an-analytical-comparison"><i class="fa fa-check"></i><b>4.6.1</b> An Analytical Comparison</a></li>
 <li class="chapter" data-level="4.6.2" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html#an-empirical-comparison"><i class="fa fa-check"></i><b>4.6.2</b> An Empirical Comparison</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>4.7</b> Generalized Linear Models</a><ul>
-<li class="chapter" data-level="4.7.1" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html#poisson-regression-model"><i class="fa fa-check"></i><b>4.7.1</b> Poisson Regression Model</a></li>
-</ul></li>
-<li class="chapter" data-level="4.8" data-path="lab-classification-methods.html"><a href="lab-classification-methods.html"><i class="fa fa-check"></i><b>4.8</b> Lab: Classification Methods</a></li>
-<li class="chapter" data-level="4.9" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>4.9</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="4.9.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>4.9.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="4.7" data-path="generalized-linear-models.html"><a href="generalized-linear-models.html"><i class="fa fa-check"></i><b>4.7</b> Generalized Linear Models</a></li>
+<li class="chapter" data-level="4.8" data-path="linear-regression-with-count-data---negative-values.html"><a href="linear-regression-with-count-data---negative-values.html"><i class="fa fa-check"></i><b>4.8</b> Linear regression with count data - negative values</a></li>
+<li class="chapter" data-level="4.9" data-path="linear-regression-with-count-data---heteroscedasticity.html"><a href="linear-regression-with-count-data---heteroscedasticity.html"><i class="fa fa-check"></i><b>4.9</b> Linear regression with count data - heteroscedasticity</a></li>
+<li class="chapter" data-level="4.10" data-path="problems-with-linear-regression-of-count-data.html"><a href="problems-with-linear-regression-of-count-data.html"><i class="fa fa-check"></i><b>4.10</b> Problems with linear regression of count data</a></li>
+<li class="chapter" data-level="4.11" data-path="poisson-distribution.html"><a href="poisson-distribution.html"><i class="fa fa-check"></i><b>4.11</b> Poisson distribution</a></li>
+<li class="chapter" data-level="4.12" data-path="poisson-regression-model-mean-lambda.html"><a href="poisson-regression-model-mean-lambda.html"><i class="fa fa-check"></i><b>4.12</b> Poisson Regression Model mean (lambda)</a></li>
+<li class="chapter" data-level="4.13" data-path="estimating-the-poisson-regression-parameters.html"><a href="estimating-the-poisson-regression-parameters.html"><i class="fa fa-check"></i><b>4.13</b> Estimating the Poisson Regression parameters</a></li>
+<li class="chapter" data-level="4.14" data-path="interpreting-poisson-regression.html"><a href="interpreting-poisson-regression.html"><i class="fa fa-check"></i><b>4.14</b> Interpreting Poisson Regression</a></li>
+<li class="chapter" data-level="4.15" data-path="advantages-of-poisson-regression.html"><a href="advantages-of-poisson-regression.html"><i class="fa fa-check"></i><b>4.15</b> Advantages of Poisson Regression</a></li>
+<li class="chapter" data-level="4.16" data-path="generalized-linear-models-1.html"><a href="generalized-linear-models-1.html"><i class="fa fa-check"></i><b>4.16</b> Generalized Linear Models</a></li>
+<li class="chapter" data-level="4.17" data-path="lab-classification-methods.html"><a href="lab-classification-methods.html"><i class="fa fa-check"></i><b>4.17</b> Lab: Classification Methods</a></li>
+<li class="chapter" data-level="4.18" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>4.18</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="4.18.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>4.18.1</b> Cohort 1</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resampling-methods.html"><a href="resampling-methods.html"><i class="fa fa-check"></i><b>5</b> Resampling Methods</a><ul>
@@ -333,27 +340,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="text-coloring" class="section level2 unnumbered">
 <h2>Text coloring</h2>
 <p>To add color you can use CSS or R code like this:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="text-coloring.html#cb15-1"></a>color_text &lt;-<span class="st"> </span><span class="cf">function</span>(x, color){</span>
-<span id="cb15-2"><a href="text-coloring.html#cb15-2"></a>  <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_latex_output</span>())</span>
-<span id="cb15-3"><a href="text-coloring.html#cb15-3"></a>    <span class="kw">paste</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>,color,<span class="st">&quot;}{&quot;</span>,x,<span class="st">&quot;}&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb15-4"><a href="text-coloring.html#cb15-4"></a>  <span class="cf">else</span> <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_html_output</span>())</span>
-<span id="cb15-5"><a href="text-coloring.html#cb15-5"></a>    <span class="kw">paste</span>(<span class="st">&quot;&lt;font color=&#39;&quot;</span>,color,<span class="st">&quot;&#39;&gt;&quot;</span>,x,<span class="st">&quot;&lt;/font&gt;&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb15-6"><a href="text-coloring.html#cb15-6"></a>  <span class="cf">else</span></span>
-<span id="cb15-7"><a href="text-coloring.html#cb15-7"></a>    x</span>
-<span id="cb15-8"><a href="text-coloring.html#cb15-8"></a>}</span>
-<span id="cb15-9"><a href="text-coloring.html#cb15-9"></a></span>
-<span id="cb15-10"><a href="text-coloring.html#cb15-10"></a>red &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb15-11"><a href="text-coloring.html#cb15-11"></a>  <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_latex_output</span>())</span>
-<span id="cb15-12"><a href="text-coloring.html#cb15-12"></a>    <span class="kw">paste</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&quot;}{&quot;</span>,x,<span class="st">&quot;}&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb15-13"><a href="text-coloring.html#cb15-13"></a>  <span class="cf">else</span> <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_html_output</span>())</span>
-<span id="cb15-14"><a href="text-coloring.html#cb15-14"></a>    <span class="kw">paste</span>(<span class="st">&quot;&lt;font color=&#39;red&#39;&gt;&quot;</span>,x,<span class="st">&quot;&lt;/font&gt;&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb15-15"><a href="text-coloring.html#cb15-15"></a>  <span class="cf">else</span></span>
-<span id="cb15-16"><a href="text-coloring.html#cb15-16"></a>    x</span>
-<span id="cb15-17"><a href="text-coloring.html#cb15-17"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="text-coloring.html#cb16-1"></a>color_text &lt;-<span class="st"> </span><span class="cf">function</span>(x, color){</span>
+<span id="cb16-2"><a href="text-coloring.html#cb16-2"></a>  <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_latex_output</span>())</span>
+<span id="cb16-3"><a href="text-coloring.html#cb16-3"></a>    <span class="kw">paste</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>,color,<span class="st">&quot;}{&quot;</span>,x,<span class="st">&quot;}&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb16-4"><a href="text-coloring.html#cb16-4"></a>  <span class="cf">else</span> <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_html_output</span>())</span>
+<span id="cb16-5"><a href="text-coloring.html#cb16-5"></a>    <span class="kw">paste</span>(<span class="st">&quot;&lt;font color=&#39;&quot;</span>,color,<span class="st">&quot;&#39;&gt;&quot;</span>,x,<span class="st">&quot;&lt;/font&gt;&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb16-6"><a href="text-coloring.html#cb16-6"></a>  <span class="cf">else</span></span>
+<span id="cb16-7"><a href="text-coloring.html#cb16-7"></a>    x</span>
+<span id="cb16-8"><a href="text-coloring.html#cb16-8"></a>}</span>
+<span id="cb16-9"><a href="text-coloring.html#cb16-9"></a></span>
+<span id="cb16-10"><a href="text-coloring.html#cb16-10"></a>red &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb16-11"><a href="text-coloring.html#cb16-11"></a>  <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_latex_output</span>())</span>
+<span id="cb16-12"><a href="text-coloring.html#cb16-12"></a>    <span class="kw">paste</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">textcolor{&quot;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&quot;}{&quot;</span>,x,<span class="st">&quot;}&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb16-13"><a href="text-coloring.html#cb16-13"></a>  <span class="cf">else</span> <span class="cf">if</span>(knitr<span class="op">::</span><span class="kw">is_html_output</span>())</span>
+<span id="cb16-14"><a href="text-coloring.html#cb16-14"></a>    <span class="kw">paste</span>(<span class="st">&quot;&lt;font color=&#39;red&#39;&gt;&quot;</span>,x,<span class="st">&quot;&lt;/font&gt;&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb16-15"><a href="text-coloring.html#cb16-15"></a>  <span class="cf">else</span></span>
+<span id="cb16-16"><a href="text-coloring.html#cb16-16"></a>    x</span>
+<span id="cb16-17"><a href="text-coloring.html#cb16-17"></a>}</span></code></pre></div>
 <p>The strng <font color='red'>This is colored with the red function</font> comes from:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="text-coloring.html#cb16-1"></a><span class="st">`</span><span class="dt">r red(&quot;This is colored with the red function&quot;)</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="text-coloring.html#cb17-1"></a><span class="st">`</span><span class="dt">r red(&quot;This is colored with the red function&quot;)</span><span class="st">`</span></span></code></pre></div>
 <p>The string <font color='#E0B0FF'>This is colored with the color_text function set to mauve</font> comes from:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="text-coloring.html#cb17-1"></a><span class="st">`</span><span class="dt">r color_text(&quot;This is colored with the color_text function set to mauve&quot;, &quot;#E0B0FF&quot;)</span><span class="st">`</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="text-coloring.html#cb18-1"></a><span class="st">`</span><span class="dt">r color_text(&quot;This is colored with the color_text function set to mauve&quot;, &quot;#E0B0FF&quot;)</span><span class="st">`</span></span></code></pre></div>
 </div>
             </section>
 
