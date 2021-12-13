@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.22 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club</title>
+  <title>2.2 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.22 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club" />
+  <meta property="og:title" content="2.2 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-islr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.22 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club" />
+  <meta name="twitter:title" content="2.2 Assessing Model Accuracy | Introduction to Statistical Learning Using R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-11-24" />
+<meta name="date" content="2021-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="regression-versus-classification-problems.html"/>
-<link rel="next" href="mse.html"/>
+<link rel="prev" href="what-is-statistical-learning-1.html"/>
+<link rel="next" href="exercises.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -153,41 +153,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="learning.html"><a href="learning.html"><i class="fa fa-check"></i><b>2</b> Statistical Learning</a><ul>
-<li class="chapter" data-level="2.1" data-path="advertising-example.html"><a href="advertising-example.html"><i class="fa fa-check"></i><b>2.1</b> Advertising Example</a></li>
-<li class="chapter" data-level="2.2" data-path="terms.html"><a href="terms.html"><i class="fa fa-check"></i><b>2.2</b> Terms</a></li>
-<li class="chapter" data-level="2.3" data-path="equation-2.html"><a href="equation-2.html"><i class="fa fa-check"></i><b>2.3</b> Equation 2.1</a></li>
-<li class="chapter" data-level="2.4" data-path="error-terms.html"><a href="error-terms.html"><i class="fa fa-check"></i><b>2.4</b> Error terms</a></li>
-<li class="chapter" data-level="2.5" data-path="error-terms-two-predictors.html"><a href="error-terms-two-predictors.html"><i class="fa fa-check"></i><b>2.5</b> Error Terms Two Predictors</a></li>
-<li class="chapter" data-level="2.6" data-path="why-estiamte-f.html"><a href="why-estiamte-f.html"><i class="fa fa-check"></i><b>2.6</b> Why Estiamte <span class="math inline">\(f\)</span>?</a></li>
-<li class="chapter" data-level="2.7" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i><b>2.7</b> Prediction</a></li>
-<li class="chapter" data-level="2.8" data-path="accuracy.html"><a href="accuracy.html"><i class="fa fa-check"></i><b>2.8</b> Accuracy</a></li>
-<li class="chapter" data-level="2.9" data-path="reducible-vs-irreducible-error.html"><a href="reducible-vs-irreducible-error.html"><i class="fa fa-check"></i><b>2.9</b> Reducible vs Irreducible Error</a></li>
-<li class="chapter" data-level="2.10" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i><b>2.10</b> Inference</a></li>
-<li class="chapter" data-level="2.11" data-path="linear-model.html"><a href="linear-model.html"><i class="fa fa-check"></i><b>2.11</b> Linear Model</a></li>
-<li class="chapter" data-level="2.12" data-path="parametric-methods-_1.html"><a href="parametric-methods-_1.html"><i class="fa fa-check"></i><b>2.12</b> Parametric methods <span class="math inline">\(_{(1)}\)</span></a></li>
-<li class="chapter" data-level="2.13" data-path="parametric-methods-_2.html"><a href="parametric-methods-_2.html"><i class="fa fa-check"></i><b>2.13</b> Parametric methods <span class="math inline">\(_{(2)}\)</span></a></li>
-<li class="chapter" data-level="2.14" data-path="parametric-methods-_3---easier-than-an-arbitray-function.html"><a href="parametric-methods-_3---easier-than-an-arbitray-function.html"><i class="fa fa-check"></i><b>2.14</b> Parametric methods <span class="math inline">\(_{(3)}\)</span> - Easier than an arbitray function</a></li>
-<li class="chapter" data-level="2.15" data-path="parametric-methods-_4---disadvantage.html"><a href="parametric-methods-_4---disadvantage.html"><i class="fa fa-check"></i><b>2.15</b> Parametric methods <span class="math inline">\(_{(4)}\)</span> - Disadvantage</a></li>
-<li class="chapter" data-level="2.16" data-path="basic-parametric-model.html"><a href="basic-parametric-model.html"><i class="fa fa-check"></i><b>2.16</b> Basic Parametric Model</a></li>
-<li class="chapter" data-level="2.17" data-path="non-parametric-methods.html"><a href="non-parametric-methods.html"><i class="fa fa-check"></i><b>2.17</b> Non-Parametric Methods</a></li>
-<li class="chapter" data-level="2.18" data-path="thin-plate-splines.html"><a href="thin-plate-splines.html"><i class="fa fa-check"></i><b>2.18</b> Thin plate splines</a></li>
-<li class="chapter" data-level="2.19" data-path="prediction-accuracy-vs-model-interpretability.html"><a href="prediction-accuracy-vs-model-interpretability.html"><i class="fa fa-check"></i><b>2.19</b> Prediction Accuracy vs Model Interpretability</a></li>
-<li class="chapter" data-level="2.20" data-path="supervised-versus-unsupervised-learning.html"><a href="supervised-versus-unsupervised-learning.html"><i class="fa fa-check"></i><b>2.20</b> Supervised Versus Unsupervised Learning</a></li>
-<li class="chapter" data-level="2.21" data-path="regression-versus-classification-problems.html"><a href="regression-versus-classification-problems.html"><i class="fa fa-check"></i><b>2.21</b> Regression Versus Classification Problems</a></li>
-<li class="chapter" data-level="2.22" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.22</b> Assessing Model Accuracy</a></li>
-<li class="chapter" data-level="2.23" data-path="mse.html"><a href="mse.html"><i class="fa fa-check"></i><b>2.23</b> MSE</a></li>
-<li class="chapter" data-level="2.24" data-path="training-vs.-test.html"><a href="training-vs.-test.html"><i class="fa fa-check"></i><b>2.24</b> Training vs. Test</a></li>
-<li class="chapter" data-level="2.25" data-path="overfitting-with-increased-flexiblity.html"><a href="overfitting-with-increased-flexiblity.html"><i class="fa fa-check"></i><b>2.25</b> Overfitting with Increased Flexiblity</a></li>
-<li class="chapter" data-level="2.26" data-path="interpretation.html"><a href="interpretation.html"><i class="fa fa-check"></i><b>2.26</b> Interpretation</a></li>
-<li class="chapter" data-level="2.27" data-path="the-bias-variance-trade-off.html"><a href="the-bias-variance-trade-off.html"><i class="fa fa-check"></i><b>2.27</b> The Bias-Variance Trade-Off</a></li>
-<li class="chapter" data-level="2.28" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>2.28</b> Bias-Variance Trade-Off</a></li>
-<li class="chapter" data-level="2.29" data-path="the-classification-setting.html"><a href="the-classification-setting.html"><i class="fa fa-check"></i><b>2.29</b> The Classification Setting</a></li>
-<li class="chapter" data-level="2.30" data-path="test-error.html"><a href="test-error.html"><i class="fa fa-check"></i><b>2.30</b> Test Error</a></li>
-<li class="chapter" data-level="2.31" data-path="the-bayes-classifier.html"><a href="the-bayes-classifier.html"><i class="fa fa-check"></i><b>2.31</b> The Bayes Classifier</a></li>
-<li class="chapter" data-level="2.32" data-path="bayes-classifier-decision-boundry.html"><a href="bayes-classifier-decision-boundry.html"><i class="fa fa-check"></i><b>2.32</b> Bayes Classifier Decision Boundry</a></li>
-<li class="chapter" data-level="2.33" data-path="k-nearest-neighbors.html"><a href="k-nearest-neighbors.html"><i class="fa fa-check"></i><b>2.33</b> K-Nearest Neighbors</a></li>
-<li class="chapter" data-level="2.34" data-path="knn-with-different-k.html"><a href="knn-with-different-k.html"><i class="fa fa-check"></i><b>2.34</b> KNN with Different K</a></li>
-<li class="chapter" data-level="2.35" data-path="knn-tuning.html"><a href="knn-tuning.html"><i class="fa fa-check"></i><b>2.35</b> KNN Tuning</a></li>
+<li class="chapter" data-level="2.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html"><i class="fa fa-check"></i><b>2.1</b> What is Statistical Learning?</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#why-estimate-f"><i class="fa fa-check"></i><b>2.1.1</b> Why Estimate <span class="math inline">\(f\)</span>?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#how-do-we-estimate-f"><i class="fa fa-check"></i><b>2.1.2</b> How do we estimate <span class="math inline">\(f\)</span>?</a></li>
+<li class="chapter" data-level="2.1.3" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#prediction-accuracy-vs-model-interpretability"><i class="fa fa-check"></i><b>2.1.3</b> Prediction Accuracy vs Model Interpretability</a></li>
+<li class="chapter" data-level="2.1.4" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#supervised-versus-unsupervised-learning"><i class="fa fa-check"></i><b>2.1.4</b> Supervised Versus Unsupervised Learning</a></li>
+<li class="chapter" data-level="2.1.5" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#regression-versus-classification-problems"><i class="fa fa-check"></i><b>2.1.5</b> Regression Versus Classification Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.2</b> Assessing Model Accuracy</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#measuring-quality-of-fit"><i class="fa fa-check"></i><b>2.2.1</b> Measuring Quality of Fit</a></li>
+<li class="chapter" data-level="2.2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-bias-variance-trade-off"><i class="fa fa-check"></i><b>2.2.2</b> The Bias-Variance Trade-Off</a></li>
+<li class="chapter" data-level="2.2.3" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-classification-setting"><i class="fa fa-check"></i><b>2.2.3</b> The Classification Setting</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>2.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>3</b> Linear Regression</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-to-answer.html"><a href="questions-to-answer.html"><i class="fa fa-check"></i><b>3.1</b> Questions to Answer</a></li>
@@ -349,18 +327,167 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="assessing-model-accuracy" class="section level2">
-<h2><span class="header-section-number">2.22</span> Assessing Model Accuracy</h2>
+<h2><span class="header-section-number">2.2</span> Assessing Model Accuracy</h2>
+<p>There is no free lunch in statistics: no one method dominates all others over all possible problems.</p>
+<p>Selecting the best approach can be challenging in practice.</p>
+<div id="measuring-quality-of-fit" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Measuring Quality of Fit</h3>
 <blockquote>
 <p><em>There is no free lunch in statistics</em>: no one method dominates all others over all possible data sets. On a particular data set, one specific method may work best, but some other method may work better on a similar but different data set.</p>
 </blockquote>
+<h4>
+<strong>MSE</strong>
+</h4>
+<p>We always need some way to measure how well a model’s predictions actually match the observed data.</p>
+<blockquote>
+<p>In the regression setting, the most commonly-used measure is the <mark><em>mean squared error</em></mark> (MSE), given by <span class="math display">\[ MSE = \frac{1}{n}\sum_{i=1}^n(y_i-\hat{f}(x_i))^2,\]</span></p>
+</blockquote>
+<p>The MSE will be small if the predicted responses are very close to the true responses,and will be large if for some of the observations, the predicted and true responses differ substantially.</p>
+<h4>
+<strong>Training vs. Test</strong>
+</h4>
+<p>The MSE in the above equation is computed using the training data that was used to fit the model, and so should more accurately be referred to as the <mark><em>training MSE</em></mark>.</p>
+<blockquote>
+<p>In general, we do not really care how well the method works on the training data.</p>
+</blockquote>
+<p>We are interested in the accuracy of the predictions that we obtain when we apply our method to previously unseen <mark><em>test data</em></mark>.</p>
+<p><span class="math display">\[\mathrm{Ave}(y_0 - \hat{f}(x_0))^2 ,\]</span></p>
+<p>We’d like to select the model for which this quantity is as small as possible on unseen, future samples.</p>
+<p>The <mark><em>degrees of freedom</em></mark> is a quantity that summarizes the flexibility of a curve. The training MSE declines monotonically as flexibility increases.</p>
+<h4>
+<strong>Overfitting</strong>
+</h4>
+<p><mark>As model flexibility increases, training MSE will decrease, but the test MSE may not.</mark> When a given method yields a small training MSE but a large test MSE, we are said to be <em>overfitting</em> the data.</p>
+<blockquote>
+<p>Overfitting refers specifically to the case in which a less flexible model would have yielded a smaller test MSE.</p>
+</blockquote>
+<p>MSE, for a given value, can always be decomposed into the sum of three fundamental quantities: the <mark><em>variance</em></mark> of <span class="math inline">\(\hat{f}(x_0)\)</span>, the squared <mark><em>bias</em></mark> of <span class="math inline">\(\hat{f}(x_0)\)</span> and the variance of the <mark>error terms</mark> <span class="math inline">\(\epsilon\)</span>. That is,</p>
+<p><span class="math display">\[E\big(y_0 - \hat{f}(x_0)\big)^2 = \mathrm{Var}\big(\hat{f}(x_0)\big) +[\mathrm{Bias}\big(\hat{f}(x_0)\big)]^2 + \mathrm{Var}(\epsilon)\]</span></p>
+<p>Here the notation <span class="math inline">\(E\big(y_0 - \hat{f}(x_0)\big)^2\)</span> defines the <mark><em>expected test MSE</em></mark> at <span class="math inline">\(x_0\)</span> and refers to the average test MSE that we would obtain if we repeatedly estimated <span class="math inline">\(f\)</span> using a <mark>large number of training sets</mark>, and tested each at <span class="math inline">\(x_0\)</span>. The overall expected test MSE can be computed by averaging <span class="math inline">\(E \big(y_0 - \hat{f}x(x_0)\big)^2\)</span> over all possible values of <span class="math inline">\(x_0\)</span> in the test set</p>
+<div class="figure">
+<img src="images/fig2_9.jpg" alt="" />
+<p class="caption">FIGURE 2.9. Left: Data simulated from f, shown in black. Three estimates of f are shown: the linear regression line (orange curve), and two smoothing spline fits (blue and green curves). Right: Training MSE (grey curve), test MSE (red curve), and minimum possible test MSE over all methods (dashed line). Squares represent the training and test MSEs for the three fits shown in the left-hand panel.</p>
+</div>
+<p>The orange, blue and green squares indicate the MSEs associated with the corresponding curves in the left hand panel. A more restricted and hence smoother curve has fewer degrees of freedom than a wiggly curve—note that in Figure 2.9, linear regression is at the most restrictive end, with two degrees of freedom. The training MSE declines monotonically as flexibility increases.</p>
+<p>As the flexibility of the statistical learning method increases, we observe a monotone decrease in the training MSE and a U-shape in the test MSE. This is a fundamental property of statistical learning that holds regardless of the particular data set at hand and regardless of the statistical method being used. As model flexibility increases, training MSE will decrease, but the test MSE may not.</p>
+<p>When a given method yields a small training MSE but a large test MSE, we are said to be <mark><em>overfitting</em></mark> the data.</p>
+<div class="figure">
+<img src="images/fig2_10.jpg" alt="" />
+<p class="caption">FIGURE 2.10. Details are as in Figure 2.9, using a different true f that is much closer to linear. In this setting, linear regression provides a very good fit to the data.</p>
+</div>
+<p>Another example in which the true <span class="math inline">\(f\)</span> is approximately linear.</p>
+<p>However, because the truth is close to linear, the test MSE
+only decreases slightly before increasing again, so that the orange least squares fit is substantially better than the highly flexible green curve.</p>
+<p>Figure 2.11 displays an example in which f is highly non-linear. The
+training and test MSE curves still exhibit the same general patterns, but now there is a rapid decrease in both curves before the test MSE starts to increase slowly.</p>
+<div class="figure">
+<img src="images/fig2_11.jpg" alt="" />
+<p class="caption">FIGURE 2.11. Details are as in Figure 2.9, using a different f that is far from linear. In this setting, linear regression provides a very poor fit to the data.</p>
+</div>
+<blockquote>
+<p>We need to select a statistical learning method that simultaneously achieves low variance and low bias.</p>
+</blockquote>
+</div>
+<div id="the-bias-variance-trade-off" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> The Bias-Variance Trade-Off</h3>
+<p>As we use more flexible methods, the variance will increase and the bias will decrease. As we increase the flexibility of a class of methods, the bias tends to initially decrease faster than the variance increases. However, at some point increasing flexibility has little impact on the bias but starts to significantly increase the variance. When this happens the test MSE increases.</p>
+<div class="figure">
+<img src="images/fig2_12.jpg" alt="" />
+<p class="caption">FIGURE 2.12. Squared bias (blue curve), variance (orange curve), Var(ϵ) (dashed line), and test MSE (red curve) for the three data sets in Figures 2.9–2.11. The vertical dotted line indicates the flexibility level corresponding to the smallest test MSE.</p>
+</div>
+<p>In all three cases, the variance increases and the bias decreases as the method’s flexibility increases. The relationship between bias, variance, and test set MSE given is referred to as the <mark><em>bias-variance trade-off</em></mark>.</p>
+<blockquote>
+<p>The challenge lies in finding a method for which both the variance and the squared bias are low. This trade-off is one of the most important recurring themes in this book.</p>
+</blockquote>
+</div>
+<div id="the-classification-setting" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> The Classification Setting</h3>
+<p>The most common approach for quantifying the accuracy of our estimate <span class="math inline">\(\hat{f}\)</span> is the training <mark><em>error rate</em></mark>, the proportion of mistakes that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations: <span class="math display">\[\frac{1}{n}\sum_{i=1}^{n}I(y_i \ne \hat{y}_i).\]</span></p>
+<p>The above equation computes the fraction of incorrect classifications.</p>
+<p>The equation is referred to as the <mark><em>training error</em></mark> rate because it is computed based on the data that was used to train our classifier.</p>
+<blockquote>
+<p>Again, we are most interested in the error rates that result from applying our classifier to test observations that were not used in training.</p>
+</blockquote>
+<h4>
+<strong>Test Error</strong>
+</h4>
+<p>The <mark><em>test error</em></mark> rate associated with a set of test observations of the form <span class="math inline">\((x_0, y_0)\)</span> is given by</p>
+<p><span class="math display">\[\mathrm{Ave}\big(I(y_i \ne \hat{y}_i)\big).\]</span></p>
+<p>Where <span class="math inline">\(\hat{y}_0\)</span> is the predicted class label that results from applying the classifier to the test observation with predictor <span class="math inline">\(x_0\)</span>. A good classifier is one for which the test error is smallest.</p>
+<h4>
+<strong>The Bayes Classifier</strong>
+</h4>
+<p><em>Hypothetical – cannot be done in practice</em></p>
+<p>The test error rate is minimized, on average, by a very simple classifier that <em>assigns each observation to the most likely class, given its predictor values</em>. In other words, we should simply assign a test observation with predictor vector <span class="math inline">\(x_0\)</span> to the class <span class="math inline">\(j\)</span> for which</p>
+<p><span class="math display">\[\mathrm{Pr}(Y=j|X=x_0).\]</span></p>
+<p>Note that is a <mark><em>conditional probability</em></mark>: it is the probability that <span class="math inline">\(Y = j\)</span>, given the observed predictor vector <span class="math inline">\(X_0\)</span>. This very simple classifier is called the <mark><em>Bayes classifier</em></mark>.</p>
+<h4>
+<strong>Bayes Classifier Decision Boundary</strong>
+</h4>
+<p>Figure 2.13 provides an example using a simulated data set in a two dimensional space consisting of predictors X1 and X2. The orange and
+blue circles correspond to training observations that belong to two different classes. For each value of X1 and X2, there is a different probability of the response being orange or blue.</p>
+<div class="figure">
+<img src="images/fig2_13.jpg" alt="" />
+<p class="caption">FIGURE 2.13. A simulated data set consisting of 100 observations in each of two groups, indicated in blue and in orange. The purple dashed line represents the Bayes decision boundary. The orange background grid indicates the region in which a test observation will be assigned to the orange class, and the blue background grid indicates the region in which a test observation will be assigned to the blue class.</p>
+</div>
+<p>The purple dashed line represents the points where the probability is exactly 50%. This is called the <mark><em>Bayes decision boundary</em></mark>. An observation that falls on the orange side of the boundary will be assigned to the orange class, and similarly an observation on the blue side of the boundary will be assigned to the blue class.</p>
+<blockquote>
+<p>The Bayes classifier produces the lowest possible test error rate, called the <mark><em>Bayes error rate</em></mark>.</p>
+</blockquote>
+<p>The overall Bayes error rate is given by</p>
+<p><span class="math display">\[1- E\big(\mathop{\mathrm{max}}_{j}(Y=j|X)\big),\]</span></p>
+<p>where the expectation averages the probability over all possible values of X. The Bayes error rate is analogous to the irreducible error, discussed earlier.</p>
+<h4>
+<strong>K-Nearest Neighbors</strong>
+</h4>
+<p>For real data, we do not know the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span>, and so computing the Bayes classifier is impossible.</p>
+<p>Many approaches attempt to estimate the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span>, and then classify a given observation to the class with highest estimated probability. One such method is the <mark><em>K-nearest neighbors</em></mark> (KNN) classifier.</p>
+<p>Given a positive integer K and a test observation <span class="math inline">\(t_{0}\)</span>, the KNN classifier first identifies the K points in the training data that are closest to <span class="math inline">\(x_0\)</span></p>
+<p><span class="math display">\[\mathrm{Pr}(Y=j|X=x_0) = \frac{1}{K}\sum_{i \in \mathcal{N}_0} I (y_i = j)\]</span></p>
+<p>Finally, KNN classifies the test observation <span class="math inline">\(x_0\)</span> to the class with the largest probability.</p>
+<div class="figure">
+<img src="images/fig2_14.jpg" alt="" />
+<p class="caption">Figure 2-143</p>
+</div>
+<p>The KNN approach with <span class="math inline">\(K\)</span> = 3 at all of the possible values for <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, and have drawn in the corresponding KNN decision boundary.</p>
+<p>Despite the fact that it is a very simple approach, KNN can produce classifiers that are surprisingly close to the optimal Bayes classifier.</p>
+<h4>
+<strong>KNN with Different K</strong>
+</h4>
+<div class="figure">
+<img src="images/fig2_15.jpg" alt="" />
+<p class="caption">FIGURE 2.15. The black curve indicates the KNN decision boundary on the data from Figure 2.13, using K = 10. The Bayes decision boundary is shown as a purple dashed line. The KNN and Bayes decision boundaries are very similar.</p>
+</div>
+<div class="figure">
+<img src="images/fig2_16.jpg" alt="" />
+<p class="caption">FIGURE 2.16. A comparison of the KNN decision boundaries obtained using K = 1 and K = 100 on the data from Figure 2.13. With K = 1, the decision boundary is overly flexible, while with K = 100 it is not sufficiently flexible. The Bayes decision boundary is shown as a purple dashed line.</p>
+</div>
+<blockquote>
+<p>The choice of K has a drastic effect on the KNN classifier obtained.</p>
+</blockquote>
+<p>Nearest neighbor methods can be lousy when <span class="math inline">\(p\)</span> is large.</p>
+<p>Reason: the <em>curse of dimensionality</em>. Nearest neighbors tend to be far away in high dimensions.</p>
+<h4>
+<strong>KNN Tuning</strong>
+</h4>
+<div class="figure">
+<img src="images/fig2_17.jpg" alt="" />
+<p class="caption">FIGURE 2.17. The KNN training error rate (blue, 200 observations) and test error rate (orange, 5,000 observations) on the data from Figure 2.13, as the level of flexibility (assessed using 1/K on the log scale) increases, or equivalently as the number of neighbors K decreases. The black dashed line indicates the Bayes error rate. The jumpiness of the curves is due to the small size of the training data set.</p>
+</div>
+<blockquote>
+<p>As we use more flexible classification methods, the training error rate will decline but the test error rate may not.</p>
+</blockquote>
+<p>As <span class="math inline">\(1/K\)</span> increases, the method becomes more flexible. As in the regression setting, the training error rate consistently declines as the flexibility increases.</p>
+<p>However, the test error exhibits a characteristic U-shape, declining at first (with a minimum at approximately <span class="math inline">\(K\)</span> = 10) before increasing again when the method becomes excessively flexible and overfits.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="regression-versus-classification-problems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="mse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="what-is-statistical-learning-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

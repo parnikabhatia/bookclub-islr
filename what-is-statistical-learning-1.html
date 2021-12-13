@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.32 Bayes Classifier Decision Boundry | Introduction to Statistical Learning Using R Book Club</title>
+  <title>2.1 What is Statistical Learning? | Introduction to Statistical Learning Using R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.32 Bayes Classifier Decision Boundry | Introduction to Statistical Learning Using R Book Club" />
+  <meta property="og:title" content="2.1 What is Statistical Learning? | Introduction to Statistical Learning Using R Book Club" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-islr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.32 Bayes Classifier Decision Boundry | Introduction to Statistical Learning Using R Book Club" />
+  <meta name="twitter:title" content="2.1 What is Statistical Learning? | Introduction to Statistical Learning Using R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2021-11-24" />
+<meta name="date" content="2021-12-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-bayes-classifier.html"/>
-<link rel="next" href="k-nearest-neighbors.html"/>
+<link rel="prev" href="learning.html"/>
+<link rel="next" href="assessing-model-accuracy.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -153,41 +153,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="learning.html"><a href="learning.html"><i class="fa fa-check"></i><b>2</b> Statistical Learning</a><ul>
-<li class="chapter" data-level="2.1" data-path="advertising-example.html"><a href="advertising-example.html"><i class="fa fa-check"></i><b>2.1</b> Advertising Example</a></li>
-<li class="chapter" data-level="2.2" data-path="terms.html"><a href="terms.html"><i class="fa fa-check"></i><b>2.2</b> Terms</a></li>
-<li class="chapter" data-level="2.3" data-path="equation-2.html"><a href="equation-2.html"><i class="fa fa-check"></i><b>2.3</b> Equation 2.1</a></li>
-<li class="chapter" data-level="2.4" data-path="error-terms.html"><a href="error-terms.html"><i class="fa fa-check"></i><b>2.4</b> Error terms</a></li>
-<li class="chapter" data-level="2.5" data-path="error-terms-two-predictors.html"><a href="error-terms-two-predictors.html"><i class="fa fa-check"></i><b>2.5</b> Error Terms Two Predictors</a></li>
-<li class="chapter" data-level="2.6" data-path="why-estiamte-f.html"><a href="why-estiamte-f.html"><i class="fa fa-check"></i><b>2.6</b> Why Estiamte <span class="math inline">\(f\)</span>?</a></li>
-<li class="chapter" data-level="2.7" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i><b>2.7</b> Prediction</a></li>
-<li class="chapter" data-level="2.8" data-path="accuracy.html"><a href="accuracy.html"><i class="fa fa-check"></i><b>2.8</b> Accuracy</a></li>
-<li class="chapter" data-level="2.9" data-path="reducible-vs-irreducible-error.html"><a href="reducible-vs-irreducible-error.html"><i class="fa fa-check"></i><b>2.9</b> Reducible vs Irreducible Error</a></li>
-<li class="chapter" data-level="2.10" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i><b>2.10</b> Inference</a></li>
-<li class="chapter" data-level="2.11" data-path="linear-model.html"><a href="linear-model.html"><i class="fa fa-check"></i><b>2.11</b> Linear Model</a></li>
-<li class="chapter" data-level="2.12" data-path="parametric-methods-_1.html"><a href="parametric-methods-_1.html"><i class="fa fa-check"></i><b>2.12</b> Parametric methods <span class="math inline">\(_{(1)}\)</span></a></li>
-<li class="chapter" data-level="2.13" data-path="parametric-methods-_2.html"><a href="parametric-methods-_2.html"><i class="fa fa-check"></i><b>2.13</b> Parametric methods <span class="math inline">\(_{(2)}\)</span></a></li>
-<li class="chapter" data-level="2.14" data-path="parametric-methods-_3---easier-than-an-arbitray-function.html"><a href="parametric-methods-_3---easier-than-an-arbitray-function.html"><i class="fa fa-check"></i><b>2.14</b> Parametric methods <span class="math inline">\(_{(3)}\)</span> - Easier than an arbitray function</a></li>
-<li class="chapter" data-level="2.15" data-path="parametric-methods-_4---disadvantage.html"><a href="parametric-methods-_4---disadvantage.html"><i class="fa fa-check"></i><b>2.15</b> Parametric methods <span class="math inline">\(_{(4)}\)</span> - Disadvantage</a></li>
-<li class="chapter" data-level="2.16" data-path="basic-parametric-model.html"><a href="basic-parametric-model.html"><i class="fa fa-check"></i><b>2.16</b> Basic Parametric Model</a></li>
-<li class="chapter" data-level="2.17" data-path="non-parametric-methods.html"><a href="non-parametric-methods.html"><i class="fa fa-check"></i><b>2.17</b> Non-Parametric Methods</a></li>
-<li class="chapter" data-level="2.18" data-path="thin-plate-splines.html"><a href="thin-plate-splines.html"><i class="fa fa-check"></i><b>2.18</b> Thin plate splines</a></li>
-<li class="chapter" data-level="2.19" data-path="prediction-accuracy-vs-model-interpretability.html"><a href="prediction-accuracy-vs-model-interpretability.html"><i class="fa fa-check"></i><b>2.19</b> Prediction Accuracy vs Model Interpretability</a></li>
-<li class="chapter" data-level="2.20" data-path="supervised-versus-unsupervised-learning.html"><a href="supervised-versus-unsupervised-learning.html"><i class="fa fa-check"></i><b>2.20</b> Supervised Versus Unsupervised Learning</a></li>
-<li class="chapter" data-level="2.21" data-path="regression-versus-classification-problems.html"><a href="regression-versus-classification-problems.html"><i class="fa fa-check"></i><b>2.21</b> Regression Versus Classification Problems</a></li>
-<li class="chapter" data-level="2.22" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.22</b> Assessing Model Accuracy</a></li>
-<li class="chapter" data-level="2.23" data-path="mse.html"><a href="mse.html"><i class="fa fa-check"></i><b>2.23</b> MSE</a></li>
-<li class="chapter" data-level="2.24" data-path="training-vs.-test.html"><a href="training-vs.-test.html"><i class="fa fa-check"></i><b>2.24</b> Training vs. Test</a></li>
-<li class="chapter" data-level="2.25" data-path="overfitting-with-increased-flexiblity.html"><a href="overfitting-with-increased-flexiblity.html"><i class="fa fa-check"></i><b>2.25</b> Overfitting with Increased Flexiblity</a></li>
-<li class="chapter" data-level="2.26" data-path="interpretation.html"><a href="interpretation.html"><i class="fa fa-check"></i><b>2.26</b> Interpretation</a></li>
-<li class="chapter" data-level="2.27" data-path="the-bias-variance-trade-off.html"><a href="the-bias-variance-trade-off.html"><i class="fa fa-check"></i><b>2.27</b> The Bias-Variance Trade-Off</a></li>
-<li class="chapter" data-level="2.28" data-path="bias-variance-trade-off.html"><a href="bias-variance-trade-off.html"><i class="fa fa-check"></i><b>2.28</b> Bias-Variance Trade-Off</a></li>
-<li class="chapter" data-level="2.29" data-path="the-classification-setting.html"><a href="the-classification-setting.html"><i class="fa fa-check"></i><b>2.29</b> The Classification Setting</a></li>
-<li class="chapter" data-level="2.30" data-path="test-error.html"><a href="test-error.html"><i class="fa fa-check"></i><b>2.30</b> Test Error</a></li>
-<li class="chapter" data-level="2.31" data-path="the-bayes-classifier.html"><a href="the-bayes-classifier.html"><i class="fa fa-check"></i><b>2.31</b> The Bayes Classifier</a></li>
-<li class="chapter" data-level="2.32" data-path="bayes-classifier-decision-boundry.html"><a href="bayes-classifier-decision-boundry.html"><i class="fa fa-check"></i><b>2.32</b> Bayes Classifier Decision Boundry</a></li>
-<li class="chapter" data-level="2.33" data-path="k-nearest-neighbors.html"><a href="k-nearest-neighbors.html"><i class="fa fa-check"></i><b>2.33</b> K-Nearest Neighbors</a></li>
-<li class="chapter" data-level="2.34" data-path="knn-with-different-k.html"><a href="knn-with-different-k.html"><i class="fa fa-check"></i><b>2.34</b> KNN with Different K</a></li>
-<li class="chapter" data-level="2.35" data-path="knn-tuning.html"><a href="knn-tuning.html"><i class="fa fa-check"></i><b>2.35</b> KNN Tuning</a></li>
+<li class="chapter" data-level="2.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html"><i class="fa fa-check"></i><b>2.1</b> What is Statistical Learning?</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#why-estimate-f"><i class="fa fa-check"></i><b>2.1.1</b> Why Estimate <span class="math inline">\(f\)</span>?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#how-do-we-estimate-f"><i class="fa fa-check"></i><b>2.1.2</b> How do we estimate <span class="math inline">\(f\)</span>?</a></li>
+<li class="chapter" data-level="2.1.3" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#prediction-accuracy-vs-model-interpretability"><i class="fa fa-check"></i><b>2.1.3</b> Prediction Accuracy vs Model Interpretability</a></li>
+<li class="chapter" data-level="2.1.4" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#supervised-versus-unsupervised-learning"><i class="fa fa-check"></i><b>2.1.4</b> Supervised Versus Unsupervised Learning</a></li>
+<li class="chapter" data-level="2.1.5" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#regression-versus-classification-problems"><i class="fa fa-check"></i><b>2.1.5</b> Regression Versus Classification Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.2</b> Assessing Model Accuracy</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#measuring-quality-of-fit"><i class="fa fa-check"></i><b>2.2.1</b> Measuring Quality of Fit</a></li>
+<li class="chapter" data-level="2.2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-bias-variance-trade-off"><i class="fa fa-check"></i><b>2.2.2</b> The Bias-Variance Trade-Off</a></li>
+<li class="chapter" data-level="2.2.3" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-classification-setting"><i class="fa fa-check"></i><b>2.2.3</b> The Classification Setting</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>2.3</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>3</b> Linear Regression</a><ul>
 <li class="chapter" data-level="3.1" data-path="questions-to-answer.html"><a href="questions-to-answer.html"><i class="fa fa-check"></i><b>3.1</b> Questions to Answer</a></li>
@@ -348,27 +326,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bayes-classifier-decision-boundry" class="section level2">
-<h2><span class="header-section-number">2.32</span> Bayes Classifier Decision Boundry</h2>
-<div class="figure">
-<img src="images/fig2_13.jpg" alt="" />
-<p class="caption">Figure 2-13</p>
-</div>
-<p>The purple dashed line represents the points where the probability is exactly 50%. This is called the <mark><em>Bayes decision boundary</em></mark>. An observation that falls on the orange side of the boundary will be assigned to the orange class, and similarly an observation on the blue side of the boundary will be assigned to the blue class.</p>
+<div id="what-is-statistical-learning-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> What is Statistical Learning?</h2>
+<p>The chapter opens with a discussion of what models are good for, how we use them, and some of the issues that are involved.</p>
+<p>Can we predict Sales using ad media spending?</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="what-is-statistical-learning-1.html#cb4-1"></a><span class="kw">read_csv</span>(</span>
+<span id="cb4-2"><a href="what-is-statistical-learning-1.html#cb4-2"></a>    <span class="st">&quot;https://www.statlearning.com/s/Advertising.csv&quot;</span>,</span>
+<span id="cb4-3"><a href="what-is-statistical-learning-1.html#cb4-3"></a>    <span class="dt">col_types =</span> <span class="st">&quot;-dddd&quot;</span>,</span>
+<span id="cb4-4"><a href="what-is-statistical-learning-1.html#cb4-4"></a>    <span class="dt">skip =</span> <span class="dv">1</span>,</span>
+<span id="cb4-5"><a href="what-is-statistical-learning-1.html#cb4-5"></a>    <span class="dt">col_names =</span> <span class="kw">c</span>(<span class="st">&quot;row&quot;</span>, <span class="st">&quot;TV&quot;</span>, <span class="st">&quot;radio&quot;</span>, <span class="st">&quot;newspaper&quot;</span>, <span class="st">&quot;sales&quot;</span>)</span>
+<span id="cb4-6"><a href="what-is-statistical-learning-1.html#cb4-6"></a>  ) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-7"><a href="what-is-statistical-learning-1.html#cb4-7"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols =</span> <span class="op">-</span>sales) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb4-8"><a href="what-is-statistical-learning-1.html#cb4-8"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(value, sales)) <span class="op">+</span></span>
+<span id="cb4-9"><a href="what-is-statistical-learning-1.html#cb4-9"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape =</span> <span class="dv">21</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb4-10"><a href="what-is-statistical-learning-1.html#cb4-10"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb4-11"><a href="what-is-statistical-learning-1.html#cb4-11"></a>              <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">formula =</span> <span class="st">&quot;y ~ x&quot;</span>) <span class="op">+</span></span>
+<span id="cb4-12"><a href="what-is-statistical-learning-1.html#cb4-12"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="kw">vars</span>(name),</span>
+<span id="cb4-13"><a href="what-is-statistical-learning-1.html#cb4-13"></a>             <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>,</span>
+<span id="cb4-14"><a href="what-is-statistical-learning-1.html#cb4-14"></a>             <span class="dt">strip.position =</span> <span class="st">&quot;bottom&quot;</span>) <span class="op">+</span></span>
+<span id="cb4-15"><a href="what-is-statistical-learning-1.html#cb4-15"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb4-16"><a href="what-is-statistical-learning-1.html#cb4-16"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
+<span id="cb4-17"><a href="what-is-statistical-learning-1.html#cb4-17"></a>        <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb4-18"><a href="what-is-statistical-learning-1.html#cb4-18"></a>        <span class="dt">strip.background =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></span>
+<span id="cb4-19"><a href="what-is-statistical-learning-1.html#cb4-19"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="ot">NULL</span>,</span>
+<span id="cb4-20"><a href="what-is-statistical-learning-1.html#cb4-20"></a>       <span class="dt">caption =</span> <span class="st">&quot;Source: https://www.statlearning.com/s/Advertising.csv | A simple least squares fit shown in blue&quot;</span>)</span></code></pre></div>
+<p><img src="bookclub-islr_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>You can make out a trend, at least in radio and TV.</p>
+<p>We typically want to be able to characterize the <strong>Sales</strong> potential as a function of all three media inputs. How do they operate together?</p>
+<h4>
+<strong>Notation</strong>
+</h4>
+<p>In this setting, the advertising budgets are <mark><em>input variables</em></mark> while sales is an <mark><em>output variable</em></mark>. The input variables are typically denoted using the symbol <span class="math inline">\(X\)</span>, with a subscript to distinguish them.</p>
+<p>So <span class="math inline">\(X_1\)</span> might be the <code>TV</code> budget,
+<span class="math inline">\(X_2\)</span> the <code>radio</code> budget, and
+<span class="math inline">\(X_3\)</span> the <code>newspaper</code> budget.</p>
+<p>The inputs go by different names, such as <mark><em>predictors</em>, <em>independent variables</em>, <em>features</em></mark>, or sometimes just <mark><em>variables</em></mark>.</p>
+<p>The output variable in this case, <code>sales</code> is often called the <mark><em>response</em></mark> or <mark><em>dependent variable</em></mark>, and is typically denoted using the symbol <span class="math inline">\(Y\)</span>.</p>
+<p>We assume that there is some relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X = (X_1, X_2,\dots,X_p)\)</span>, which can be written in the very general form</p>
+<span class="math display">\[\begin{equation}
+y = f(X) + \epsilon
+\end{equation}\]</span>
+<p>Here <span class="math inline">\(f\)</span> is some fixed but unknown function of <span class="math inline">\(X_1, \dots, X_p\)</span>, and <span class="math inline">\(\epsilon\)</span> is a random <mark><em>error term</em></mark>, which is independent of <span class="math inline">\(X\)</span> and has a mean of zero. In this formulation, <span class="math inline">\(f\)</span> represents the <mark><em>systematic</em></mark> information that <span class="math inline">\(X\)</span> provides about <span class="math inline">\(Y\)</span>.</p>
+<h4>
+<strong>What is the <span class="math inline">\(f(X)\)</span> good for?</strong>
+</h4>
+<p>With a good <span class="math inline">\(f\)</span> we can make predictions of <span class="math inline">\(Y\)</span> at new points.</p>
+<p>We can understand which components are important in explaining <span class="math inline">\(Y\)</span>, and which components are irrelevant.</p>
+<p>Depending on the complexity of <span class="math inline">\(f\)</span>, we may be able to understand how each component of <span class="math inline">\(X_j\)</span> of <span class="math inline">\(X\)</span> affects <span class="math inline">\(Y\)</span>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="what-is-statistical-learning-1.html#cb5-1"></a><span class="kw">read_csv</span>(<span class="st">&quot;https://www.statlearning.com/s/Income1.csv&quot;</span>,</span>
+<span id="cb5-2"><a href="what-is-statistical-learning-1.html#cb5-2"></a>         <span class="dt">col_types =</span> <span class="st">&quot;-dd&quot;</span>,</span>
+<span id="cb5-3"><a href="what-is-statistical-learning-1.html#cb5-3"></a>         <span class="dt">skip =</span> <span class="dv">1</span>,</span>
+<span id="cb5-4"><a href="what-is-statistical-learning-1.html#cb5-4"></a>         <span class="dt">col_names =</span> <span class="kw">c</span>(<span class="st">&quot;row&quot;</span>, <span class="st">&quot;Education&quot;</span>,<span class="st">&quot;Income&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-5"><a href="what-is-statistical-learning-1.html#cb5-5"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">res =</span> <span class="kw">residuals</span>(<span class="kw">loess</span>(Income <span class="op">~</span><span class="st"> </span>Education))) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb5-6"><a href="what-is-statistical-learning-1.html#cb5-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(Education, Income)) <span class="op">+</span></span>
+<span id="cb5-7"><a href="what-is-statistical-learning-1.html#cb5-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape =</span> <span class="dv">20</span>, <span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb5-8"><a href="what-is-statistical-learning-1.html#cb5-8"></a><span class="st">  </span><span class="kw">geom_segment</span>(<span class="kw">aes</span>(<span class="dt">xend =</span> Education, <span class="dt">yend =</span> Income <span class="op">-</span><span class="st"> </span>res)) <span class="op">+</span></span>
+<span id="cb5-9"><a href="what-is-statistical-learning-1.html#cb5-9"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb5-10"><a href="what-is-statistical-learning-1.html#cb5-10"></a>              <span class="dt">formula =</span> <span class="st">&quot;y ~ x&quot;</span>) <span class="op">+</span></span>
+<span id="cb5-11"><a href="what-is-statistical-learning-1.html#cb5-11"></a><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">10</span>,<span class="dv">22</span>,<span class="dv">2</span>)) <span class="op">+</span></span>
+<span id="cb5-12"><a href="what-is-statistical-learning-1.html#cb5-12"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb5-13"><a href="what-is-statistical-learning-1.html#cb5-13"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></span>
+<span id="cb5-14"><a href="what-is-statistical-learning-1.html#cb5-14"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Years of Education&quot;</span>,</span>
+<span id="cb5-15"><a href="what-is-statistical-learning-1.html#cb5-15"></a>       <span class="dt">caption =</span> <span class="st">&quot;Source: https://www.statlearning.com/s/Income1.csv | A loess fit shown in blue&quot;</span>) </span></code></pre></div>
+<p><img src="bookclub-islr_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The vertical lines represent the error terms <span class="math inline">\(\epsilon\)</span>. That is, the difference between the model estimate and the observed value.</p>
+<hr />
+<div id="why-estimate-f" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Why Estimate <span class="math inline">\(f\)</span>?</h3>
+<p>There are two main reasons that we may wish to estimate <span class="math inline">\(f\)</span>: <em>prediction</em> and <em>inference</em>.</p>
+<h4>
+<strong>Prediction</strong>
+</h4>
+<p>In many situations, a set of inputs <span class="math inline">\(X\)</span> are readily available, but the output <span class="math inline">\(Y\)</span> cannot be easily obtained. We can predict <span class="math inline">\(Y\)</span> using</p>
+<span class="math display">\[\begin{equation}
+\hat{Y} = \hat{f}(X)
+\end{equation}\]</span>
+<p><span class="math inline">\(\hat{f}\)</span> is often treated as a <em>black box</em>,</p>
 <blockquote>
-<p>The Bayes classifier produces the lowest possible test error rate, called the <mark><em>Bayes error rate</em></mark>.</p>
+<p>One is not typically concerned with the exact form of <span class="math inline">\(\hat{f}\)</span>, provided that it yields accurate predictions for Y.</p>
 </blockquote>
-<p>The overall Bayes error rate is given by</p>
-<p><span class="math display">\[1- E\big(\mathop{\mathrm{max}}_{j}(Y=j|X)\big),\]</span></p>
-<p>where the expectation averages the probability over all possible values of X. The Bayes error rate is analogous to the irreducible error, discussed earlier.</p>
+<p>The accuracy of <span class="math inline">\(\hat{Y}\)</span> as a prediction for <span class="math inline">\(Y\)</span> depends on two quantities, called the <em>reducible error</em> and the <em>irreducible error</em>.</p>
+<p><strong>Reducible Error</strong> We can reduce the gap between our estimate and the true function by applying improved methods.</p>
+<p><strong>Irreducible Error</strong> The quantity <span class="math inline">\(\epsilon\)</span> may contain unmeasured variables that are useful in predicting <span class="math inline">\(Y\)</span> : since we don’t measure them, <span class="math inline">\(f\)</span> cannot use them for its prediction. The quantity <span class="math inline">\(\epsilon\)</span> will also contain unmeasurable variation.</p>
+<p><img src="https://24.media.tumblr.com/18571dcd16e913b96632fe403278d0a3/tumblr_mv5fvvsRQy1ro5xweo1_400.gif" /></p>
+<p>The focus of the book is on techniques for estimating <span class="math inline">\(f\)</span> with the aim of minimizing the <em>reducible</em> error.</p>
+<hr />
+<h4>
+<strong>Inference</strong>
+</h4>
+<p>We are often interested in understanding the association between <span class="math inline">\(Y\)</span> and
+<span class="math inline">\(X = (X_1, X_2,\dots,X_p)\)</span>. In this situation we wish to estimate <span class="math inline">\(f\)</span>, but our goal is not necessarily to make predictions for <span class="math inline">\(Y\)</span>. Now <span class="math inline">\(f\)</span> cannot be treated as a black box, because we need to know its exact form. In this setting, one may be interested in answering the following questions:</p>
+<ul>
+<li><p>Which predictors are associated with the response?</p></li>
+<li><p>What is the relationship between the response and each predictor?</p></li>
+<li><p>Can the relationship between Y and each predictor be adequately summarized using a linear equation, or is the relationship more complicated?</p></li>
+</ul>
+<p>Consider the <strong>Advertising</strong> data. One may be interested in answering questions such as:</p>
+<p>– Which media are associated with sales?</p>
+<p>– Which media generate the biggest boost in sales? or</p>
+<p>– How large of an increase in sales is associated with a given increase
+in TV advertising?</p>
+<hr />
+</div>
+<div id="how-do-we-estimate-f" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> How do we estimate <span class="math inline">\(f\)</span>?</h3>
+<p>We want to find a function <span class="math inline">\(f\)</span> such that <span class="math inline">\(Y ≈ f(X)\)</span> for any observation. Broadly speaking, most statistical learning methods for this task can be characterized as either <em>parametric</em> or <em>non-parametric</em>.</p>
+<h4>
+<strong>Parametric Methods</strong>
+</h4>
+<p>Parametric methods involve a two-step model-based approach.</p>
+<ol style="list-style-type: decimal">
+<li><p>First we make an assumption about the functional form of <span class="math inline">\(f\)</span></p></li>
+<li><p>After a model is selected, we apply a procedure to fit or train the model.</p></li>
+</ol>
+<blockquote>
+<p>The potential disadvantage of a parametric approach is that the model we choose will usually not match the true unknown form of <span class="math inline">\(f\)</span>. If the chosen model is too far from the true <span class="math inline">\(f\)</span>, then our estimate will be poor.</p>
+</blockquote>
+<p>We can try to address this problem by choosing more flexible models that can fit many different possible functional forms for <span class="math inline">\(f\)</span>.</p>
+<blockquote>
+<p>These more complex models can lead to a phenomenon known as <mark><em>overfitting</em></mark> the data, which essentially means they follow the errors, or noise, too closely.</p>
+</blockquote>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="what-is-statistical-learning-1.html#cb6-1"></a>ISLR2<span class="op">::</span>Portfolio <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb6-2"><a href="what-is-statistical-learning-1.html#cb6-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(X, Y)) <span class="op">+</span></span>
+<span id="cb6-3"><a href="what-is-statistical-learning-1.html#cb6-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape =</span> <span class="dv">21</span>, <span class="dt">color =</span> <span class="st">&quot;gray50&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-4"><a href="what-is-statistical-learning-1.html#cb6-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb6-5"><a href="what-is-statistical-learning-1.html#cb6-5"></a>              <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">formula =</span> <span class="st">&quot;y ~ x&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-6"><a href="what-is-statistical-learning-1.html#cb6-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">x =</span> <span class="dv">1</span>, <span class="dt">y =</span> <span class="fl">0.5</span>, <span class="dt">shape =</span> <span class="dv">20</span>, </span>
+<span id="cb6-7"><a href="what-is-statistical-learning-1.html#cb6-7"></a>             <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size =</span> <span class="dv">8</span>) <span class="op">+</span></span>
+<span id="cb6-8"><a href="what-is-statistical-learning-1.html#cb6-8"></a><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> <span class="dv">1</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span></span>
+<span id="cb6-9"><a href="what-is-statistical-learning-1.html#cb6-9"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb6-10"><a href="what-is-statistical-learning-1.html#cb6-10"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_blank</span>()) <span class="op">+</span></span>
+<span id="cb6-11"><a href="what-is-statistical-learning-1.html#cb6-11"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">caption =</span> <span class="st">&quot;Source: ISLR2::Portfolio | A linear fit shown in red&quot;</span>) </span></code></pre></div>
+<p><img src="bookclub-islr_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>In a given dataset, there may be many observed values of <span class="math inline">\(Y\)</span> for each <span class="math inline">\(X\)</span>. In this regression example, the expected value of Y given X = 1 is 0.5.</p>
+<p>The value of 0.5 is an average of sorts of the slice taken at x = 1.</p>
+<p>Although it is almost never correct, a linear model often serves as a good and interpretable approximation.</p>
+<h4>
+<strong>Non-Parametric Methods</strong>
+</h4>
+<blockquote>
+<p>Non-parametric methods don’t make explicit assumptions about the functional form of <span class="math inline">\(f\)</span></p>
+</blockquote>
+<p>Instead they seek an estimate of <span class="math inline">\(f\)</span> that gets as close to the data points as possible without being too rough or wiggly.</p>
+<p>Any parametric approach brings with it the possibility that the functional form used to estimate <span class="math inline">\(f\)</span> on training data is very different from the true <span class="math inline">\(f\)</span>, in which case the resulting model will not fit unseen, new data well.</p>
+<p>Non-parametric approaches do suffer from a major disadvantage:</p>
+<blockquote>
+<p>A very large number of observations (far more a than is typically needed for a parametric approach) is required in order to obtain an accurate estimate for <span class="math inline">\(f\)</span>.</p>
+</blockquote>
+<hr />
+</div>
+<div id="prediction-accuracy-vs-model-interpretability" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Prediction Accuracy vs Model Interpretability</h3>
+<p>Why would we ever choose to use a more restrictive method instead of a very flexible approach?</p>
+<blockquote>
+<p>If we are mainly interested in inference, then restrictive models are often more interpretable.</p>
+</blockquote>
+<p>Flexible approaches can lead to such complicated estimates of <span class="math inline">\(f\)</span> that it is difficult to understand how any individual predictor is associated with the response.</p>
+</div>
+<div id="supervised-versus-unsupervised-learning" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Supervised Versus Unsupervised Learning</h3>
+<p>Supervised problems have labeled data with a response measurement, also called a dependent variable.</p>
+<p>Unsupervised problems have no labels. The challenge is to derive clusters, or patterns, to better understand what is happening.</p>
+</div>
+<div id="regression-versus-classification-problems" class="section level3">
+<h3><span class="header-section-number">2.1.5</span> Regression Versus Classification Problems</h3>
+<p>Variables can be characterized as either <mark><em>quantitative</em></mark> or <mark><em>qualitative</em></mark> (categorical).</p>
+<p>Quantitative variables take on numerical values.</p>
+<p>In contrast, qualitative variables take on values in <mark><em>classes</em></mark>, or categories.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="the-bayes-classifier.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="k-nearest-neighbors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="assessing-model-accuracy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
