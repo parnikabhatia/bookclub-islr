@@ -24,7 +24,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-01-11" />
+<meta name="date" content="2022-01-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -148,9 +148,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="notation.html"><a href="notation.html"><i class="fa fa-check"></i><b>1.3</b> Notation</a></li>
 <li class="chapter" data-level="1.4" data-path="what-have-we-gotten-ourselves-into.html"><a href="what-have-we-gotten-ourselves-into.html"><i class="fa fa-check"></i><b>1.4</b> What have we gotten ourselves into?</a></li>
 <li class="chapter" data-level="1.5" data-path="wheres-the-data.html"><a href="wheres-the-data.html"><i class="fa fa-check"></i><b>1.5</b> Where’s the data?</a></li>
-<li class="chapter" data-level="1.6" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.6</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="1.6.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.6.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="1.6.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.6.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.6" data-path="some-useful-resources.html"><a href="some-useful-resources.html"><i class="fa fa-check"></i><b>1.6</b> Some useful resources:</a></li>
+<li class="chapter" data-level="1.7" data-path="what-is-covered-in-the-book.html"><a href="what-is-covered-in-the-book.html"><i class="fa fa-check"></i><b>1.7</b> What is covered in the book?</a></li>
+<li class="chapter" data-level="1.8" data-path="how-is-the-book-divided.html"><a href="how-is-the-book-divided.html"><i class="fa fa-check"></i><b>1.8</b> How is the book divided?</a></li>
+<li class="chapter" data-level="1.9" data-path="some-examples-of-the-problems-addressed-with-statistical-analysis.html"><a href="some-examples-of-the-problems-addressed-with-statistical-analysis.html"><i class="fa fa-check"></i><b>1.9</b> Some examples of the problems addressed with statistical analysis</a></li>
+<li class="chapter" data-level="1.10" data-path="datasets-provided-in-the-islr2-package.html"><a href="datasets-provided-in-the-islr2-package.html"><i class="fa fa-check"></i><b>1.10</b> Datasets provided in the ISLR2 package</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="datasets-provided-in-the-islr2-package.html"><a href="datasets-provided-in-the-islr2-package.html#example-datasets"><i class="fa fa-check"></i><b>1.10.1</b> Example datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.11</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="1.11.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.11.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="1.11.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.11.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="learning.html"><a href="learning.html"><i class="fa fa-check"></i><b>2</b> Statistical Learning</a><ul>
@@ -381,13 +388,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>where <span class="math inline">\(\lambda\)</span> represents both the expected value (mean) and variance of <span class="math inline">\(Y\)</span>:</p>
 <p><span class="math inline">\(Y = E(Y) = Var(Y)\)</span></p>
 <p>=&gt; “<em>[I]f <span class="math inline">\(Y\)</span> follows the Poisson distribution, then the larger the mean of <span class="math inline">\(Y\)</span>, the larger its variance.</em>”</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="poisson-distribution.html#cb65-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
-<span id="cb65-2"><a href="poisson-distribution.html#cb65-2"></a>lambda &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
-<span id="cb65-3"><a href="poisson-distribution.html#cb65-3"></a>k &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</span>
-<span id="cb65-4"><a href="poisson-distribution.html#cb65-4"></a><span class="cf">for</span> (lam <span class="cf">in</span> lambda) {</span>
-<span id="cb65-5"><a href="poisson-distribution.html#cb65-5"></a>  Prk &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="op">-</span>lam)<span class="op">*</span>lam<span class="op">^</span>k)<span class="op">/</span><span class="kw">factorial</span>(k)</span>
-<span id="cb65-6"><a href="poisson-distribution.html#cb65-6"></a>  <span class="kw">plot</span>(k, Prk, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.4</span>), <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;lambda =&quot;</span>, lam))</span>
-<span id="cb65-7"><a href="poisson-distribution.html#cb65-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="poisson-distribution.html#cb82-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb82-2"><a href="poisson-distribution.html#cb82-2"></a>lambda &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
+<span id="cb82-3"><a href="poisson-distribution.html#cb82-3"></a>k &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</span>
+<span id="cb82-4"><a href="poisson-distribution.html#cb82-4"></a><span class="cf">for</span> (lam <span class="cf">in</span> lambda) {</span>
+<span id="cb82-5"><a href="poisson-distribution.html#cb82-5"></a>  Prk &lt;-<span class="st"> </span>(<span class="kw">exp</span>(<span class="op">-</span>lam)<span class="op">*</span>lam<span class="op">^</span>k)<span class="op">/</span><span class="kw">factorial</span>(k)</span>
+<span id="cb82-6"><a href="poisson-distribution.html#cb82-6"></a>  <span class="kw">plot</span>(k, Prk, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.4</span>), <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;lambda =&quot;</span>, lam))</span>
+<span id="cb82-7"><a href="poisson-distribution.html#cb82-7"></a>}</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
 <img src="bookclub-islr_files/figure-html/unnamed-chunk-28-1.png" alt="_Plots of Poisson Distributions with different lambda values, showing how variance increases with increasing lambda. Note all values are non-negative integer values, suitable for modelling counts, k._" width="672" />
 <p class="caption">

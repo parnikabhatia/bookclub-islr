@@ -1,3 +1,7 @@
+fig:01-contents
+fig:01-datasets
+fig:01-Smarket1
+fig:01-NCI601
 tab:unnamed-chunk-11
 fig:fig3-1
 fig:fig3-2
@@ -31,6 +35,12 @@ why-islr
 notation
 what-have-we-gotten-ourselves-into
 wheres-the-data
+some-useful-resources
+what-is-covered-in-the-book
+how-is-the-book-divided
+some-examples-of-the-problems-addressed-with-statistical-analysis
+datasets-provided-in-the-islr2-package
+example-datasets
 meeting-videos
 cohort-1
 cohort-2
