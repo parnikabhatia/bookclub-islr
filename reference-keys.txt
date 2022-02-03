@@ -112,6 +112,13 @@ logistic-polynomial-regression-bayes-decision-boundaries-and-k-fold-cross-valida
 the-bootstrap
 population-distribution-compared-to-bootstrap-distribution
 bootstrap-standard-error
+lab-cross-validation-and-the-bootstrap
+the-validation-set-approach
+leave-one-out-cross-validation
+k-fold-cross-validation-1
+the-bootstrap-1
+estimating-the-accuracy-of-a-statistic-of-interest
+estimating-the-accuracy-of-a-linear-regression-model
 meeting-videos-4
 cohort-1-4
 cohort-2-4
