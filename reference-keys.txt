@@ -94,6 +94,13 @@ estimating-the-poisson-regression-parameters
 interpreting-poisson-regression
 advantages-of-poisson-regression
 generalized-linear-models-1
+addendum---logistic-regression-assumptions
+assumption-1---the-response-variable-is-binary
+assumption-2---observations-are-independent
+assumption-3---no-multicollinearity-among-predictors
+assumption-4---no-extreme-outliers
+assumption-5---there-is-a-linear-relationship-between-explanatory-variables-and-the-logit-of-the-response-variable
+assumption-6---sample-size-must-be-sufficiently-large
 lab-classification-methods
 meeting-videos-3
 cohort-1-3

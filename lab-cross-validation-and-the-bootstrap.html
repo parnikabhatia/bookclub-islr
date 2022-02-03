@@ -220,10 +220,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.14" data-path="interpreting-poisson-regression.html"><a href="interpreting-poisson-regression.html"><i class="fa fa-check"></i><b>4.14</b> Interpreting Poisson Regression</a></li>
 <li class="chapter" data-level="4.15" data-path="advantages-of-poisson-regression.html"><a href="advantages-of-poisson-regression.html"><i class="fa fa-check"></i><b>4.15</b> Advantages of Poisson Regression</a></li>
 <li class="chapter" data-level="4.16" data-path="generalized-linear-models-1.html"><a href="generalized-linear-models-1.html"><i class="fa fa-check"></i><b>4.16</b> Generalized Linear Models</a></li>
-<li class="chapter" data-level="4.17" data-path="lab-classification-methods.html"><a href="lab-classification-methods.html"><i class="fa fa-check"></i><b>4.17</b> Lab: Classification Methods</a></li>
-<li class="chapter" data-level="4.18" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html"><i class="fa fa-check"></i><b>4.18</b> Meeting Videos</a><ul>
-<li class="chapter" data-level="4.18.1" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-1-3"><i class="fa fa-check"></i><b>4.18.1</b> Cohort 1</a></li>
-<li class="chapter" data-level="4.18.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.18.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="4.17" data-path="addendum---logistic-regression-assumptions.html"><a href="addendum---logistic-regression-assumptions.html"><i class="fa fa-check"></i><b>4.17</b> Addendum - Logistic Regression Assumptions</a></li>
+<li class="chapter" data-level="4.18" data-path="lab-classification-methods.html"><a href="lab-classification-methods.html"><i class="fa fa-check"></i><b>4.18</b> Lab: Classification Methods</a></li>
+<li class="chapter" data-level="4.19" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html"><i class="fa fa-check"></i><b>4.19</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="4.19.1" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-1-3"><i class="fa fa-check"></i><b>4.19.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="4.19.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.19.2</b> Cohort 2</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="resampling-methods.html"><a href="resampling-methods.html"><i class="fa fa-check"></i><b>5</b> Resampling Methods</a><ul>
@@ -393,60 +394,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="the-validation-set-approach" class="section level3">
 <h3><span class="header-section-number">5.14.1</span> The Validation Set Approach</h3>
 <p>to estimate the test error rates</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb91-1"></a><span class="kw">library</span>(ISLR2)</span>
-<span id="cb91-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb91-2"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb91-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb91-3"></a><span class="co">#library(tidymodels)</span></span>
-<span id="cb91-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb91-4"></a><span class="co">#tidymodels_prefer()</span></span>
-<span id="cb91-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb91-5"></a><span class="kw">library</span>(patchwork)</span></code></pre></div>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb92-1"></a><span class="kw">data</span>(<span class="st">&quot;Auto&quot;</span>);<span class="kw">dim</span>(Auto)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb99-1"></a><span class="kw">library</span>(ISLR2)</span>
+<span id="cb99-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb99-2"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb99-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb99-3"></a><span class="co">#library(tidymodels)</span></span>
+<span id="cb99-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb99-4"></a><span class="co">#tidymodels_prefer()</span></span>
+<span id="cb99-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb99-5"></a><span class="kw">library</span>(patchwork)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb100-1"></a><span class="kw">data</span>(<span class="st">&quot;Auto&quot;</span>);<span class="kw">dim</span>(Auto)</span></code></pre></div>
 <pre><code>## [1] 392   9</code></pre>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb94-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb94-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb94-2"></a>train1 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">392</span>,<span class="dv">196</span>) <span class="co"># 392/2 = 196 split the set in two groups</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb102-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-2"></a>train1 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">392</span>,<span class="dv">196</span>) <span class="co"># 392/2 = 196 split the set in two groups</span></span></code></pre></div>
 <p>Check the trend of the data</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb95-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>Auto, <span class="kw">aes</span>(<span class="dt">x =</span> horsepower, <span class="dt">y =</span> mpg))<span class="op">+</span></span>
-<span id="cb95-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb95-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
-<span id="cb95-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb95-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>Auto, <span class="kw">aes</span>(<span class="dt">x =</span> horsepower, <span class="dt">y =</span> mpg))<span class="op">+</span></span>
+<span id="cb103-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-2"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb103-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-3"></a><span class="st">  </span><span class="kw">geom_smooth</span>()</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="bookclub-islr_files/figure-html/05L-plot1-1.png" width="672" /></p>
 <p>The estimated test MSE for the linear regression fit is 23.27</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-1"></a>lm.fit1 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto, <span class="dt">subset =</span> train1)</span>
-<span id="cb97-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-2"></a></span>
-<span id="cb97-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-3"></a><span class="co"># calculate MSE</span></span>
-<span id="cb97-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-4"></a>mse &lt;-<span class="st"> </span><span class="kw">cbind</span>(Auto,<span class="dt">pred=</span><span class="kw">predict</span>(lm.fit1, Auto))<span class="op">%&gt;%</span></span>
-<span id="cb97-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-5"></a><span class="st">  </span><span class="kw">select</span>(mpg,pred)<span class="op">%&gt;%</span></span>
-<span id="cb97-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="op">-</span>train1)<span class="op">%&gt;%</span></span>
-<span id="cb97-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">res=</span>(mpg<span class="op">-</span>pred)<span class="op">^</span><span class="dv">2</span>)<span class="op">%&gt;%</span></span>
-<span id="cb97-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb97-8"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mse=</span><span class="kw">mean</span>(res))</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-1"></a>lm.fit1 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto, <span class="dt">subset =</span> train1)</span>
+<span id="cb105-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-2"></a></span>
+<span id="cb105-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-3"></a><span class="co"># calculate MSE</span></span>
+<span id="cb105-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-4"></a>mse &lt;-<span class="st"> </span><span class="kw">cbind</span>(Auto,<span class="dt">pred=</span><span class="kw">predict</span>(lm.fit1, Auto))<span class="op">%&gt;%</span></span>
+<span id="cb105-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-5"></a><span class="st">  </span><span class="kw">select</span>(mpg,pred)<span class="op">%&gt;%</span></span>
+<span id="cb105-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-6"></a><span class="st">  </span><span class="kw">slice</span>(<span class="op">-</span>train1)<span class="op">%&gt;%</span></span>
+<span id="cb105-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">res=</span>(mpg<span class="op">-</span>pred)<span class="op">^</span><span class="dv">2</span>)<span class="op">%&gt;%</span></span>
+<span id="cb105-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-8"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">mse=</span><span class="kw">mean</span>(res))</span></code></pre></div>
 <p><code>poly()</code> function to estimate the <strong>test error</strong> for the quadratic and cubic regressions</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb98-1"></a>lm.fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower,<span class="dv">2</span>),<span class="dt">data=</span>Auto,<span class="dt">subset=</span>train1)</span>
-<span id="cb98-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb98-2"></a></span>
-<span id="cb98-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb98-3"></a><span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit2, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-1"></a>lm.fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower,<span class="dv">2</span>),<span class="dt">data=</span>Auto,<span class="dt">subset=</span>train1)</span>
+<span id="cb106-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-2"></a></span>
+<span id="cb106-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-3"></a><span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit2, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 18.71646</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb100-1"></a>lm.fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower,<span class="dv">3</span>),<span class="dt">data=</span>Auto,<span class="dt">subset=</span>train1)</span>
-<span id="cb100-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb100-2"></a><span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit3, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb108-1"></a>lm.fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower,<span class="dv">3</span>),<span class="dt">data=</span>Auto,<span class="dt">subset=</span>train1)</span>
+<span id="cb108-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb108-2"></a><span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit3, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 18.79401</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-1"></a>mse_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample=</span> <span class="st">&quot;seed_1&quot;</span>,</span>
-<span id="cb102-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-2"></a>                     <span class="dt">poly=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
-<span id="cb102-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-3"></a>           <span class="dt">mse=</span><span class="kw">c</span>(<span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit1, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>),</span>
-<span id="cb102-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-4"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit2, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>),</span>
-<span id="cb102-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb102-5"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit3, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-1"></a>mse_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample=</span> <span class="st">&quot;seed_1&quot;</span>,</span>
+<span id="cb110-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-2"></a>                     <span class="dt">poly=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
+<span id="cb110-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-3"></a>           <span class="dt">mse=</span><span class="kw">c</span>(<span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit1, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb110-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-4"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit2, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb110-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-5"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit3, Auto))[<span class="op">-</span>train1]<span class="op">^</span><span class="dv">2</span>)))</span></code></pre></div>
 <p>Trying with a different sample found that results are consistent and using a quadradic function is better than a simple liners function…</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-1"></a><span class="kw">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb103-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-2"></a>train2 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">392</span>,<span class="dv">196</span>)</span>
-<span id="cb103-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-3"></a>lm.fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto, <span class="dt">subset =</span> train2)</span>
-<span id="cb103-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-4"></a>lm.fit5 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, <span class="dv">2</span>), <span class="dt">data =</span> Auto,<span class="dt">subset =</span> train2)</span>
-<span id="cb103-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-5"></a>lm.fit6 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, <span class="dv">3</span>), <span class="dt">data =</span> Auto,<span class="dt">subset =</span> train2)</span>
-<span id="cb103-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-6"></a></span>
-<span id="cb103-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-7"></a>mse_df_full &lt;-<span class="st"> </span>mse_df <span class="op">%&gt;%</span></span>
-<span id="cb103-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-8"></a><span class="st">  </span><span class="kw">rbind</span>(<span class="kw">data.frame</span>(<span class="dt">sample=</span><span class="st">&quot;seed_2&quot;</span>,</span>
-<span id="cb103-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-9"></a>                   <span class="dt">poly=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
-<span id="cb103-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-10"></a>           <span class="dt">mse=</span><span class="kw">c</span>(<span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit4, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>),</span>
-<span id="cb103-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-11"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit5, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>),</span>
-<span id="cb103-12"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-12"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit6, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>))</span>
-<span id="cb103-13"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-13"></a>           )) <span class="op">%&gt;%</span></span>
-<span id="cb103-14"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-14"></a><span class="st">  </span><span class="kw">group_by</span>(sample)<span class="op">%&gt;%</span></span>
-<span id="cb103-15"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-15"></a><span class="st">  </span><span class="kw">arrange</span>(mse)</span>
-<span id="cb103-16"><a href="lab-cross-validation-and-the-bootstrap.html#cb103-16"></a>mse_df_full</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-1"></a><span class="kw">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb111-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-2"></a>train2 &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">392</span>,<span class="dv">196</span>)</span>
+<span id="cb111-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-3"></a>lm.fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto, <span class="dt">subset =</span> train2)</span>
+<span id="cb111-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-4"></a>lm.fit5 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, <span class="dv">2</span>), <span class="dt">data =</span> Auto,<span class="dt">subset =</span> train2)</span>
+<span id="cb111-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-5"></a>lm.fit6 &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, <span class="dv">3</span>), <span class="dt">data =</span> Auto,<span class="dt">subset =</span> train2)</span>
+<span id="cb111-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-6"></a></span>
+<span id="cb111-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-7"></a>mse_df_full &lt;-<span class="st"> </span>mse_df <span class="op">%&gt;%</span></span>
+<span id="cb111-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-8"></a><span class="st">  </span><span class="kw">rbind</span>(<span class="kw">data.frame</span>(<span class="dt">sample=</span><span class="st">&quot;seed_2&quot;</span>,</span>
+<span id="cb111-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-9"></a>                   <span class="dt">poly=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,</span>
+<span id="cb111-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-10"></a>           <span class="dt">mse=</span><span class="kw">c</span>(<span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit4, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb111-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-11"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit5, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>),</span>
+<span id="cb111-12"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-12"></a>                 <span class="kw">mean</span>((Auto<span class="op">$</span>mpg <span class="op">-</span><span class="st"> </span><span class="kw">predict</span>(lm.fit6, Auto))[<span class="op">-</span>train2]<span class="op">^</span><span class="dv">2</span>))</span>
+<span id="cb111-13"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-13"></a>           )) <span class="op">%&gt;%</span></span>
+<span id="cb111-14"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-14"></a><span class="st">  </span><span class="kw">group_by</span>(sample)<span class="op">%&gt;%</span></span>
+<span id="cb111-15"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-15"></a><span class="st">  </span><span class="kw">arrange</span>(mse)</span>
+<span id="cb111-16"><a href="lab-cross-validation-and-the-bootstrap.html#cb111-16"></a>mse_df_full</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
 ## # Groups:   sample [2]
 ##   sample  poly   mse
@@ -457,18 +458,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 seed_2     2  20.4
 ## 5 seed_1     1  23.3
 ## 6 seed_2     1  25.7</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-1"></a>p1 &lt;-<span class="kw">ggplot</span>(mse_df_full, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>),<span class="dt">y=</span>mse,<span class="dt">color=</span>sample))<span class="op">+</span></span>
-<span id="cb105-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-2"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>,<span class="dt">color=</span><span class="st">&quot;grey35&quot;</span>)<span class="op">+</span></span>
-<span id="cb105-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-3"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb105-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;model fit&quot;</span>)<span class="op">+</span></span>
-<span id="cb105-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-5"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
-<span id="cb105-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb105-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-7"></a>p2 &lt;-<span class="kw">ggplot</span>(mse_df_full, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(poly),<span class="dt">y=</span>mse,<span class="dt">color=</span>sample))<span class="op">+</span></span>
-<span id="cb105-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-8"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
-<span id="cb105-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;polynomial&quot;</span>)<span class="op">+</span></span>
-<span id="cb105-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-10"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
-<span id="cb105-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> <span class="kw">element_blank</span>())</span>
-<span id="cb105-12"><a href="lab-cross-validation-and-the-bootstrap.html#cb105-12"></a>p1<span class="op">+</span>p2</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-1"></a>p1 &lt;-<span class="kw">ggplot</span>(mse_df_full, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>),<span class="dt">y=</span>mse,<span class="dt">color=</span>sample))<span class="op">+</span></span>
+<span id="cb113-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-2"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>,<span class="dt">color=</span><span class="st">&quot;grey35&quot;</span>)<span class="op">+</span></span>
+<span id="cb113-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-3"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb113-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;model fit&quot;</span>)<span class="op">+</span></span>
+<span id="cb113-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-5"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
+<span id="cb113-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb113-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-7"></a>p2 &lt;-<span class="kw">ggplot</span>(mse_df_full, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">factor</span>(poly),<span class="dt">y=</span>mse,<span class="dt">color=</span>sample))<span class="op">+</span></span>
+<span id="cb113-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-8"></a><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></span>
+<span id="cb113-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-9"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;polynomial&quot;</span>)<span class="op">+</span></span>
+<span id="cb113-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-10"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
+<span id="cb113-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> <span class="kw">element_blank</span>())</span>
+<span id="cb113-12"><a href="lab-cross-validation-and-the-bootstrap.html#cb113-12"></a>p1<span class="op">+</span>p2</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/05L-plot2-1.png" width="672" /></p>
 </div>
 <div id="leave-one-out-cross-validation" class="section level3">
@@ -479,13 +480,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>cv.glm()</li>
 </ul>
 <p>These <strong>linear regressions</strong> are the same</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-1"></a>glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
-<span id="cb106-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-2"></a>lm.fit &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
-<span id="cb106-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-3"></a></span>
-<span id="cb106-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb106-4"></a><span class="kw">coef</span>(glm.fit)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-1"></a>glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
+<span id="cb114-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-2"></a>lm.fit &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
+<span id="cb114-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-3"></a></span>
+<span id="cb114-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-4"></a><span class="kw">coef</span>(glm.fit)</span></code></pre></div>
 <pre><code>## (Intercept)  horsepower 
 ##  39.9358610  -0.1578447</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb108-1"></a><span class="kw">coef</span>(lm.fit)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb116-1"></a><span class="kw">coef</span>(lm.fit)</span></code></pre></div>
 <pre><code>## (Intercept)  horsepower 
 ##  39.9358610  -0.1578447</code></pre>
 <p>In this section we use <code>glm()</code> as it can be used with `cv.glm() function to compare results.</p>
@@ -494,68 +495,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>LOOCV estimate for the MSE test error is the average of <span class="math inline">\(n\)</span> tests error estimates:</p>
 </blockquote>
 <p><span class="math display">\[CV_{n} = \frac{1}{n}{\sum_{i=1}^{n}}MSE_{i}\]</span></p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-1"></a><span class="kw">library</span>(boot)</span>
-<span id="cb110-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-2"></a>glm.fit_cv &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
-<span id="cb110-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-3"></a></span>
-<span id="cb110-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-4"></a>cv.err &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit_cv)</span>
-<span id="cb110-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-5"></a></span>
-<span id="cb110-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-6"></a></span>
-<span id="cb110-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb110-7"></a>cv.err<span class="op">$</span>delta</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-1"></a><span class="kw">library</span>(boot)</span>
+<span id="cb118-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-2"></a>glm.fit_cv &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto)</span>
+<span id="cb118-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-3"></a></span>
+<span id="cb118-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-4"></a>cv.err &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit_cv)</span>
+<span id="cb118-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-5"></a></span>
+<span id="cb118-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-6"></a></span>
+<span id="cb118-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-7"></a>cv.err<span class="op">$</span>delta</span></code></pre></div>
 <pre><code>## [1] 24.23151 24.23114</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-1"></a>cv.error &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb112-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-2"></a></span>
-<span id="cb112-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-3"></a><span class="co"># iteratively fits polynomial regressions for polynomials of order i = 1 to i = 10</span></span>
-<span id="cb112-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
-<span id="cb112-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-5"></a>  glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, i), <span class="dt">data =</span> Auto)</span>
-<span id="cb112-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-6"></a>  cv.error[i] &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit)<span class="op">$</span>delta[<span class="dv">1</span>]</span>
-<span id="cb112-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-7"></a>  }</span>
-<span id="cb112-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-8"></a></span>
-<span id="cb112-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb112-9"></a>cv.error</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-1"></a>cv.error &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb120-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-2"></a></span>
+<span id="cb120-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-3"></a><span class="co"># iteratively fits polynomial regressions for polynomials of order i = 1 to i = 10</span></span>
+<span id="cb120-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
+<span id="cb120-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-5"></a>  glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, i), <span class="dt">data =</span> Auto)</span>
+<span id="cb120-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-6"></a>  cv.error[i] &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit)<span class="op">$</span>delta[<span class="dv">1</span>]</span>
+<span id="cb120-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-7"></a>  }</span>
+<span id="cb120-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-8"></a></span>
+<span id="cb120-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-9"></a>cv.error</span></code></pre></div>
 <pre><code>##  [1] 24.23151 19.24821 19.33498 19.42443 19.03321 18.97864 18.83305 18.96115
 ##  [9] 19.06863 19.49093</code></pre>
 <p>Sharp drop in the estimated test MSE between the linear and quadratic fits.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(cv.error), </span>
-<span id="cb114-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-2"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>), <span class="dt">y =</span>cv.error) ) <span class="op">+</span></span>
-<span id="cb114-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-3"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>)<span class="op">+</span></span>
-<span id="cb114-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="st">&quot;white&quot;</span>,<span class="dt">stroke=</span><span class="dv">1</span>,<span class="dt">shape=</span><span class="dv">21</span>,<span class="dt">size=</span><span class="dv">2</span>)<span class="op">+</span></span>
-<span id="cb114-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">size=</span><span class="fl">1.5</span>)<span class="op">+</span></span>
-<span id="cb114-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Degree of Polynomial&quot;</span>,<span class="dt">y=</span><span class="st">&quot;MSE&quot;</span>,<span class="dt">title=</span><span class="st">&quot;LOOCV&quot;</span>)<span class="op">+</span></span>
-<span id="cb114-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">16</span>,<span class="dv">28</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">16</span>,<span class="dv">28</span>,<span class="dv">1</span>))<span class="op">+</span></span>
-<span id="cb114-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
-<span id="cb114-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb114-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">data.frame</span>(cv.error), </span>
+<span id="cb122-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-2"></a>       <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>), <span class="dt">y =</span>cv.error) ) <span class="op">+</span></span>
+<span id="cb122-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-3"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">group=</span><span class="dv">1</span>,<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>)<span class="op">+</span></span>
+<span id="cb122-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="st">&quot;white&quot;</span>,<span class="dt">stroke=</span><span class="dv">1</span>,<span class="dt">shape=</span><span class="dv">21</span>,<span class="dt">size=</span><span class="dv">2</span>)<span class="op">+</span></span>
+<span id="cb122-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-5"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">size=</span><span class="fl">1.5</span>)<span class="op">+</span></span>
+<span id="cb122-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-6"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Degree of Polynomial&quot;</span>,<span class="dt">y=</span><span class="st">&quot;MSE&quot;</span>,<span class="dt">title=</span><span class="st">&quot;LOOCV&quot;</span>)<span class="op">+</span></span>
+<span id="cb122-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">16</span>,<span class="dv">28</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">16</span>,<span class="dv">28</span>,<span class="dv">1</span>))<span class="op">+</span></span>
+<span id="cb122-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-8"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
+<span id="cb122-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.2</span>))</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/05L-plot3-1.png" width="672" /></p>
 </div>
 <div id="k-fold-cross-validation-1" class="section level3">
 <h3><span class="header-section-number">5.14.3</span> k-Fold Cross-Validation</h3>
 <p>cv.glm() function is also used to implement <strong>k-fold CV</strong>.</p>
 <p>computation time shorter</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-1"></a>k &lt;-<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb115-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-2"></a><span class="kw">set.seed</span>(<span class="dv">17</span>)</span>
-<span id="cb115-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-3"></a>cv.error<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>)</span>
-<span id="cb115-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
-<span id="cb115-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-5"></a>  glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, i), <span class="dt">data =</span> Auto)</span>
-<span id="cb115-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-6"></a>  cv.error<span class="fl">.10</span>[i] &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit, <span class="dt">K=</span><span class="dv">10</span>)<span class="op">$</span>delta[<span class="dv">1</span>]</span>
-<span id="cb115-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-7"></a>}</span>
-<span id="cb115-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb115-8"></a>cv.error<span class="fl">.10</span></span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-1"></a>k &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb123-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-2"></a><span class="kw">set.seed</span>(<span class="dv">17</span>)</span>
+<span id="cb123-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-3"></a>cv.error<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span>)</span>
+<span id="cb123-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) {</span>
+<span id="cb123-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-5"></a>  glm.fit &lt;-<span class="st"> </span><span class="kw">glm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(horsepower, i), <span class="dt">data =</span> Auto)</span>
+<span id="cb123-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-6"></a>  cv.error<span class="fl">.10</span>[i] &lt;-<span class="st"> </span><span class="kw">cv.glm</span>(Auto, glm.fit, <span class="dt">K=</span><span class="dv">10</span>)<span class="op">$</span>delta[<span class="dv">1</span>]</span>
+<span id="cb123-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-7"></a>}</span>
+<span id="cb123-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb123-8"></a>cv.error<span class="fl">.10</span></span></code></pre></div>
 <pre><code>##  [1] 24.27207 19.26909 19.34805 19.29496 19.03198 18.89781 19.12061 19.14666
 ##  [9] 18.87013 20.95520</code></pre>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-1"></a><span class="kw">data.frame</span>(<span class="dt">id=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,</span>
-<span id="cb117-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-2"></a>           <span class="dt">cv.error=</span>cv.error,</span>
-<span id="cb117-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-3"></a>           <span class="dt">cv.error.10=</span>cv.error<span class="fl">.10</span>) <span class="op">%&gt;%</span></span>
-<span id="cb117-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-4"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="kw">c</span>(cv.error,cv.error<span class="fl">.10</span>),<span class="dt">names_to=</span><span class="st">&quot;cv&quot;</span>,<span class="dt">values_to=</span><span class="st">&quot;cv_values&quot;</span>)<span class="op">%&gt;%</span></span>
-<span id="cb117-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-5"></a><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> id, <span class="dt">y =</span>cv_values,<span class="dt">group=</span>cv)) <span class="op">+</span></span>
-<span id="cb117-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color=</span>cv))<span class="op">+</span></span>
-<span id="cb117-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="st">&quot;.&quot;</span>)<span class="op">+</span></span>
-<span id="cb117-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Degree of Polynomial&quot;</span>,<span class="dt">y=</span><span class="st">&quot;MSE&quot;</span>,<span class="dt">title=</span><span class="st">&quot;10-fold CV&quot;</span>)<span class="op">+</span></span>
-<span id="cb117-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-9"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">16</span>,<span class="dv">28</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">16</span>,<span class="dv">28</span>,<span class="dv">1</span>))<span class="op">+</span></span>
-<span id="cb117-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-10"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
-<span id="cb117-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb117-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-1"></a><span class="kw">data.frame</span>(<span class="dt">id=</span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,</span>
+<span id="cb125-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-2"></a>           <span class="dt">cv.error=</span>cv.error,</span>
+<span id="cb125-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-3"></a>           <span class="dt">cv.error.10=</span>cv.error<span class="fl">.10</span>) <span class="op">%&gt;%</span></span>
+<span id="cb125-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-4"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dt">cols=</span><span class="kw">c</span>(cv.error,cv.error<span class="fl">.10</span>),<span class="dt">names_to=</span><span class="st">&quot;cv&quot;</span>,<span class="dt">values_to=</span><span class="st">&quot;cv_values&quot;</span>)<span class="op">%&gt;%</span></span>
+<span id="cb125-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-5"></a><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> id, <span class="dt">y =</span>cv_values,<span class="dt">group=</span>cv)) <span class="op">+</span></span>
+<span id="cb125-6"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-6"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">color=</span>cv))<span class="op">+</span></span>
+<span id="cb125-7"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-7"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">shape=</span><span class="st">&quot;.&quot;</span>)<span class="op">+</span></span>
+<span id="cb125-8"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-8"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Degree of Polynomial&quot;</span>,<span class="dt">y=</span><span class="st">&quot;MSE&quot;</span>,<span class="dt">title=</span><span class="st">&quot;10-fold CV&quot;</span>)<span class="op">+</span></span>
+<span id="cb125-9"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-9"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">16</span>,<span class="dv">28</span>),<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">16</span>,<span class="dv">28</span>,<span class="dv">1</span>))<span class="op">+</span></span>
+<span id="cb125-10"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-10"></a><span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span></span>
+<span id="cb125-11"><a href="lab-cross-validation-and-the-bootstrap.html#cb125-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid =</span> <span class="kw">element_line</span>(<span class="dt">size=</span><span class="fl">0.2</span>))</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/05L-plot4-1.png" width="672" /></p>
 </div>
 <div id="the-bootstrap-1" class="section level3">
 <h3><span class="header-section-number">5.14.4</span> The Bootstrap</h3>
 <p>Bootstrap approach can be applied in almost all situations.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb118-1"></a><span class="kw">data</span>(<span class="st">&quot;Portfolio&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb126-1"></a><span class="kw">data</span>(<span class="st">&quot;Portfolio&quot;</span>)</span></code></pre></div>
 <div id="estimating-the-accuracy-of-a-statistic-of-interest" class="section level4">
 <h4><span class="header-section-number">5.14.4.1</span> Estimating the Accuracy of a Statistic of Interest</h4>
 <ul>
@@ -564,21 +565,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math inline">\(\alpha\)</span> is the fraction we want to invest in <span class="math inline">\(X\)</span> and <span class="math inline">\((1-\alpha)\)</span> is the fraction we want to invest in <span class="math inline">\(Y\)</span></p>
 <p><span class="math display">\[Var=\alpha X+(1-\alpha)Y)\]</span>
 <span class="math display">\[\alpha=\frac{\sigma^2_{Y}-\sigma_{XY}}{\sigma^2_{X}+\sigma^2_{Y}-2\sigma_{XY}}\]</span></p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb119-1"></a>alpha.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data,index) {</span>
-<span id="cb119-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb119-2"></a>  X &lt;-<span class="st"> </span>data<span class="op">$</span>X[index]</span>
-<span id="cb119-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb119-3"></a>  Y &lt;-<span class="st"> </span>data<span class="op">$</span>Y[index]</span>
-<span id="cb119-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb119-4"></a>  (<span class="kw">var</span>(Y)<span class="op">-</span><span class="kw">cov</span>(X,Y))<span class="op">/</span>(<span class="kw">var</span>(X)<span class="op">+</span><span class="kw">var</span>(Y)<span class="op">-</span><span class="dv">2</span><span class="op">*</span><span class="kw">cov</span>(X,Y))</span>
-<span id="cb119-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb119-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb127-1"></a>alpha.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data,index) {</span>
+<span id="cb127-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb127-2"></a>  X &lt;-<span class="st"> </span>data<span class="op">$</span>X[index]</span>
+<span id="cb127-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb127-3"></a>  Y &lt;-<span class="st"> </span>data<span class="op">$</span>Y[index]</span>
+<span id="cb127-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb127-4"></a>  (<span class="kw">var</span>(Y)<span class="op">-</span><span class="kw">cov</span>(X,Y))<span class="op">/</span>(<span class="kw">var</span>(X)<span class="op">+</span><span class="kw">var</span>(Y)<span class="op">-</span><span class="dv">2</span><span class="op">*</span><span class="kw">cov</span>(X,Y))</span>
+<span id="cb127-5"><a href="lab-cross-validation-and-the-bootstrap.html#cb127-5"></a>}</span></code></pre></div>
 <p>First <span class="math inline">\(\alpha\)</span> calculation</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb120-1"></a><span class="kw">alpha.fn</span>(Portfolio, <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb128-1"></a><span class="kw">alpha.fn</span>(Portfolio, <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5758321</code></pre>
 <p><strong>Bootstrap contruction</strong></p>
 <p>Select 100 random observations from the range 1 to 100, with replacement, recompute <span class="math inline">\(\hat{\alpha}\)</span> based on new data.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-1"></a><span class="kw">set.seed</span>(<span class="dv">7</span>)</span>
-<span id="cb122-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb122-2"></a><span class="kw">alpha.fn</span>(Portfolio, <span class="kw">sample</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dt">replace =</span> T))</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb130-1"></a><span class="kw">set.seed</span>(<span class="dv">7</span>)</span>
+<span id="cb130-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb130-2"></a><span class="kw">alpha.fn</span>(Portfolio, <span class="kw">sample</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dt">replace =</span> T))</span></code></pre></div>
 <pre><code>## [1] 0.5385326</code></pre>
 <p>Applying the <code>boot()</code> function with the <code>alpha.fn</code> and 1000 replications.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb124-1"></a><span class="kw">boot</span>(Portfolio, alpha.fn, <span class="dt">R =</span> <span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb132-1"></a><span class="kw">boot</span>(Portfolio, alpha.fn, <span class="dt">R =</span> <span class="dv">1000</span>)</span></code></pre></div>
 <pre><code>## 
 ## ORDINARY NONPARAMETRIC BOOTSTRAP
 ## 
@@ -597,15 +598,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>to assess the variability of the coefficient estimates and predictions</li>
 </ul>
 <p>In particular, to assess the variability of the estimates for <span class="math inline">\(\beta_{1}\)</span> and <span class="math inline">\(\beta_{2}\)</span></p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb126-1"></a>boot.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data, index)</span>
-<span id="cb126-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb126-2"></a>  <span class="kw">coef</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> data, <span class="dt">subset =</span> index))</span>
-<span id="cb126-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb126-3"></a></span>
-<span id="cb126-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb126-4"></a><span class="kw">boot.fn</span>(Auto, <span class="dv">1</span><span class="op">:</span><span class="dv">392</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb134-1"></a>boot.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data, index)</span>
+<span id="cb134-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb134-2"></a>  <span class="kw">coef</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> data, <span class="dt">subset =</span> index))</span>
+<span id="cb134-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb134-3"></a></span>
+<span id="cb134-4"><a href="lab-cross-validation-and-the-bootstrap.html#cb134-4"></a><span class="kw">boot.fn</span>(Auto, <span class="dv">1</span><span class="op">:</span><span class="dv">392</span>)</span></code></pre></div>
 <pre><code>## (Intercept)  horsepower 
 ##  39.9358610  -0.1578447</code></pre>
 <p>If we try with different samples we obtain different results, with random observations.</p>
 <p>Calculate the <strong>standard errors</strong> of 1,000 bootstrap estimates for the intercept and slope terms, applying the <code>boot.fn</code> to the bootstrap function <code>boot()</code>:</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb128-1"></a><span class="kw">boot</span>(Auto, boot.fn, <span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb136-1"></a><span class="kw">boot</span>(Auto, boot.fn, <span class="dv">1000</span>)</span></code></pre></div>
 <pre><code>## 
 ## ORDINARY NONPARAMETRIC BOOTSTRAP
 ## 
@@ -618,16 +619,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##       original        bias    std. error
 ## t1* 39.9358610  0.0815499334 0.846979326
 ## t2* -0.1578447 -0.0009816788 0.007234668</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb130-1"></a><span class="kw">summary</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto))<span class="op">$</span>coef</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb138-1"></a><span class="kw">summary</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower, <span class="dt">data =</span> Auto))<span class="op">$</span>coef</span></code></pre></div>
 <pre><code>##               Estimate  Std. Error   t value      Pr(&gt;|t|)
 ## (Intercept) 39.9358610 0.717498656  55.65984 1.220362e-187
 ## horsepower  -0.1578447 0.006445501 -24.48914  7.031989e-81</code></pre>
 <p>What if we change the model adding <code>I(horsepower^2)</code> term in the model?</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb132-1"></a>boot.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data, index)</span>
-<span id="cb132-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb132-2"></a>  <span class="kw">coef</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(horsepower<span class="op">^</span><span class="dv">2</span>), </span>
-<span id="cb132-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb132-3"></a>          <span class="dt">data =</span> data, <span class="dt">subset =</span> index))</span></code></pre></div>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb133-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb133-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb133-2"></a><span class="kw">boot</span>(Auto, boot.fn, <span class="dv">1000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb140-1"></a>boot.fn &lt;-<span class="st"> </span><span class="cf">function</span>(data, index)</span>
+<span id="cb140-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb140-2"></a>  <span class="kw">coef</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(horsepower<span class="op">^</span><span class="dv">2</span>), </span>
+<span id="cb140-3"><a href="lab-cross-validation-and-the-bootstrap.html#cb140-3"></a>          <span class="dt">data =</span> data, <span class="dt">subset =</span> index))</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb141-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb141-2"><a href="lab-cross-validation-and-the-bootstrap.html#cb141-2"></a><span class="kw">boot</span>(Auto, boot.fn, <span class="dv">1000</span>)</span></code></pre></div>
 <pre><code>## 
 ## ORDINARY NONPARAMETRIC BOOTSTRAP
 ## 
@@ -641,7 +642,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## t1* 56.900099702  3.511640e-02 2.0300222526
 ## t2* -0.466189630 -7.080834e-04 0.0324241984
 ## t3*  0.001230536  2.840324e-06 0.0001172164</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb135-1"></a><span class="kw">summary</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(horsepower<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> Auto))<span class="op">$</span>coef</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="lab-cross-validation-and-the-bootstrap.html#cb143-1"></a><span class="kw">summary</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>horsepower <span class="op">+</span><span class="st"> </span><span class="kw">I</span>(horsepower<span class="op">^</span><span class="dv">2</span>), <span class="dt">data =</span> Auto))<span class="op">$</span>coef</span></code></pre></div>
 <pre><code>##                     Estimate   Std. Error   t value      Pr(&gt;|t|)
 ## (Intercept)     56.900099702 1.8004268063  31.60367 1.740911e-109
 ## horsepower      -0.466189630 0.0311246171 -14.97816  2.289429e-40

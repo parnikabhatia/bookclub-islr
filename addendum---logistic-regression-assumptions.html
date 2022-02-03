@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.2 Why NOT Linear Regression? | Introduction to Statistical Learning Using R Book Club</title>
+  <title>4.17 Addendum - Logistic Regression Assumptions | Introduction to Statistical Learning Using R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.2 Why NOT Linear Regression? | Introduction to Statistical Learning Using R Book Club" />
+  <meta property="og:title" content="4.17 Addendum - Logistic Regression Assumptions | Introduction to Statistical Learning Using R Book Club" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-islr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.2 Why NOT Linear Regression? | Introduction to Statistical Learning Using R Book Club" />
+  <meta name="twitter:title" content="4.17 Addendum - Logistic Regression Assumptions | Introduction to Statistical Learning Using R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="an-overview-of-classification.html"/>
-<link rel="next" href="logistic-regression.html"/>
+<link rel="prev" href="generalized-linear-models-1.html"/>
+<link rel="next" href="lab-classification-methods.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -388,26 +388,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="why-not-linear-regression" class="section level2">
-<h2><span class="header-section-number">4.2</span> Why NOT Linear Regression?</h2>
+<div id="addendum---logistic-regression-assumptions" class="section level2">
+<h2><span class="header-section-number">4.17</span> Addendum - Logistic Regression Assumptions</h2>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="addendum---logistic-regression-assumptions.html#cb86-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb86-2"><a href="addendum---logistic-regression-assumptions.html#cb86-2"></a><span class="kw">library</span>(titanic)</span>
+<span id="cb86-3"><a href="addendum---logistic-regression-assumptions.html#cb86-3"></a><span class="kw">library</span>(car)</span></code></pre></div>
+<pre><code>## Loading required package: carData</code></pre>
+<p>Source: <a href="https://www.statology.org/assumptions-of-logistic-regression/">The 6 Assumptions of Logistic Regression (With Examples)</a></p>
+<p>Source: <a href="https://towardsdatascience.com/assumptions-of-logistic-regression-clearly-explained-44d85a22b290">Assumptions of Logistic Regression, Clearly Explained</a></p>
+<p><strong>Logistic regression</strong> is a method to fit a regression model usually when the response variable is binary.</p>
+<div id="assumption-1---the-response-variable-is-binary" class="section level4">
+<h4><span class="header-section-number">4.17.0.1</span> Assumption #1 - The response variable is binary</h4>
+<p>Examples:</p>
 <ul>
-<li>a regression method cannot convert a qualitative response variable with more than two levels into a quantitative response that is ready for linear regression</li>
+<li><p>Yes or No</p></li>
+<li><p>Male or Female</p></li>
+<li><p>Pass or Fail</p></li>
 </ul>
-<p><span class="math display">\[Y = \left\{ \begin{array}{ll}
-          1 &amp; \mbox{if stroke};\\
-          2 &amp; \mbox{if epileptic seizure};\\
-          3 &amp; \mbox{if drug overdose}.\end{array} \right.\]</span></p>
-<ul>
-<li>a regression method will not provide meaningful estimates of Pr(Y |X), even with just two classes; partial estimates might be outside the [0, 1] probability interval</li>
-</ul>
+<p>For more tha two possible outcomes, an <strong>ordinal regression</strong> is the model of choice.</p>
+</div>
+<div id="assumption-2---observations-are-independent" class="section level4">
+<h4><span class="header-section-number">4.17.0.2</span> Assumption #2 - Observations are independent</h4>
+<p>As the OLS regression, the logistic regression requires that observations are iid (independent and identical distributed).</p>
+<p>Easiest way is to create a plot of residuals against time (i.e. order of observations) and observe if the pattern is random or not.</p>
+</div>
+<div id="assumption-3---no-multicollinearity-among-predictors" class="section level4">
+<h4><span class="header-section-number">4.17.0.3</span> Assumption #3 - No multicollinearity among predictors</h4>
+<p>Multicollinearity occurs when two or more explanatory variables are highly correlated to each other, such that they do not provide unique or independent information in the regression model. If the degree of correlation is high enough between variables, it can cause problems when fitting and interpreting the model.</p>
+<p>Use <code>VIF</code> to check multicollinearity (&gt; 10 show strong collinearity among predcitors)</p>
+</div>
+<div id="assumption-4---no-extreme-outliers" class="section level4">
+<h4><span class="header-section-number">4.17.0.4</span> Assumption #4 - No extreme outliers</h4>
+<p>Logistic regression assumes that there are no extreme outliers or influential observations in the dataset.</p>
+<p>Use <code>Cook's distance</code> for each observation.</p>
+</div>
+<div id="assumption-5---there-is-a-linear-relationship-between-explanatory-variables-and-the-logit-of-the-response-variable" class="section level4">
+<h4><span class="header-section-number">4.17.0.5</span> Assumption #5 - There is a Linear Relationship Between Explanatory Variables and the Logit of the Response Variable</h4>
+<p>Logistic regression assumes that there exists a linear relationship between each explanatory variable and the logit of the response variable. Recall that the logit is defined as:</p>
+<p>Logit(p) = log(p / (1-p)) where p is the probability of a positive outcome.</p>
+<p>Use <code>Box-Tidwell</code> test to check this assumption.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="addendum---logistic-regression-assumptions.html#cb88-1"></a>titanic &lt;-<span class="st"> </span>titanic_train <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb88-2"><a href="addendum---logistic-regression-assumptions.html#cb88-2"></a><span class="st">     </span><span class="kw">select</span>(Survived, Age, Fare) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb88-3"><a href="addendum---logistic-regression-assumptions.html#cb88-3"></a><span class="st">     </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb88-4"><a href="addendum---logistic-regression-assumptions.html#cb88-4"></a><span class="st">     </span>janitor<span class="op">::</span><span class="kw">clean_names</span>()</span>
+<span id="cb88-5"><a href="addendum---logistic-regression-assumptions.html#cb88-5"></a></span>
+<span id="cb88-6"><a href="addendum---logistic-regression-assumptions.html#cb88-6"></a><span class="kw">glimpse</span>(titanic)</span></code></pre></div>
+<pre><code>## Rows: 714
+## Columns: 3
+## $ survived &lt;int&gt; 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1…
+## $ age      &lt;dbl&gt; 22, 38, 26, 35, 35, 54, 2, 27, 14, 4, 58, 20, 39, 14, 55, 2, …
+## $ fare     &lt;dbl&gt; 7.2500, 71.2833, 7.9250, 53.1000, 8.0500, 51.8625, 21.0750, 1…</code></pre>
+<p>Build the model</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="addendum---logistic-regression-assumptions.html#cb90-1"></a><span class="co"># survived (target  ~ age + fare)</span></span>
+<span id="cb90-2"><a href="addendum---logistic-regression-assumptions.html#cb90-2"></a>log_reg &lt;-<span class="st"> </span><span class="kw">glm</span>(survived <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>fare, <span class="dt">data =</span> titanic, <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&quot;logit&quot;</span>))</span>
+<span id="cb90-3"><a href="addendum---logistic-regression-assumptions.html#cb90-3"></a></span>
+<span id="cb90-4"><a href="addendum---logistic-regression-assumptions.html#cb90-4"></a><span class="kw">summary</span>(log_reg)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = survived ~ age + fare, family = binomial(link = &quot;logit&quot;), 
+##     data = titanic)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.7605  -0.9232  -0.8214   1.2362   1.7820  
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -0.417055   0.185976  -2.243  0.02493 *  
+## age         -0.017578   0.005666  -3.103  0.00192 ** 
+## fare         0.017258   0.002617   6.596 4.23e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 964.52  on 713  degrees of freedom
+## Residual deviance: 891.34  on 711  degrees of freedom
+## AIC: 897.34
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<p>Box_Tidwell test</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="addendum---logistic-regression-assumptions.html#cb92-1"></a>titanic &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb92-2"><a href="addendum---logistic-regression-assumptions.html#cb92-2"></a><span class="st">     </span><span class="kw">mutate</span>(<span class="dt">age_1 =</span> age <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">fare_1 =</span> fare <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb92-3"><a href="addendum---logistic-regression-assumptions.html#cb92-3"></a></span>
+<span id="cb92-4"><a href="addendum---logistic-regression-assumptions.html#cb92-4"></a><span class="kw">boxTidwell</span>(survived <span class="op">~</span><span class="st"> </span>age_<span class="dv">1</span> <span class="op">+</span><span class="st"> </span>fare_<span class="dv">1</span>, <span class="dt">data =</span> titanic)</span></code></pre></div>
+<pre><code>##        MLE of lambda Score Statistic (z)  Pr(&gt;|z|)    
+## age_1       -0.48631              1.3237    0.1856    
+## fare_1       0.10111             -5.5619 2.668e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## iterations =  10</code></pre>
+</div>
+<div id="assumption-6---sample-size-must-be-sufficiently-large" class="section level4">
+<h4><span class="header-section-number">4.17.0.6</span> Assumption #6 - Sample size must be sufficiently large</h4>
+<p>Logistic regression assumes that the sample size of the dataset if large enough to draw valid conclusions from the fitted logistic regression model.</p>
+<p>As a rule of thumb, you should have a minimum of 10 cases with the least frequent outcome for each explanatory variable. For example, if you have 3 explanatory variables and the expected probability of the least frequent outcome is 0.20, then you should have a sample size of at least (10*3) / 0.20 = 150.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="an-overview-of-classification.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logistic-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="generalized-linear-models-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-classification-methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
