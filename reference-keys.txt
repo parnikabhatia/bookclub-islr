@@ -161,6 +161,10 @@ support-vector-machines-cont.
 radial-kernels
 radial-kernels-cont.
 svms-with-more-than-two-classes
+lab-support-vector-classifier
+tuning
+linearly-separable-data
+lab-support-vector-machine-non-linear-kernel
 meeting-videos-8
 cohort-1-8
 deep-learning
