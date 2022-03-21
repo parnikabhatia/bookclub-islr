@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.3 Logistic Regression | Introduction to Statistical Learning Using R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.3 Logistic Regression | Introduction to Statistical Learning Using R Book Club" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-islr" />
@@ -24,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-03-15" />
+<meta name="date" content="2022-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -200,8 +199,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="an-overview-of-classification.html"><a href="an-overview-of-classification.html"><i class="fa fa-check"></i><b>4.1</b> An Overview of Classification<span></span></a></li>
 <li class="chapter" data-level="4.2" data-path="why-not-linear-regression.html"><a href="why-not-linear-regression.html"><i class="fa fa-check"></i><b>4.2</b> Why NOT Linear Regression?<span></span></a></li>
 <li class="chapter" data-level="4.3" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>4.3</b> Logistic Regression<span></span></a><ul>
-<li class="chapter" data-level="4.3.1" data-path="logistic-regression.html"><a href="logistic-regression.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>4.3.1</b> Multiple Logistic Regression<span></span></a></li>
-<li class="chapter" data-level="4.3.2" data-path="logistic-regression.html"><a href="logistic-regression.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>4.3.2</b> Multinomial Logistic Regression<span></span></a></li>
+<li class="chapter" data-level="4.3.1" data-path="logistic-regression.html"><a href="logistic-regression.html#the-logistic-model"><i class="fa fa-check"></i><b>4.3.1</b> The Logistic Model<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="logistic-regression.html"><a href="logistic-regression.html#estimating-the-regression-coefficient"><i class="fa fa-check"></i><b>4.3.2</b> Estimating the Regression Coefficient<span></span></a></li>
+<li class="chapter" data-level="4.3.3" data-path="logistic-regression.html"><a href="logistic-regression.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>4.3.3</b> Multiple Logistic Regression<span></span></a></li>
+<li class="chapter" data-level="4.3.4" data-path="logistic-regression.html"><a href="logistic-regression.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>4.3.4</b> Multinomial Logistic Regression<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="generative-models-for-classification.html"><a href="generative-models-for-classification.html"><i class="fa fa-check"></i><b>4.4</b> Generative Models for Classification<span></span></a></li>
 <li class="chapter" data-level="4.5" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html"><i class="fa fa-check"></i><b>4.5</b> A Comparison of Classification Methods<span></span></a><ul>
@@ -430,31 +431,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="logistic-regression" class="section level2 hasAnchor">
 <h2><span class="header-section-number">4.3</span> Logistic Regression<a href="logistic-regression.html#logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-logistic-model" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.3.1</span> The Logistic Model<a href="logistic-regression.html#the-logistic-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><strong>Logistic regression</strong>: models the probability that Y belongs to a particular category (X)</li>
 <li>X is binary (0/1)</li>
 </ul>
 <p><span class="math display">\[p(X) = β_0 + β_1X \space \Longrightarrow {Linear \space regression}\]</span>
 <span class="math display">\[p (X) =  \frac{e^{\beta_{0} + \beta_{1}X}}{1 + e^{\beta_{0} + \beta_{1}X}} \space \Longrightarrow {Logistic \space function}\]</span>
-<span class="math display">\[odds = p (X) =  \frac{e^{\beta_{0} + \beta_{1}X}}{1 + e^{\beta_{0} + \beta_{1}X}} \Longrightarrow {odds \space value [0, ∞]}\]</span>
-<span class="math display">\[\log \biggl(\frac{p(X)}{1- p(X)}\bigg) = \beta_{0} + \beta_{1}X \Longrightarrow {log \space odds/logit}\]</span></p>
+<span class="math display">\[odds = \frac{p (X)}{1 - p (X)} =  e^{\beta_{0} + \beta_{1}X}} \Longrightarrow {odds \space value [0, ∞]}\]</span></p>
 <p>By logging the whole equation, we get</p>
 <p><span class="math display">\[\log \biggl(\frac{p(X)}{1- p(X)}\bigg) = \beta_{0} + \beta_{1}X \Longrightarrow {log \space odds/logit}\]</span></p>
+</div>
+<div id="estimating-the-regression-coefficient" class="section level3 hasAnchor">
+<h3><span class="header-section-number">4.3.2</span> Estimating the Regression Coefficient<a href="logistic-regression.html#estimating-the-regression-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To estimate the regression coefficient, we use <strong>maximum likelihood (ME)</strong>.</p>
 <p><strong><em>Likelihood Function</em></strong></p>
-<p><span class="math display">\[ℓ (\beta_{0}, \beta_{1}) = \prod_{i: y_{i}= 1} p (x_i) = \prod_{i&#39;: y_{i&#39;}= 0} (1- p (x_{i&#39;})) \Longrightarrow {Likelihood \space function}\]</span></p>
+<p><span class="math display">\[ℓ (\beta_{0}, \beta_{1}) = \prod_{i: y_{i}= 1} p (x_i)  \prod_{i&#39;: y_{i&#39;}= 0} (1- p (x_{i&#39;})) \Longrightarrow {Likelihood \space function}\]</span></p>
+<ul>
+<li>The aim is to find beta values such that <span class="math display">\[ℓ\]</span> is maximum.</li>
+<li>The Least square method is the special case of maximum likelihood function.</li>
+</ul>
+</div>
 <div id="multiple-logistic-regression" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.3.1</span> Multiple Logistic Regression<a href="logistic-regression.html#multiple-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.3.3</span> Multiple Logistic Regression<a href="logistic-regression.html#multiple-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\log \biggl(\frac{p(X)}{1- p(X)}\bigg) = \beta_{0} + \beta_{1}X_1 + ... + \beta_{p}X_p \\ \Downarrow \\ p(X) = \frac{e^{\beta_{0} + \beta_{1}X_1 + ... + \beta_{p}X_p}}{1 + \beta_{0} + \beta_{1}X_1 + ... + \beta_{p}X_p}\]</span></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-3"></span>
 <img src="images/fig4_3.jpg" alt="Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown."  />
 <p class="caption">
-Figure 4.2: Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown.
+Figure 4.3: Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown.
 </p>
 </div>
 </div>
 <div id="multinomial-logistic-regression" class="section level3 hasAnchor">
-<h3><span class="header-section-number">4.3.2</span> Multinomial Logistic Regression<a href="logistic-regression.html#multinomial-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">4.3.4</span> Multinomial Logistic Regression<a href="logistic-regression.html#multinomial-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>This is used in the setting where K &gt; 2 classes. In multinomial, we select a single class to serve as the baseline.</p></li>
 <li><p>However, the interpretation of the coefficients in a multinomial logistic regression model must be done with care, since it is tied to the choice of baseline.</p></li>

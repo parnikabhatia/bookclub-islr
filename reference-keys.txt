@@ -6,6 +6,7 @@ tab:unnamed-chunk-11
 fig:fig3-1
 fig:fig3-2
 fig:fig4-1
+fig:fig4-2
 fig:fig4-3
 fig:fig4-4
 fig:fig4-5
@@ -76,6 +77,8 @@ classification
 an-overview-of-classification
 why-not-linear-regression
 logistic-regression
+the-logistic-model
+estimating-the-regression-coefficient
 multiple-logistic-regression
 multinomial-logistic-regression
 generative-models-for-classification

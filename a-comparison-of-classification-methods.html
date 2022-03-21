@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.5 A Comparison of Classification Methods | Introduction to Statistical Learning Using R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.5 A Comparison of Classification Methods | Introduction to Statistical Learning Using R Book Club" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Introduction to Statistical Learning Using R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-islr" />
@@ -24,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-03-15" />
+<meta name="date" content="2022-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -200,8 +199,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="an-overview-of-classification.html"><a href="an-overview-of-classification.html"><i class="fa fa-check"></i><b>4.1</b> An Overview of Classification<span></span></a></li>
 <li class="chapter" data-level="4.2" data-path="why-not-linear-regression.html"><a href="why-not-linear-regression.html"><i class="fa fa-check"></i><b>4.2</b> Why NOT Linear Regression?<span></span></a></li>
 <li class="chapter" data-level="4.3" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>4.3</b> Logistic Regression<span></span></a><ul>
-<li class="chapter" data-level="4.3.1" data-path="logistic-regression.html"><a href="logistic-regression.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>4.3.1</b> Multiple Logistic Regression<span></span></a></li>
-<li class="chapter" data-level="4.3.2" data-path="logistic-regression.html"><a href="logistic-regression.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>4.3.2</b> Multinomial Logistic Regression<span></span></a></li>
+<li class="chapter" data-level="4.3.1" data-path="logistic-regression.html"><a href="logistic-regression.html#the-logistic-model"><i class="fa fa-check"></i><b>4.3.1</b> The Logistic Model<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="logistic-regression.html"><a href="logistic-regression.html#estimating-the-regression-coefficient"><i class="fa fa-check"></i><b>4.3.2</b> Estimating the Regression Coefficient<span></span></a></li>
+<li class="chapter" data-level="4.3.3" data-path="logistic-regression.html"><a href="logistic-regression.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>4.3.3</b> Multiple Logistic Regression<span></span></a></li>
+<li class="chapter" data-level="4.3.4" data-path="logistic-regression.html"><a href="logistic-regression.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>4.3.4</b> Multinomial Logistic Regression<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="generative-models-for-classification.html"><a href="generative-models-for-classification.html"><i class="fa fa-check"></i><b>4.4</b> Generative Models for Classification<span></span></a></li>
 <li class="chapter" data-level="4.5" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html"><i class="fa fa-check"></i><b>4.5</b> A Comparison of Classification Methods<span></span></a><ul>
@@ -447,9 +448,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 mean and,
 - a shared variance term across all K classes [<span class="math inline">\(σ^2_1 = · · · = σ^2_K\)</span> ]</p>
 <p>The normal density takes the form</p>
-<p><span class="math display">\[f_k(x) = \frac{1}{\sqrt{2πσk}}exp(- \frac{1}{2σ^2_k}(x- \mu_k)^2)\]</span></p>
+<p><span class="math display">\[f_k(x) = \frac{1}{\sqrt{2πσ_k}}exp(- \frac{1}{2σ^2_k}(x- \mu_k)^2)\]</span></p>
 <p>Then, the posterior probability (probability that the observation belongs to the kth class, given the predictor value for that observation) is</p>
-<p><span class="math display">\[p_k(x) = \frac{π_k \frac{1}{\sqrt{2πσk}}exp(- \frac{1}{2σ^2_k}(x- \mu_k)^2)}{\sum^k_{l=1} π_l \frac{1}{\sqrt{2πσk}}exp(- \frac{1}{2σ^2_k}(x- \mu_l)^2)}\]</span></p>
+<p><span class="math display">\[p_k(x) = \frac{π_k \frac{1}{\sqrt{2πσ}}exp(- \frac{1}{2σ^2}(x- \mu_k)^2)}{\sum^k_{l=1} π_l \frac{1}{\sqrt{2πσ}}exp(- \frac{1}{2σ^2}(x- \mu_l)^2)}\]</span></p>
 <p><strong>Additional mathematical formula</strong></p>
 <p>After you log and rearrange the above equation, you will the following formula. The Bayes’ classifier assign to one class if <span class="math inline">\(2x (μ_1 − μ_2) &gt; μ_1^2 − μ_2^2\)</span> and otherwise.</p>
 <p><span class="math display">\[δ_k(x) = x . \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2} + log(π_k) \Longrightarrow {Equation \space 4.18}\]</span></p>
@@ -458,11 +459,11 @@ mean and,
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-4"></span>
 <img src="images/fig4_4.jpg" alt="Left: Two one-dimensional normal density functions are shown. The dashed vertical line represents the Bayes decision boundary. Right: 20 observations were drawn from each of the two classes, and are shown as histograms. The Bayes decision boundary is again shown as a dashed vertical line. The solid vertical line represents the LDA decision boundary estimated from the training data."  />
 <p class="caption">
-Figure 4.3: Left: Two one-dimensional normal density functions are shown. The dashed vertical line represents the Bayes decision boundary. Right: 20 observations were drawn from each of the two classes, and are shown as histograms. The Bayes decision boundary is again shown as a dashed vertical line. The solid vertical line represents the LDA decision boundary estimated from the training data.
+Figure 4.4: Left: Two one-dimensional normal density functions are shown. The dashed vertical line represents the Bayes decision boundary. Right: 20 observations were drawn from each of the two classes, and are shown as histograms. The Bayes decision boundary is again shown as a dashed vertical line. The solid vertical line represents the LDA decision boundary estimated from the training data.
 </p>
 </div>
 <p>The <strong>linear discriminant analysis (LDA)</strong> method approximates the linear
-discriminant analysis Bayes classifier by plugging estimates for <span class="math inline">\(π_k\)</span>, <span class="math inline">\(μ_k\)</span>, and σ^2 into equation 4.18.</p>
+discriminant analysis Bayes classifier by plugging estimates for <span class="math inline">\(π_k\)</span>, <span class="math inline">\(μ_k\)</span>, and <span class="math inline">\(σ^2\)</span> into equation 4.18.</p>
 <p><span class="math inline">\(\hat μ_k\)</span> is the average of all the training observations from the kth class
 <span class="math display">\[\hat{\mu}_{k} = \frac{1}{n_{k}}\sum_{i: y_{i}= k} x_{i}\]</span></p>
 <p><span class="math inline">\(\hat σ^2\)</span> is the weighted average of the sample variances for each of the K classes</p>
@@ -472,7 +473,7 @@ n = total number of training observations,
 <span class="math inline">\(n_k\)</span> = number of training observations in the kth class</p>
 <p><span class="math inline">\(π_k\)</span> is estimated from the proportion of the training observations
 that belong to the kth class.</p>
-<p><span class="math inline">\(π_k = \frac{n_k}{n}\)</span></p>
+<p><span class="math display">\[π_k = \frac{n_k}{n}\]</span></p>
 <p>LDA classifier assigns an observation X = x to the class for which <span class="math inline">\(δ_k(x)\)</span> is largest.</p>
 <p><span class="math display">\[δ_k(x) = x . \frac{\mu_k}{\sigma^2} - \frac{\mu_k^2}{2\sigma^2} + log(π_k) \Longrightarrow {Equation \space 4.18} \\ \Downarrow \\ \hat δ_k(x) = x \cdot \frac{\hat \mu_k}{\hat \sigma^2} - \frac{\hat \mu_k^2}{2\hat \sigma^2} + log(\hat π_k)\]</span></p>
 </div>
@@ -487,7 +488,7 @@ that belong to the kth class.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-5"></span>
 <img src="images/fig4_5.jpg" alt="Two multivariate Gaussian density functions are shown, with p = 2. Left: The two predictors are uncorrelated and it has a circular base. Var(X_1) = Var(X_2) and Cor(X_1,X_2) = 0; Right: The two variables have a correlation of 0.7 with a elliptical base"  />
 <p class="caption">
-Figure 4.4: Two multivariate Gaussian density functions are shown, with p = 2. Left: The two predictors are uncorrelated and it has a circular base. Var(X_1) = Var(X_2) and Cor(X_1,X_2) = 0; Right: The two variables have a correlation of 0.7 with a elliptical base
+Figure 4.5: Two multivariate Gaussian density functions are shown, with p = 2. Left: The two predictors are uncorrelated and it has a circular base. Var(X_1) = Var(X_2) and Cor(X_1,X_2) = 0; Right: The two variables have a correlation of 0.7 with a elliptical base
 </p>
 </div>
 <p><span class="math inline">\(\exp\)</span>
@@ -498,7 +499,7 @@ The multivariate Gaussian density is defined as:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-6"></span>
 <img src="images/fig4_6.jpg" alt="An example with three classes. The observations from each class are drawn from a multivariate Gaussian distribution with p = 2, with a class-specific mean vector and a common covariance matrix. Left: Ellipses that contain 95% of the probability for each of the three classes are shown. The dashed lines are the Bayes decision boundaries. Right: 20 observations were generated from each class, and the corresponding LDA decision boundaries are indicated using solid black lines. The Bayes decision boundaries are once again shown as dashed lines. Overall, the LDA decision boundaries are pretty close to the Bayes decision boundaries, shown again as dashed lines. The test error rates for the Bayes and LDA classifiers are 0.0746 and 0.0770, respectively."  />
 <p class="caption">
-Figure 4.5: An example with three classes. The observations from each class are drawn from a multivariate Gaussian distribution with p = 2, with a class-specific mean vector and a common covariance matrix. Left: Ellipses that contain 95% of the probability for each of the three classes are shown. The dashed lines are the Bayes decision boundaries. Right: 20 observations were generated from each class, and the corresponding LDA decision boundaries are indicated using solid black lines. The Bayes decision boundaries are once again shown as dashed lines. Overall, the LDA decision boundaries are pretty close to the Bayes decision boundaries, shown again as dashed lines. The test error rates for the Bayes and LDA classifiers are 0.0746 and 0.0770, respectively.
+Figure 4.6: An example with three classes. The observations from each class are drawn from a multivariate Gaussian distribution with p = 2, with a class-specific mean vector and a common covariance matrix. Left: Ellipses that contain 95% of the probability for each of the three classes are shown. The dashed lines are the Bayes decision boundaries. Right: 20 observations were generated from each class, and the corresponding LDA decision boundaries are indicated using solid black lines. The Bayes decision boundaries are once again shown as dashed lines. Overall, the LDA decision boundaries are pretty close to the Bayes decision boundaries, shown again as dashed lines. The test error rates for the Bayes and LDA classifiers are 0.0746 and 0.0770, respectively.
 </p>
 </div>
 <p>All classification models have training error rate, which can be displayed with a <strong>confusion matrix</strong>.</p>
@@ -518,7 +519,7 @@ total error rate out of all classifiers
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-7"></span>
 <img src="images/fig4_7.jpg" alt="The figure illustrates the trade-off that results from modifying the threshold value for the posterior probability of default. For the Default data set, error rates are shown as a function of the threshold value for the posterior probability that is used to perform the assignment. The black solid line displays the overall error rate. The blue dashed line represents the fraction of defaulting customers that are incorrectly classified, and the orange dotted line indicates the fraction of errors among the non-defaulting customers."  />
 <p class="caption">
-Figure 4.6: The figure illustrates the trade-off that results from modifying the threshold value for the posterior probability of default. For the Default data set, error rates are shown as a function of the threshold value for the posterior probability that is used to perform the assignment. The black solid line displays the overall error rate. The blue dashed line represents the fraction of defaulting customers that are incorrectly classified, and the orange dotted line indicates the fraction of errors among the non-defaulting customers.
+Figure 4.7: The figure illustrates the trade-off that results from modifying the threshold value for the posterior probability of default. For the Default data set, error rates are shown as a function of the threshold value for the posterior probability that is used to perform the assignment. The black solid line displays the overall error rate. The blue dashed line represents the fraction of defaulting customers that are incorrectly classified, and the orange dotted line indicates the fraction of errors among the non-defaulting customers.
 </p>
 </div>
 <ul>
@@ -528,7 +529,7 @@ Figure 4.6: The figure illustrates the trade-off that results from modifying the
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-8"></span>
 <img src="images/fig4_8.jpg" alt="The true positive rate is the sensitivity: the fraction of defaulters that are correctly identified, using a given threshold value. The false positive rate is 1-specificity: the fraction of non-defaulters that we classify incorrectly as defaulters, using that same threshold value. The ideal ROC curve hugs the top left corner, indicating a high true positive rate and a low false positive rate. The dotted line represents the “no information” classifier; this is what we would expect if student status and credit card balance are not associated with probability of default."  />
 <p class="caption">
-Figure 4.7: The true positive rate is the sensitivity: the fraction of defaulters that are correctly identified, using a given threshold value. The false positive rate is 1-specificity: the fraction of non-defaulters that we classify incorrectly as defaulters, using that same threshold value. The ideal ROC curve hugs the top left corner, indicating a high true positive rate and a low false positive rate. The dotted line represents the “no information” classifier; this is what we would expect if student status and credit card balance are not associated with probability of default.
+Figure 4.8: The true positive rate is the sensitivity: the fraction of defaulters that are correctly identified, using a given threshold value. The false positive rate is 1-specificity: the fraction of non-defaulters that we classify incorrectly as defaulters, using that same threshold value. The ideal ROC curve hugs the top left corner, indicating a high true positive rate and a low false positive rate. The dotted line represents the “no information” classifier; this is what we would expect if student status and credit card balance are not associated with probability of default.
 </p>
 </div>
 <p>An ideal ROC curve will hug the top left corner, so the larger <strong>area under the ROC curve (AUC)</strong>, the better the classifier.</p>
@@ -636,7 +637,7 @@ P
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4-9"></span>
 <img src="images/fig4_9.jpg" alt="Left: The Bayes (purple dashed), LDA (black dotted), and QDA (green solid) decision boundaries for a two-class problem with Σ1 = Σ2. The shading indicates the QDA decision rule. Since the Bayes decision boundary is linear, it is more accurately approximated by LDA than by QDA. Right: Details are as given in the left-hand panel, except that Σ1 ̸= Σ2. Since the Bayes decision boundary is non-linear, it is more accurately approximated by QDA than by LDA."  />
 <p class="caption">
-Figure 4.8: Left: The Bayes (purple dashed), LDA (black dotted), and QDA (green solid) decision boundaries for a two-class problem with Σ1 = Σ2. The shading indicates the QDA decision rule. Since the Bayes decision boundary is linear, it is more accurately approximated by LDA than by QDA. Right: Details are as given in the left-hand panel, except that Σ1 ̸= Σ2. Since the Bayes decision boundary is non-linear, it is more accurately approximated by QDA than by LDA.
+Figure 4.9: Left: The Bayes (purple dashed), LDA (black dotted), and QDA (green solid) decision boundaries for a two-class problem with Σ1 = Σ2. The shading indicates the QDA decision rule. Since the Bayes decision boundary is linear, it is more accurately approximated by LDA than by QDA. Right: Details are as given in the left-hand panel, except that Σ1 ̸= Σ2. Since the Bayes decision boundary is non-linear, it is more accurately approximated by QDA than by LDA.
 </p>
 </div>
 </div>
