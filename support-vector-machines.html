@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-04-26" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -477,6 +485,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Implement a binary classification model using a <strong>support vector machine</strong> (SVM).</li>
 <li>Generalize SVM models to <strong>multi-class</strong> cases.</li>
 </ul>
+<p><strong>Support vector machine (SVM)</strong>, an approach for classification developed in 1990.
+SVM is a generalizaion of classifiers methods, in particular:</p>
+<ul>
+<li><strong>maximal margin classifier</strong> (it requires that the classes be separable by a linear boundary).</li>
+<li><strong>support vector classifier</strong></li>
+<li><strong>support vector machine</strong>: binary classification setting with two classes</li>
+</ul>
+<div id="htmlwidget-ec6f88660acf45026887" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ec6f88660acf45026887">{"x":{"diagram":"\ngraph TB\n  A[SVM<br>support vector machine<br>non-linear class boundaries]\n\n  B[MMC<br>maximal margin classifier<br>linear class boundaries] \n  B-->C[SVC<br>support vector classifier<br>applied in a broader range of cases]\n  A-->C\n\n"},"evals":[],"jsHooks":[]}</script>
 </div>
             </section>
 
