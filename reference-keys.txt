@@ -33,6 +33,7 @@ eq:eq99-3
 introduction
 what-is-statistical-learning
 why-islr
+premises-of-islr
 notation
 what-have-we-gotten-ourselves-into
 wheres-the-data
