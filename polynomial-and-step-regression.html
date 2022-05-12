@@ -49,7 +49,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -64,18 +63,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -95,7 +94,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -145,12 +144,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Introduction to Statistical Learning Using R Book Club</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
 <li class="chapter" data-level="" data-path="book-club-meetings.html"><a href="book-club-meetings.html"><i class="fa fa-check"></i>Book club meetings</a></li>
 <li class="chapter" data-level="" data-path="st-edition-vs-2nd-edition.html"><a href="st-edition-vs-2nd-edition.html"><i class="fa fa-check"></i>1st edition vs 2nd edition</a></li>
 <li class="chapter" data-level="" data-path="pace.html"><a href="pace.html"><i class="fa fa-check"></i>Pace</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="what-is-statistical-learning.html"><a href="what-is-statistical-learning.html"><i class="fa fa-check"></i><b>1.1</b> What is statistical learning?</a></li>
 <li class="chapter" data-level="1.2" data-path="why-islr.html"><a href="why-islr.html"><i class="fa fa-check"></i><b>1.2</b> Why ISLR?</a></li>
 <li class="chapter" data-level="1.3" data-path="premises-of-islr.html"><a href="premises-of-islr.html"><i class="fa fa-check"></i><b>1.3</b> Premises of ISLR</a></li>
@@ -161,66 +162,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="what-is-covered-in-the-book.html"><a href="what-is-covered-in-the-book.html"><i class="fa fa-check"></i><b>1.8</b> What is covered in the book?</a></li>
 <li class="chapter" data-level="1.9" data-path="how-is-the-book-divided.html"><a href="how-is-the-book-divided.html"><i class="fa fa-check"></i><b>1.9</b> How is the book divided?</a></li>
 <li class="chapter" data-level="1.10" data-path="some-examples-of-the-problems-addressed-with-statistical-analysis.html"><a href="some-examples-of-the-problems-addressed-with-statistical-analysis.html"><i class="fa fa-check"></i><b>1.10</b> Some examples of the problems addressed with statistical analysis</a></li>
-<li class="chapter" data-level="1.11" data-path="datasets-provided-in-the-islr2-package.html"><a href="datasets-provided-in-the-islr2-package.html"><i class="fa fa-check"></i><b>1.11</b> Datasets provided in the ISLR2 package</a><ul>
+<li class="chapter" data-level="1.11" data-path="datasets-provided-in-the-islr2-package.html"><a href="datasets-provided-in-the-islr2-package.html"><i class="fa fa-check"></i><b>1.11</b> Datasets provided in the ISLR2 package</a>
+<ul>
 <li class="chapter" data-level="1.11.1" data-path="datasets-provided-in-the-islr2-package.html"><a href="datasets-provided-in-the-islr2-package.html#example-datasets"><i class="fa fa-check"></i><b>1.11.1</b> Example datasets</a></li>
 </ul></li>
-<li class="chapter" data-level="1.12" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.12</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="1.12" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.12</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="1.12.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.12.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="1.12.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.12.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="1.12.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-3"><i class="fa fa-check"></i><b>1.12.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="1.12.4" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-4"><i class="fa fa-check"></i><b>1.12.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="learning.html"><a href="learning.html"><i class="fa fa-check"></i><b>2</b> Statistical Learning</a><ul>
-<li class="chapter" data-level="2.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html"><i class="fa fa-check"></i><b>2.1</b> What is Statistical Learning?</a><ul>
+<li class="chapter" data-level="2" data-path="learning.html"><a href="learning.html"><i class="fa fa-check"></i><b>2</b> Statistical Learning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html"><i class="fa fa-check"></i><b>2.1</b> What is Statistical Learning?</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#why-estimate-f"><i class="fa fa-check"></i><b>2.1.1</b> Why Estimate <span class="math inline">\(f\)</span>?</a></li>
 <li class="chapter" data-level="2.1.2" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#how-do-we-estimate-f"><i class="fa fa-check"></i><b>2.1.2</b> How do we estimate <span class="math inline">\(f\)</span>?</a></li>
 <li class="chapter" data-level="2.1.3" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#prediction-accuracy-vs-model-interpretability"><i class="fa fa-check"></i><b>2.1.3</b> Prediction Accuracy vs Model Interpretability</a></li>
 <li class="chapter" data-level="2.1.4" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#supervised-versus-unsupervised-learning"><i class="fa fa-check"></i><b>2.1.4</b> Supervised Versus Unsupervised Learning</a></li>
 <li class="chapter" data-level="2.1.5" data-path="what-is-statistical-learning-1.html"><a href="what-is-statistical-learning-1.html#regression-versus-classification-problems"><i class="fa fa-check"></i><b>2.1.5</b> Regression Versus Classification Problems</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.2</b> Assessing Model Accuracy</a><ul>
+<li class="chapter" data-level="2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html"><i class="fa fa-check"></i><b>2.2</b> Assessing Model Accuracy</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#measuring-quality-of-fit"><i class="fa fa-check"></i><b>2.2.1</b> Measuring Quality of Fit</a></li>
 <li class="chapter" data-level="2.2.2" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-bias-variance-trade-off"><i class="fa fa-check"></i><b>2.2.2</b> The Bias-Variance Trade-Off</a></li>
 <li class="chapter" data-level="2.2.3" data-path="assessing-model-accuracy.html"><a href="assessing-model-accuracy.html#the-classification-setting"><i class="fa fa-check"></i><b>2.2.3</b> The Classification Setting</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>2.3</b> Exercises</a></li>
-<li class="chapter" data-level="2.4" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>2.4</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="2.4" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>2.4</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-1-1"><i class="fa fa-check"></i><b>2.4.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="2.4.2" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>2.4.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="2.4.3" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-3-1"><i class="fa fa-check"></i><b>2.4.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="2.4.4" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-4-1"><i class="fa fa-check"></i><b>2.4.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="3" data-path="linear.html"><a href="linear.html"><i class="fa fa-check"></i><b>3</b> Linear Regression</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="questions-to-answer.html"><a href="questions-to-answer.html"><i class="fa fa-check"></i><b>3.1</b> Questions to Answer</a></li>
 <li class="chapter" data-level="3.2" data-path="simple-linear-regression-definition.html"><a href="simple-linear-regression-definition.html"><i class="fa fa-check"></i><b>3.2</b> Simple Linear Regression: Definition</a></li>
 <li class="chapter" data-level="3.3" data-path="simple-linear-regression-visualization.html"><a href="simple-linear-regression-visualization.html"><i class="fa fa-check"></i><b>3.3</b> Simple Linear Regression: Visualization</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-linear-regression-math.html"><a href="simple-linear-regression-math.html"><i class="fa fa-check"></i><b>3.4</b> Simple Linear Regression: Math</a><ul>
+<li class="chapter" data-level="3.4" data-path="simple-linear-regression-math.html"><a href="simple-linear-regression-math.html"><i class="fa fa-check"></i><b>3.4</b> Simple Linear Regression: Math</a>
+<ul>
 <li class="chapter" data-level="3.4.1" data-path="simple-linear-regression-math.html"><a href="simple-linear-regression-math.html#visualization-of-fit"><i class="fa fa-check"></i><b>3.4.1</b> Visualization of Fit</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="assessing-accuracy-of-coefficient-estimates.html"><a href="assessing-accuracy-of-coefficient-estimates.html"><i class="fa fa-check"></i><b>3.5</b> Assessing Accuracy of Coefficient Estimates</a></li>
-<li class="chapter" data-level="3.6" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.6</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="3.6" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.6</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="3.6.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.6.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="3.6.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.6.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="3.6.3" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-3-2"><i class="fa fa-check"></i><b>3.6.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="3.6.4" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-4-2"><i class="fa fa-check"></i><b>3.6.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>4</b> Classification</a><ul>
+<li class="chapter" data-level="4" data-path="classification.html"><a href="classification.html"><i class="fa fa-check"></i><b>4</b> Classification</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="an-overview-of-classification.html"><a href="an-overview-of-classification.html"><i class="fa fa-check"></i><b>4.1</b> An Overview of Classification</a></li>
 <li class="chapter" data-level="4.2" data-path="why-not-linear-regression.html"><a href="why-not-linear-regression.html"><i class="fa fa-check"></i><b>4.2</b> Why NOT Linear Regression?</a></li>
-<li class="chapter" data-level="4.3" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>4.3</b> Logistic Regression</a><ul>
+<li class="chapter" data-level="4.3" data-path="logistic-regression.html"><a href="logistic-regression.html"><i class="fa fa-check"></i><b>4.3</b> Logistic Regression</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="logistic-regression.html"><a href="logistic-regression.html#the-logistic-model"><i class="fa fa-check"></i><b>4.3.1</b> The Logistic Model</a></li>
 <li class="chapter" data-level="4.3.2" data-path="logistic-regression.html"><a href="logistic-regression.html#estimating-the-regression-coefficient"><i class="fa fa-check"></i><b>4.3.2</b> Estimating the Regression Coefficient</a></li>
 <li class="chapter" data-level="4.3.3" data-path="logistic-regression.html"><a href="logistic-regression.html#multiple-logistic-regression"><i class="fa fa-check"></i><b>4.3.3</b> Multiple Logistic Regression</a></li>
 <li class="chapter" data-level="4.3.4" data-path="logistic-regression.html"><a href="logistic-regression.html#multinomial-logistic-regression"><i class="fa fa-check"></i><b>4.3.4</b> Multinomial Logistic Regression</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="generative-models-for-classification.html"><a href="generative-models-for-classification.html"><i class="fa fa-check"></i><b>4.4</b> Generative Models for Classification</a></li>
-<li class="chapter" data-level="4.5" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html"><i class="fa fa-check"></i><b>4.5</b> A Comparison of Classification Methods</a><ul>
+<li class="chapter" data-level="4.5" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html"><i class="fa fa-check"></i><b>4.5</b> A Comparison of Classification Methods</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html#linear-discriminant-analysis-for-p-1"><i class="fa fa-check"></i><b>4.5.1</b> Linear Discriminant Analysis for p = 1</a></li>
 <li class="chapter" data-level="4.5.2" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html#linear-discriminant-analysis-for-p-1-1"><i class="fa fa-check"></i><b>4.5.2</b> Linear Discriminant Analysis for p &gt; 1</a></li>
 <li class="chapter" data-level="4.5.3" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html#quadratic-discriminant-analysis-qda"><i class="fa fa-check"></i><b>4.5.3</b> Quadratic Discriminant Analysis (QDA)</a></li>
 <li class="chapter" data-level="4.5.4" data-path="a-comparison-of-classification-methods.html"><a href="a-comparison-of-classification-methods.html#naive-bayes"><i class="fa fa-check"></i><b>4.5.4</b> Naive Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html"><i class="fa fa-check"></i><b>4.6</b> Summary of the classification methods</a><ul>
+<li class="chapter" data-level="4.6" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html"><i class="fa fa-check"></i><b>4.6</b> Summary of the classification methods</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html#an-analytical-comparison"><i class="fa fa-check"></i><b>4.6.1</b> An Analytical Comparison</a></li>
 <li class="chapter" data-level="4.6.2" data-path="summary-of-the-classification-methods.html"><a href="summary-of-the-classification-methods.html#an-empirical-comparison"><i class="fa fa-check"></i><b>4.6.2</b> An Empirical Comparison</a></li>
 </ul></li>
@@ -236,13 +253,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.16" data-path="generalized-linear-models-1.html"><a href="generalized-linear-models-1.html"><i class="fa fa-check"></i><b>4.16</b> Generalized Linear Models</a></li>
 <li class="chapter" data-level="4.17" data-path="addendum---logistic-regression-assumptions.html"><a href="addendum---logistic-regression-assumptions.html"><i class="fa fa-check"></i><b>4.17</b> Addendum - Logistic Regression Assumptions</a></li>
 <li class="chapter" data-level="4.18" data-path="lab-classification-methods.html"><a href="lab-classification-methods.html"><i class="fa fa-check"></i><b>4.18</b> Lab: Classification Methods</a></li>
-<li class="chapter" data-level="4.19" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html"><i class="fa fa-check"></i><b>4.19</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="4.19" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html"><i class="fa fa-check"></i><b>4.19</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="4.19.1" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-1-3"><i class="fa fa-check"></i><b>4.19.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="4.19.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.19.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="4.19.3" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-3-3"><i class="fa fa-check"></i><b>4.19.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="4.19.4" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-4-3"><i class="fa fa-check"></i><b>4.19.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="resampling-methods.html"><a href="resampling-methods.html"><i class="fa fa-check"></i><b>5</b> Resampling Methods</a><ul>
+<li class="chapter" data-level="5" data-path="resampling-methods.html"><a href="resampling-methods.html"><i class="fa fa-check"></i><b>5</b> Resampling Methods</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="validation-set-approach.html"><a href="validation-set-approach.html"><i class="fa fa-check"></i><b>5.1</b> Validation Set Approach</a></li>
 <li class="chapter" data-level="5.2" data-path="validation-error-rate-varies-depending-on-data-set.html"><a href="validation-error-rate-varies-depending-on-data-set.html"><i class="fa fa-check"></i><b>5.2</b> Validation Error Rate Varies Depending on Data Set</a></li>
 <li class="chapter" data-level="5.3" data-path="leave-one-out-cross-validation-loocv.html"><a href="leave-one-out-cross-validation-loocv.html"><i class="fa fa-check"></i><b>5.3</b> Leave-One-Out Cross-Validation (LOOCV)</a></li>
@@ -256,24 +276,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.11" data-path="the-bootstrap.html"><a href="the-bootstrap.html"><i class="fa fa-check"></i><b>5.11</b> The Bootstrap</a></li>
 <li class="chapter" data-level="5.12" data-path="population-distribution-compared-to-bootstrap-distribution.html"><a href="population-distribution-compared-to-bootstrap-distribution.html"><i class="fa fa-check"></i><b>5.12</b> Population Distribution Compared to Bootstrap Distribution</a></li>
 <li class="chapter" data-level="5.13" data-path="bootstrap-standard-error.html"><a href="bootstrap-standard-error.html"><i class="fa fa-check"></i><b>5.13</b> Bootstrap Standard Error</a></li>
-<li class="chapter" data-level="5.14" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html"><i class="fa fa-check"></i><b>5.14</b> Lab: Cross-Validation and the Bootstrap</a><ul>
+<li class="chapter" data-level="5.14" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html"><i class="fa fa-check"></i><b>5.14</b> Lab: Cross-Validation and the Bootstrap</a>
+<ul>
 <li class="chapter" data-level="5.14.1" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html#the-validation-set-approach"><i class="fa fa-check"></i><b>5.14.1</b> The Validation Set Approach</a></li>
 <li class="chapter" data-level="5.14.2" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html#leave-one-out-cross-validation"><i class="fa fa-check"></i><b>5.14.2</b> Leave-One-Out Cross-Validation</a></li>
 <li class="chapter" data-level="5.14.3" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html#k-fold-cross-validation-1"><i class="fa fa-check"></i><b>5.14.3</b> k-Fold Cross-Validation</a></li>
 <li class="chapter" data-level="5.14.4" data-path="lab-cross-validation-and-the-bootstrap.html"><a href="lab-cross-validation-and-the-bootstrap.html#the-bootstrap-1"><i class="fa fa-check"></i><b>5.14.4</b> The Bootstrap</a></li>
 </ul></li>
-<li class="chapter" data-level="5.15" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.15</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="5.15" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.15</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="5.15.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.15.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="5.15.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.15.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="5.15.3" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-3-4"><i class="fa fa-check"></i><b>5.15.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="5.15.4" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-4-4"><i class="fa fa-check"></i><b>5.15.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="linear-model-selection-and-regularization.html"><a href="linear-model-selection-and-regularization.html"><i class="fa fa-check"></i><b>6</b> Linear Model Selection and Regularization</a><ul>
+<li class="chapter" data-level="6" data-path="linear-model-selection-and-regularization.html"><a href="linear-model-selection-and-regularization.html"><i class="fa fa-check"></i><b>6</b> Linear Model Selection and Regularization</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="subset-selection.html"><a href="subset-selection.html"><i class="fa fa-check"></i><b>6.1</b> Subset Selection</a></li>
 <li class="chapter" data-level="" data-path="context-for-this-chapter.html"><a href="context-for-this-chapter.html"><i class="fa fa-check"></i>Context for This Chapter</a></li>
 <li class="chapter" data-level="" data-path="best-subset-selection-bss.html"><a href="best-subset-selection-bss.html"><i class="fa fa-check"></i>Best Subset Selection (BSS)</a></li>
 <li class="chapter" data-level="" data-path="bss-algorithm.html"><a href="bss-algorithm.html"><i class="fa fa-check"></i>BSS Algorithm</a></li>
-<li class="chapter" data-level="" data-path="bss-algorithm-1.html"><a href="bss-algorithm-1.html"><i class="fa fa-check"></i>BSS Algorithm</a></li>
 <li class="chapter" data-level="" data-path="behind-the-dots-bssing-islr2credit.html"><a href="behind-the-dots-bssing-islr2credit.html"><i class="fa fa-check"></i>Behind the dots, BSS’ing ISLR2::Credit</a></li>
 <li class="chapter" data-level="" data-path="best-subset-selection-bss-1.html"><a href="best-subset-selection-bss-1.html"><i class="fa fa-check"></i>Best Subset Selection (BSS)</a></li>
 <li class="chapter" data-level="" data-path="forward-stepwise-subset-selection-fsss.html"><a href="forward-stepwise-subset-selection-fsss.html"><i class="fa fa-check"></i>Forward Stepwise Subset Selection (FsSS)</a></li>
@@ -302,32 +325,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="dimension-reduction-methods.html"><a href="dimension-reduction-methods.html"><i class="fa fa-check"></i><b>6.3</b> Dimension Reduction Methods</a></li>
 <li class="chapter" data-level="" data-path="the-math.html"><a href="the-math.html"><i class="fa fa-check"></i>The Math</a></li>
 <li class="chapter" data-level="" data-path="principal-components-regression.html"><a href="principal-components-regression.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
-<li class="chapter" data-level="" data-path="principal-components-regression-1.html"><a href="principal-components-regression-1.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
-<li class="chapter" data-level="" data-path="principal-components-regression-2.html"><a href="principal-components-regression-2.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
-<li class="chapter" data-level="" data-path="principal-components-regression-3.html"><a href="principal-components-regression-3.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
-<li class="chapter" data-level="" data-path="principal-components-regression-4.html"><a href="principal-components-regression-4.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
-<li class="chapter" data-level="" data-path="principal-components-regression-5.html"><a href="principal-components-regression-5.html"><i class="fa fa-check"></i>Principal Components Regression</a></li>
 <li class="chapter" data-level="" data-path="partial-least-squares.html"><a href="partial-least-squares.html"><i class="fa fa-check"></i>Partial Least Squares</a></li>
 <li class="chapter" data-level="6.4" data-path="considerations-in-high-dimensions.html"><a href="considerations-in-high-dimensions.html"><i class="fa fa-check"></i><b>6.4</b> Considerations in High Dimensions</a></li>
-<li class="chapter" data-level="" data-path="considerations-in-high-dimensions-1.html"><a href="considerations-in-high-dimensions-1.html"><i class="fa fa-check"></i>Considerations in High Dimensions</a></li>
 <li class="chapter" data-level="" data-path="lasso-etc-vs-dimensionality.html"><a href="lasso-etc-vs-dimensionality.html"><i class="fa fa-check"></i>Lasso (etc) vs Dimensionality</a></li>
-<li class="chapter" data-level="6.5" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html"><i class="fa fa-check"></i><b>6.5</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="6.5" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html"><i class="fa fa-check"></i><b>6.5</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="6.5.1" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-1-5"><i class="fa fa-check"></i><b>6.5.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="6.5.2" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-2-5"><i class="fa fa-check"></i><b>6.5.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="6.5.3" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-3-5"><i class="fa fa-check"></i><b>6.5.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="6.5.4" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-4-5"><i class="fa fa-check"></i><b>6.5.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="moving-beyond-linearity.html"><a href="moving-beyond-linearity.html"><i class="fa fa-check"></i><b>7</b> Moving Beyond Linearity</a><ul>
+<li class="chapter" data-level="7" data-path="moving-beyond-linearity.html"><a href="moving-beyond-linearity.html"><i class="fa fa-check"></i><b>7</b> Moving Beyond Linearity</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="polynomial-and-step-regression.html"><a href="polynomial-and-step-regression.html"><i class="fa fa-check"></i><b>7.1</b> Polynomial and Step Regression</a></li>
 <li class="chapter" data-level="7.2" data-path="splines.html"><a href="splines.html"><i class="fa fa-check"></i><b>7.2</b> Splines</a></li>
 <li class="chapter" data-level="7.3" data-path="generalized-additive-models.html"><a href="generalized-additive-models.html"><i class="fa fa-check"></i><b>7.3</b> Generalized Additive Models</a></li>
-<li class="chapter" data-level="7.4" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html"><i class="fa fa-check"></i><b>7.4</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="7.4" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html"><i class="fa fa-check"></i><b>7.4</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="7.4.1" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-1-6"><i class="fa fa-check"></i><b>7.4.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="7.4.2" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-2-6"><i class="fa fa-check"></i><b>7.4.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="7.4.3" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-3-6"><i class="fa fa-check"></i><b>7.4.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="7.4.4" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-4-6"><i class="fa fa-check"></i><b>7.4.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="tree-based-methods.html"><a href="tree-based-methods.html"><i class="fa fa-check"></i><b>8</b> Tree-Based Methods</a><ul>
+<li class="chapter" data-level="8" data-path="tree-based-methods.html"><a href="tree-based-methods.html"><i class="fa fa-check"></i><b>8</b> Tree-Based Methods</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="decision-tree-terminology.html"><a href="decision-tree-terminology.html"><i class="fa fa-check"></i><b>8.1</b> Decision Tree Terminology</a></li>
 <li class="chapter" data-level="8.2" data-path="decision-trees-classification-explained-statquest.html"><a href="decision-trees-classification-explained-statquest.html"><i class="fa fa-check"></i><b>8.2</b> Decision Trees (Classification) Explained (StatQuest)</a></li>
 <li class="chapter" data-level="8.3" data-path="fitting-classification-trees.html"><a href="fitting-classification-trees.html"><i class="fa fa-check"></i><b>8.3</b> 8.1 Fitting Classification Trees</a></li>
@@ -342,7 +365,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.12" data-path="variable-importance.html"><a href="variable-importance.html"><i class="fa fa-check"></i><b>8.12</b> Variable importance</a></li>
 <li class="chapter" data-level="8.13" data-path="final-evaluation.html"><a href="final-evaluation.html"><i class="fa fa-check"></i><b>8.13</b> Final evaluation</a></li>
 <li class="chapter" data-level="8.14" data-path="fitting-regression-trees.html"><a href="fitting-regression-trees.html"><i class="fa fa-check"></i><b>8.14</b> 8.2 - Fitting Regression Trees</a></li>
-<li class="chapter" data-level="8.15" data-path="decision-trees-regression-explained-statquest.html"><a href="decision-trees-regression-explained-statquest.html"><i class="fa fa-check"></i><b>8.15</b> Decision Trees (Regression) Explained (StatQuest)</a><ul>
+<li class="chapter" data-level="8.15" data-path="decision-trees-regression-explained-statquest.html"><a href="decision-trees-regression-explained-statquest.html"><i class="fa fa-check"></i><b>8.15</b> Decision Trees (Regression) Explained (StatQuest)</a>
+<ul>
 <li class="chapter" data-level="8.15.1" data-path="decision-trees-regression-explained-statquest.html"><a href="decision-trees-regression-explained-statquest.html#eda"><i class="fa fa-check"></i><b>8.15.1</b> EDA</a></li>
 </ul></li>
 <li class="chapter" data-level="8.16" data-path="correlation-analysis-1.html"><a href="correlation-analysis-1.html"><i class="fa fa-check"></i><b>8.16</b> Correlation Analysis</a></li>
@@ -369,13 +393,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.37" data-path="evaluate-the-model-7.html"><a href="evaluate-the-model-7.html"><i class="fa fa-check"></i><b>8.37</b> Evaluate the model</a></li>
 <li class="chapter" data-level="8.38" data-path="final-evauation.html"><a href="final-evauation.html"><i class="fa fa-check"></i><b>8.38</b> Final evauation</a></li>
 <li class="chapter" data-level="8.39" data-path="feature-importance.html"><a href="feature-importance.html"><i class="fa fa-check"></i><b>8.39</b> Feature importance</a></li>
-<li class="chapter" data-level="8.40" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html"><i class="fa fa-check"></i><b>8.40</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="8.40" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html"><i class="fa fa-check"></i><b>8.40</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="8.40.1" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-1-7"><i class="fa fa-check"></i><b>8.40.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="8.40.2" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-2-7"><i class="fa fa-check"></i><b>8.40.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="8.40.3" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-3-7"><i class="fa fa-check"></i><b>8.40.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="8.40.4" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-4-7"><i class="fa fa-check"></i><b>8.40.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="support-vector-machines.html"><a href="support-vector-machines.html"><i class="fa fa-check"></i><b>9</b> Support Vector Machines</a><ul>
+<li class="chapter" data-level="9" data-path="support-vector-machines.html"><a href="support-vector-machines.html"><i class="fa fa-check"></i><b>9</b> Support Vector Machines</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="maximal-margin-classifier-hyperplanes.html"><a href="maximal-margin-classifier-hyperplanes.html"><i class="fa fa-check"></i><b>9.1</b> Maximal Margin Classifier &amp; Hyperplanes</a></li>
 <li class="chapter" data-level="9.2" data-path="using-a-separating-hyperplane-to-classify.html"><a href="using-a-separating-hyperplane-to-classify.html"><i class="fa fa-check"></i><b>9.2</b> Using a Separating Hyperplane to Classify</a></li>
 <li class="chapter" data-level="9.3" data-path="visual-example-of-using-a-hyperplane-to-classify.html"><a href="visual-example-of-using-a-hyperplane-to-classify.html"><i class="fa fa-check"></i><b>9.3</b> Visual Example of Using a Hyperplane to Classify</a></li>
@@ -390,36 +417,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.12" data-path="radial-kernels.html"><a href="radial-kernels.html"><i class="fa fa-check"></i><b>9.12</b> Radial Kernels</a></li>
 <li class="chapter" data-level="9.13" data-path="radial-kernels-cont..html"><a href="radial-kernels-cont..html"><i class="fa fa-check"></i><b>9.13</b> Radial Kernels, cont.</a></li>
 <li class="chapter" data-level="9.14" data-path="svms-with-more-than-two-classes.html"><a href="svms-with-more-than-two-classes.html"><i class="fa fa-check"></i><b>9.14</b> SVMs with More than Two Classes</a></li>
-<li class="chapter" data-level="9.15" data-path="lab-support-vector-classifier.html"><a href="lab-support-vector-classifier.html"><i class="fa fa-check"></i><b>9.15</b> Lab: Support Vector Classifier</a><ul>
+<li class="chapter" data-level="9.15" data-path="lab-support-vector-classifier.html"><a href="lab-support-vector-classifier.html"><i class="fa fa-check"></i><b>9.15</b> Lab: Support Vector Classifier</a>
+<ul>
 <li class="chapter" data-level="9.15.1" data-path="lab-support-vector-classifier.html"><a href="lab-support-vector-classifier.html#tuning"><i class="fa fa-check"></i><b>9.15.1</b> Tuning</a></li>
 <li class="chapter" data-level="9.15.2" data-path="lab-support-vector-classifier.html"><a href="lab-support-vector-classifier.html#linearly-separable-data"><i class="fa fa-check"></i><b>9.15.2</b> Linearly separable data</a></li>
 </ul></li>
 <li class="chapter" data-level="9.16" data-path="lab-support-vector-machine-non-linear-kernel.html"><a href="lab-support-vector-machine-non-linear-kernel.html"><i class="fa fa-check"></i><b>9.16</b> Lab: Support Vector Machine (non-linear kernel)</a></li>
-<li class="chapter" data-level="9.17" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html"><i class="fa fa-check"></i><b>9.17</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="9.17" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html"><i class="fa fa-check"></i><b>9.17</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="9.17.1" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-1-8"><i class="fa fa-check"></i><b>9.17.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="9.17.2" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-2-8"><i class="fa fa-check"></i><b>9.17.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="9.17.3" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-3-8"><i class="fa fa-check"></i><b>9.17.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="9.17.4" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-4-8"><i class="fa fa-check"></i><b>9.17.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="deep-learning.html"><a href="deep-learning.html"><i class="fa fa-check"></i><b>10</b> Deep Learning</a><ul>
+<li class="chapter" data-level="10" data-path="deep-learning.html"><a href="deep-learning.html"><i class="fa fa-check"></i><b>10</b> Deep Learning</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="slide-1.html"><a href="slide-1.html"><i class="fa fa-check"></i><b>10.1</b> Slide 1</a></li>
 <li class="chapter" data-level="10.2" data-path="slide-2.html"><a href="slide-2.html"><i class="fa fa-check"></i><b>10.2</b> Slide 2</a></li>
-<li class="chapter" data-level="10.3" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html"><i class="fa fa-check"></i><b>10.3</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="10.3" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html"><i class="fa fa-check"></i><b>10.3</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-1-9"><i class="fa fa-check"></i><b>10.3.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="10.3.2" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-2-9"><i class="fa fa-check"></i><b>10.3.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="10.3.3" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-3-9"><i class="fa fa-check"></i><b>10.3.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="10.3.4" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-4-9"><i class="fa fa-check"></i><b>10.3.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="survival-analysis-and-censored-data.html"><a href="survival-analysis-and-censored-data.html"><i class="fa fa-check"></i><b>11</b> Survival Analysis and Censored Data</a><ul>
+<li class="chapter" data-level="11" data-path="survival-analysis-and-censored-data.html"><a href="survival-analysis-and-censored-data.html"><i class="fa fa-check"></i><b>11</b> Survival Analysis and Censored Data</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="slide-1-1.html"><a href="slide-1-1.html"><i class="fa fa-check"></i><b>11.1</b> Slide 1</a></li>
 <li class="chapter" data-level="11.2" data-path="slide-2-1.html"><a href="slide-2-1.html"><i class="fa fa-check"></i><b>11.2</b> Slide 2</a></li>
-<li class="chapter" data-level="11.3" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html"><i class="fa fa-check"></i><b>11.3</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="11.3" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html"><i class="fa fa-check"></i><b>11.3</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="11.3.1" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-1-10"><i class="fa fa-check"></i><b>11.3.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="11.3.2" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-2-10"><i class="fa fa-check"></i><b>11.3.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="11.3.3" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-3-10"><i class="fa fa-check"></i><b>11.3.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="11.3.4" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-4-10"><i class="fa fa-check"></i><b>11.3.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="unsupervised-learning.html"><a href="unsupervised-learning.html"><i class="fa fa-check"></i><b>12</b> Unsupervised Learning</a><ul>
+<li class="chapter" data-level="12" data-path="unsupervised-learning.html"><a href="unsupervised-learning.html"><i class="fa fa-check"></i><b>12</b> Unsupervised Learning</a>
+<ul>
 <li class="chapter" data-level="" data-path="unsupervised-learning-vs-supervised-learning.html"><a href="unsupervised-learning-vs-supervised-learning.html"><i class="fa fa-check"></i>Unsupervised Learning vs Supervised Learning</a></li>
 <li class="chapter" data-level="" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
 <li class="chapter" data-level="" data-path="principal-component-analysis-1.html"><a href="principal-component-analysis-1.html"><i class="fa fa-check"></i>Principal Component Analysis</a></li>
@@ -447,35 +484,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hierarchical-clustering.html"><a href="hierarchical-clustering.html"><i class="fa fa-check"></i>Hierarchical Clustering</a></li>
 <li class="chapter" data-level="" data-path="hierarchical-clustering-types-of-linkage.html"><a href="hierarchical-clustering-types-of-linkage.html"><i class="fa fa-check"></i>Hierarchical Clustering: Types of Linkage</a></li>
 <li class="chapter" data-level="12.6" data-path="hierarchical-clustering-lab.html"><a href="hierarchical-clustering-lab.html"><i class="fa fa-check"></i><b>12.6</b> Hierarchical Clustering Lab</a></li>
-<li class="chapter" data-level="" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html"><i class="fa fa-check"></i>Meeting Videos</a><ul>
+<li class="chapter" data-level="" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html"><i class="fa fa-check"></i>Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="12.6.1" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-1-11"><i class="fa fa-check"></i><b>12.6.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="12.6.2" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-2-11"><i class="fa fa-check"></i><b>12.6.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="12.6.3" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-3-11"><i class="fa fa-check"></i><b>12.6.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="12.6.4" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-4-11"><i class="fa fa-check"></i><b>12.6.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multiple-testing.html"><a href="multiple-testing.html"><i class="fa fa-check"></i><b>13</b> Multiple Testing</a><ul>
+<li class="chapter" data-level="13" data-path="multiple-testing.html"><a href="multiple-testing.html"><i class="fa fa-check"></i><b>13</b> Multiple Testing</a>
+<ul>
 <li class="chapter" data-level="13.1" data-path="slide-1-2.html"><a href="slide-1-2.html"><i class="fa fa-check"></i><b>13.1</b> Slide 1</a></li>
 <li class="chapter" data-level="13.2" data-path="slide-2-2.html"><a href="slide-2-2.html"><i class="fa fa-check"></i><b>13.2</b> Slide 2</a></li>
-<li class="chapter" data-level="13.3" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html"><i class="fa fa-check"></i><b>13.3</b> Meeting Videos</a><ul>
+<li class="chapter" data-level="13.3" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html"><i class="fa fa-check"></i><b>13.3</b> Meeting Videos</a>
+<ul>
 <li class="chapter" data-level="13.3.1" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-1-12"><i class="fa fa-check"></i><b>13.3.1</b> Cohort 1</a></li>
 <li class="chapter" data-level="13.3.2" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-2-12"><i class="fa fa-check"></i><b>13.3.2</b> Cohort 2</a></li>
 <li class="chapter" data-level="13.3.3" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-3-12"><i class="fa fa-check"></i><b>13.3.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="13.3.4" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-4-12"><i class="fa fa-check"></i><b>13.3.4</b> Cohort 4</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="abbreviations.html"><a href="abbreviations.html"><i class="fa fa-check"></i>Abbreviations</a></li>
-<li class="chapter" data-level="" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i>Appendix: Bookdown and LaTeX Notes</a><ul>
+<li class="chapter" data-level="" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i>Appendix: Bookdown and LaTeX Notes</a>
+<ul>
 <li class="chapter" data-level="" data-path="markdown-highlighting.html"><a href="markdown-highlighting.html"><i class="fa fa-check"></i>Markdown highlighting</a></li>
 <li class="chapter" data-level="" data-path="text-coloring.html"><a href="text-coloring.html"><i class="fa fa-check"></i>Text coloring</a></li>
 <li class="chapter" data-level="" data-path="x99-4.html"><a href="x99-4.html"><i class="fa fa-check"></i>Section references</a></li>
 <li class="chapter" data-level="" data-path="footnotes.html"><a href="footnotes.html"><i class="fa fa-check"></i>Footnotes</a></li>
 <li class="chapter" data-level="" data-path="formatting-text.html"><a href="formatting-text.html"><i class="fa fa-check"></i>Formatting Text</a></li>
 <li class="chapter" data-level="" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i>Figures</a></li>
-<li class="chapter" data-level="" data-path="displaying-formula.html"><a href="displaying-formula.html"><i class="fa fa-check"></i>Displaying Formula</a><ul>
+<li class="chapter" data-level="" data-path="displaying-formula.html"><a href="displaying-formula.html"><i class="fa fa-check"></i>Displaying Formula</a>
+<ul>
 <li class="chapter" data-level="" data-path="displaying-formula.html"><a href="displaying-formula.html#formatting"><i class="fa fa-check"></i>Formatting</a></li>
 <li class="chapter" data-level="" data-path="displaying-formula.html"><a href="displaying-formula.html#symbols"><i class="fa fa-check"></i>Symbols</a></li>
 <li class="chapter" data-level="" data-path="displaying-formula.html"><a href="displaying-formula.html#notation-1"><i class="fa fa-check"></i>Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i>Equations</a><ul>
+<li class="chapter" data-level="" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i>Equations</a>
+<ul>
 <li class="chapter" data-level="" data-path="equations.html"><a href="equations.html#basic-equation"><i class="fa fa-check"></i>Basic Equation</a></li>
 <li class="chapter" data-level="" data-path="equations.html"><a href="equations.html#case-when-equation-large-curly-brace"><i class="fa fa-check"></i>Case-When Equation (Large Curly Brace)</a></li>
 <li class="chapter" data-level="" data-path="equations.html"><a href="equations.html#alligned-with-underbars"><i class="fa fa-check"></i>Alligned with Underbars</a></li>
@@ -502,7 +547,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="polynomial-and-step-regression" class="section level2 hasAnchor">
+<div id="polynomial-and-step-regression" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Polynomial and Step Regression<a href="polynomial-and-step-regression.html#polynomial-and-step-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <h4>
 The truth is never linear!
@@ -513,110 +558,110 @@ The truth is never linear!
 <center>
 A degree <strong>d</strong> polynomial
 </center>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="polynomial-and-step-regression.html#cb160-1"></a>Wage &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(ISLR2<span class="op">::</span>Wage) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb160-2"><a href="polynomial-and-step-regression.html#cb160-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">high =</span> <span class="kw">factor</span>(wage <span class="op">&gt;</span><span class="st"> </span><span class="dv">250</span>, </span>
-<span id="cb160-3"><a href="polynomial-and-step-regression.html#cb160-3"></a>                       <span class="dt">levels =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>), </span>
-<span id="cb160-4"><a href="polynomial-and-step-regression.html#cb160-4"></a>                       <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Low&quot;</span>)))</span>
-<span id="cb160-5"><a href="polynomial-and-step-regression.html#cb160-5"></a></span>
-<span id="cb160-6"><a href="polynomial-and-step-regression.html#cb160-6"></a>rec_poly &lt;-<span class="st"> </span><span class="kw">recipe</span>(wage <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> Wage) <span class="op">%&gt;%</span></span>
-<span id="cb160-7"><a href="polynomial-and-step-regression.html#cb160-7"></a><span class="st">  </span><span class="kw">step_poly</span>(age, <span class="dt">degree =</span> <span class="dv">4</span>)</span>
-<span id="cb160-8"><a href="polynomial-and-step-regression.html#cb160-8"></a></span>
-<span id="cb160-9"><a href="polynomial-and-step-regression.html#cb160-9"></a>lm_spec &lt;-<span class="st"> </span><span class="kw">linear_reg</span>() <span class="op">%&gt;%</span></span>
-<span id="cb160-10"><a href="polynomial-and-step-regression.html#cb160-10"></a><span class="st">  </span><span class="kw">set_mode</span>(<span class="st">&quot;regression&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb160-11"><a href="polynomial-and-step-regression.html#cb160-11"></a><span class="st">  </span><span class="kw">set_engine</span>(<span class="st">&quot;lm&quot;</span>)</span>
-<span id="cb160-12"><a href="polynomial-and-step-regression.html#cb160-12"></a></span>
-<span id="cb160-13"><a href="polynomial-and-step-regression.html#cb160-13"></a>poly_wf &lt;-<span class="st"> </span><span class="kw">workflow</span>() <span class="op">%&gt;%</span></span>
-<span id="cb160-14"><a href="polynomial-and-step-regression.html#cb160-14"></a><span class="st">  </span><span class="kw">add_model</span>(lm_spec) <span class="op">%&gt;%</span></span>
-<span id="cb160-15"><a href="polynomial-and-step-regression.html#cb160-15"></a><span class="st">  </span><span class="kw">add_recipe</span>(rec_poly)</span>
-<span id="cb160-16"><a href="polynomial-and-step-regression.html#cb160-16"></a></span>
-<span id="cb160-17"><a href="polynomial-and-step-regression.html#cb160-17"></a>poly_fit &lt;-<span class="st"> </span><span class="kw">fit</span>(poly_wf, <span class="dt">data =</span> Wage)</span>
-<span id="cb160-18"><a href="polynomial-and-step-regression.html#cb160-18"></a></span>
-<span id="cb160-19"><a href="polynomial-and-step-regression.html#cb160-19"></a>age_range &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">age =</span> <span class="kw">seq</span>(<span class="kw">min</span>(Wage<span class="op">$</span>age), <span class="kw">max</span>(Wage<span class="op">$</span>age)))</span>
-<span id="cb160-20"><a href="polynomial-and-step-regression.html#cb160-20"></a></span>
-<span id="cb160-21"><a href="polynomial-and-step-regression.html#cb160-21"></a>regression_lines &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(</span>
-<span id="cb160-22"><a href="polynomial-and-step-regression.html#cb160-22"></a>  <span class="kw">augment</span>(poly_fit, <span class="dt">new_data =</span> age_range),</span>
-<span id="cb160-23"><a href="polynomial-and-step-regression.html#cb160-23"></a>  <span class="kw">predict</span>(poly_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
-<span id="cb160-24"><a href="polynomial-and-step-regression.html#cb160-24"></a>)</span>
-<span id="cb160-25"><a href="polynomial-and-step-regression.html#cb160-25"></a></span>
-<span id="cb160-26"><a href="polynomial-and-step-regression.html#cb160-26"></a>regression_plot &lt;-<span class="st"> </span>Wage <span class="op">%&gt;%</span></span>
-<span id="cb160-27"><a href="polynomial-and-step-regression.html#cb160-27"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(age, wage)) <span class="op">+</span></span>
-<span id="cb160-28"><a href="polynomial-and-step-regression.html#cb160-28"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.1</span>) <span class="op">+</span></span>
-<span id="cb160-29"><a href="polynomial-and-step-regression.html#cb160-29"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred), <span class="dt">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
-<span id="cb160-30"><a href="polynomial-and-step-regression.html#cb160-30"></a>            <span class="dt">size =</span> <span class="fl">1.5</span>,</span>
-<span id="cb160-31"><a href="polynomial-and-step-regression.html#cb160-31"></a>            <span class="dt">data =</span> regression_lines) <span class="op">+</span></span>
-<span id="cb160-32"><a href="polynomial-and-step-regression.html#cb160-32"></a><span class="st">  </span><span class="kw">geom_line</span>(</span>
-<span id="cb160-33"><a href="polynomial-and-step-regression.html#cb160-33"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> .pred_lower),</span>
-<span id="cb160-34"><a href="polynomial-and-step-regression.html#cb160-34"></a>    <span class="dt">data =</span> regression_lines,</span>
-<span id="cb160-35"><a href="polynomial-and-step-regression.html#cb160-35"></a>    <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="cb160-36"><a href="polynomial-and-step-regression.html#cb160-36"></a>    <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span></span>
-<span id="cb160-37"><a href="polynomial-and-step-regression.html#cb160-37"></a>  ) <span class="op">+</span></span>
-<span id="cb160-38"><a href="polynomial-and-step-regression.html#cb160-38"></a><span class="st">  </span><span class="kw">geom_line</span>(</span>
-<span id="cb160-39"><a href="polynomial-and-step-regression.html#cb160-39"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> .pred_upper),</span>
-<span id="cb160-40"><a href="polynomial-and-step-regression.html#cb160-40"></a>    <span class="dt">data =</span> regression_lines,</span>
-<span id="cb160-41"><a href="polynomial-and-step-regression.html#cb160-41"></a>    <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="cb160-42"><a href="polynomial-and-step-regression.html#cb160-42"></a>    <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span></span>
-<span id="cb160-43"><a href="polynomial-and-step-regression.html#cb160-43"></a>  ) <span class="op">+</span></span>
-<span id="cb160-44"><a href="polynomial-and-step-regression.html#cb160-44"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb160-45"><a href="polynomial-and-step-regression.html#cb160-45"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb160-46"><a href="polynomial-and-step-regression.html#cb160-46"></a>    <span class="dt">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
-<span id="cb160-47"><a href="polynomial-and-step-regression.html#cb160-47"></a>    <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb160-48"><a href="polynomial-and-step-regression.html#cb160-48"></a>    <span class="dt">strip.background =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb160-49"><a href="polynomial-and-step-regression.html#cb160-49"></a>    <span class="dt">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
-<span id="cb160-50"><a href="polynomial-and-step-regression.html#cb160-50"></a>  ) <span class="op">+</span></span>
-<span id="cb160-51"><a href="polynomial-and-step-regression.html#cb160-51"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Wage&quot;</span>,</span>
-<span id="cb160-52"><a href="polynomial-and-step-regression.html#cb160-52"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Regression&quot;</span>)</span>
-<span id="cb160-53"><a href="polynomial-and-step-regression.html#cb160-53"></a></span>
-<span id="cb160-54"><a href="polynomial-and-step-regression.html#cb160-54"></a>rec_poly &lt;-<span class="st"> </span><span class="kw">recipe</span>(high <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> Wage) <span class="op">%&gt;%</span></span>
-<span id="cb160-55"><a href="polynomial-and-step-regression.html#cb160-55"></a><span class="st">  </span><span class="kw">step_poly</span>(age, <span class="dt">degree =</span> <span class="dv">4</span>)</span>
-<span id="cb160-56"><a href="polynomial-and-step-regression.html#cb160-56"></a></span>
-<span id="cb160-57"><a href="polynomial-and-step-regression.html#cb160-57"></a>lr_spec &lt;-<span class="st"> </span><span class="kw">logistic_reg</span>() <span class="op">%&gt;%</span></span>
-<span id="cb160-58"><a href="polynomial-and-step-regression.html#cb160-58"></a><span class="st">  </span><span class="kw">set_engine</span>(<span class="st">&quot;glm&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb160-59"><a href="polynomial-and-step-regression.html#cb160-59"></a><span class="st">  </span><span class="kw">set_mode</span>(<span class="st">&quot;classification&quot;</span>)</span>
-<span id="cb160-60"><a href="polynomial-and-step-regression.html#cb160-60"></a></span>
-<span id="cb160-61"><a href="polynomial-and-step-regression.html#cb160-61"></a>lr_poly_wf &lt;-<span class="st"> </span><span class="kw">workflow</span>() <span class="op">%&gt;%</span></span>
-<span id="cb160-62"><a href="polynomial-and-step-regression.html#cb160-62"></a><span class="st">  </span><span class="kw">add_model</span>(lr_spec) <span class="op">%&gt;%</span></span>
-<span id="cb160-63"><a href="polynomial-and-step-regression.html#cb160-63"></a><span class="st">  </span><span class="kw">add_recipe</span>(rec_poly)</span>
-<span id="cb160-64"><a href="polynomial-and-step-regression.html#cb160-64"></a></span>
-<span id="cb160-65"><a href="polynomial-and-step-regression.html#cb160-65"></a>lr_poly_fit &lt;-<span class="st"> </span><span class="kw">fit</span>(lr_poly_wf, <span class="dt">data =</span> Wage)</span>
-<span id="cb160-66"><a href="polynomial-and-step-regression.html#cb160-66"></a></span>
-<span id="cb160-67"><a href="polynomial-and-step-regression.html#cb160-67"></a>classification_lines &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(</span>
-<span id="cb160-68"><a href="polynomial-and-step-regression.html#cb160-68"></a>  <span class="kw">augment</span>(lr_poly_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>),</span>
-<span id="cb160-69"><a href="polynomial-and-step-regression.html#cb160-69"></a>  <span class="kw">predict</span>(lr_poly_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
-<span id="cb160-70"><a href="polynomial-and-step-regression.html#cb160-70"></a>)</span>
-<span id="cb160-71"><a href="polynomial-and-step-regression.html#cb160-71"></a></span>
-<span id="cb160-72"><a href="polynomial-and-step-regression.html#cb160-72"></a>classification_plot &lt;-<span class="st"> </span>classification_lines <span class="op">%&gt;%</span></span>
-<span id="cb160-73"><a href="polynomial-and-step-regression.html#cb160-73"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(age)) <span class="op">+</span></span>
-<span id="cb160-74"><a href="polynomial-and-step-regression.html#cb160-74"></a><span class="st">  </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>)) <span class="op">+</span></span>
-<span id="cb160-75"><a href="polynomial-and-step-regression.html#cb160-75"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_High), <span class="dt">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
-<span id="cb160-76"><a href="polynomial-and-step-regression.html#cb160-76"></a>            <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
-<span id="cb160-77"><a href="polynomial-and-step-regression.html#cb160-77"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_lower_High),</span>
-<span id="cb160-78"><a href="polynomial-and-step-regression.html#cb160-78"></a>            <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb160-79"><a href="polynomial-and-step-regression.html#cb160-79"></a>            <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb160-80"><a href="polynomial-and-step-regression.html#cb160-80"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_upper_High),</span>
-<span id="cb160-81"><a href="polynomial-and-step-regression.html#cb160-81"></a>            <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb160-82"><a href="polynomial-and-step-regression.html#cb160-82"></a>            <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb160-83"><a href="polynomial-and-step-regression.html#cb160-83"></a><span class="st">  </span><span class="kw">geom_jitter</span>(</span>
-<span id="cb160-84"><a href="polynomial-and-step-regression.html#cb160-84"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> (high <span class="op">==</span><span class="st"> &quot;High&quot;</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span>),</span>
-<span id="cb160-85"><a href="polynomial-and-step-regression.html#cb160-85"></a>    <span class="dt">data =</span> Wage,</span>
-<span id="cb160-86"><a href="polynomial-and-step-regression.html#cb160-86"></a>    <span class="dt">shape =</span> <span class="st">&quot;|&quot;</span>,</span>
-<span id="cb160-87"><a href="polynomial-and-step-regression.html#cb160-87"></a>    <span class="dt">height =</span> <span class="dv">0</span>,</span>
-<span id="cb160-88"><a href="polynomial-and-step-regression.html#cb160-88"></a>    <span class="dt">width =</span> <span class="fl">0.2</span></span>
-<span id="cb160-89"><a href="polynomial-and-step-regression.html#cb160-89"></a>  ) <span class="op">+</span></span>
-<span id="cb160-90"><a href="polynomial-and-step-regression.html#cb160-90"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb160-91"><a href="polynomial-and-step-regression.html#cb160-91"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb160-92"><a href="polynomial-and-step-regression.html#cb160-92"></a>    <span class="dt">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
-<span id="cb160-93"><a href="polynomial-and-step-regression.html#cb160-93"></a>    <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb160-94"><a href="polynomial-and-step-regression.html#cb160-94"></a>    <span class="dt">strip.background =</span> <span class="kw">element_blank</span>()</span>
-<span id="cb160-95"><a href="polynomial-and-step-regression.html#cb160-95"></a>  ) <span class="op">+</span></span>
-<span id="cb160-96"><a href="polynomial-and-step-regression.html#cb160-96"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Pr(Wage&gt;250 | Age)&quot;</span>,</span>
-<span id="cb160-97"><a href="polynomial-and-step-regression.html#cb160-97"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Classification&quot;</span>)</span>
-<span id="cb160-98"><a href="polynomial-and-step-regression.html#cb160-98"></a></span>
-<span id="cb160-99"><a href="polynomial-and-step-regression.html#cb160-99"></a>title_theme &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">ggdraw</span>() <span class="op">+</span></span>
-<span id="cb160-100"><a href="polynomial-and-step-regression.html#cb160-100"></a><span class="st">  </span>cowplot<span class="op">::</span><span class="kw">draw_label</span>(<span class="st">&quot;ISLR2 Wage Dataset 4th degree polynomial fits and 2x pointwise SEs&quot;</span>, <span class="dt">x =</span> <span class="fl">0.05</span>, <span class="dt">hjust =</span> <span class="dv">0</span>)</span>
-<span id="cb160-101"><a href="polynomial-and-step-regression.html#cb160-101"></a></span>
-<span id="cb160-102"><a href="polynomial-and-step-regression.html#cb160-102"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(title_theme, </span>
-<span id="cb160-103"><a href="polynomial-and-step-regression.html#cb160-103"></a>                   cowplot<span class="op">::</span><span class="kw">plot_grid</span>(regression_plot, classification_plot),</span>
-<span id="cb160-104"><a href="polynomial-and-step-regression.html#cb160-104"></a>                   <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="polynomial-and-step-regression.html#cb168-1" aria-hidden="true" tabindex="-1"></a>Wage <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(ISLR2<span class="sc">::</span>Wage) <span class="sc">%&gt;%</span> </span>
+<span id="cb168-2"><a href="polynomial-and-step-regression.html#cb168-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">high =</span> <span class="fu">factor</span>(wage <span class="sc">&gt;</span> <span class="dv">250</span>, </span>
+<span id="cb168-3"><a href="polynomial-and-step-regression.html#cb168-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), </span>
+<span id="cb168-4"><a href="polynomial-and-step-regression.html#cb168-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Low&quot;</span>)))</span>
+<span id="cb168-5"><a href="polynomial-and-step-regression.html#cb168-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-6"><a href="polynomial-and-step-regression.html#cb168-6" aria-hidden="true" tabindex="-1"></a>rec_poly <span class="ot">&lt;-</span> <span class="fu">recipe</span>(wage <span class="sc">~</span> age, <span class="at">data =</span> Wage) <span class="sc">%&gt;%</span></span>
+<span id="cb168-7"><a href="polynomial-and-step-regression.html#cb168-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_poly</span>(age, <span class="at">degree =</span> <span class="dv">4</span>)</span>
+<span id="cb168-8"><a href="polynomial-and-step-regression.html#cb168-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-9"><a href="polynomial-and-step-regression.html#cb168-9" aria-hidden="true" tabindex="-1"></a>lm_spec <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb168-10"><a href="polynomial-and-step-regression.html#cb168-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">&quot;regression&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb168-11"><a href="polynomial-and-step-regression.html#cb168-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb168-12"><a href="polynomial-and-step-regression.html#cb168-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-13"><a href="polynomial-and-step-regression.html#cb168-13" aria-hidden="true" tabindex="-1"></a>poly_wf <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb168-14"><a href="polynomial-and-step-regression.html#cb168-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(lm_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb168-15"><a href="polynomial-and-step-regression.html#cb168-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(rec_poly)</span>
+<span id="cb168-16"><a href="polynomial-and-step-regression.html#cb168-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-17"><a href="polynomial-and-step-regression.html#cb168-17" aria-hidden="true" tabindex="-1"></a>poly_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(poly_wf, <span class="at">data =</span> Wage)</span>
+<span id="cb168-18"><a href="polynomial-and-step-regression.html#cb168-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-19"><a href="polynomial-and-step-regression.html#cb168-19" aria-hidden="true" tabindex="-1"></a>age_range <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">age =</span> <span class="fu">seq</span>(<span class="fu">min</span>(Wage<span class="sc">$</span>age), <span class="fu">max</span>(Wage<span class="sc">$</span>age)))</span>
+<span id="cb168-20"><a href="polynomial-and-step-regression.html#cb168-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-21"><a href="polynomial-and-step-regression.html#cb168-21" aria-hidden="true" tabindex="-1"></a>regression_lines <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(</span>
+<span id="cb168-22"><a href="polynomial-and-step-regression.html#cb168-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(poly_fit, <span class="at">new_data =</span> age_range),</span>
+<span id="cb168-23"><a href="polynomial-and-step-regression.html#cb168-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict</span>(poly_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
+<span id="cb168-24"><a href="polynomial-and-step-regression.html#cb168-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb168-25"><a href="polynomial-and-step-regression.html#cb168-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-26"><a href="polynomial-and-step-regression.html#cb168-26" aria-hidden="true" tabindex="-1"></a>regression_plot <span class="ot">&lt;-</span> Wage <span class="sc">%&gt;%</span></span>
+<span id="cb168-27"><a href="polynomial-and-step-regression.html#cb168-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, wage)) <span class="sc">+</span></span>
+<span id="cb168-28"><a href="polynomial-and-step-regression.html#cb168-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb168-29"><a href="polynomial-and-step-regression.html#cb168-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred), <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb168-30"><a href="polynomial-and-step-regression.html#cb168-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">1.5</span>,</span>
+<span id="cb168-31"><a href="polynomial-and-step-regression.html#cb168-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> regression_lines) <span class="sc">+</span></span>
+<span id="cb168-32"><a href="polynomial-and-step-regression.html#cb168-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb168-33"><a href="polynomial-and-step-regression.html#cb168-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> .pred_lower),</span>
+<span id="cb168-34"><a href="polynomial-and-step-regression.html#cb168-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> regression_lines,</span>
+<span id="cb168-35"><a href="polynomial-and-step-regression.html#cb168-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb168-36"><a href="polynomial-and-step-regression.html#cb168-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb168-37"><a href="polynomial-and-step-regression.html#cb168-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb168-38"><a href="polynomial-and-step-regression.html#cb168-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb168-39"><a href="polynomial-and-step-regression.html#cb168-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> .pred_upper),</span>
+<span id="cb168-40"><a href="polynomial-and-step-regression.html#cb168-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> regression_lines,</span>
+<span id="cb168-41"><a href="polynomial-and-step-regression.html#cb168-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb168-42"><a href="polynomial-and-step-regression.html#cb168-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb168-43"><a href="polynomial-and-step-regression.html#cb168-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb168-44"><a href="polynomial-and-step-regression.html#cb168-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb168-45"><a href="polynomial-and-step-regression.html#cb168-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb168-46"><a href="polynomial-and-step-regression.html#cb168-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
+<span id="cb168-47"><a href="polynomial-and-step-regression.html#cb168-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb168-48"><a href="polynomial-and-step-regression.html#cb168-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb168-49"><a href="polynomial-and-step-regression.html#cb168-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
+<span id="cb168-50"><a href="polynomial-and-step-regression.html#cb168-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb168-51"><a href="polynomial-and-step-regression.html#cb168-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb168-52"><a href="polynomial-and-step-regression.html#cb168-52" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Regression&quot;</span>)</span>
+<span id="cb168-53"><a href="polynomial-and-step-regression.html#cb168-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-54"><a href="polynomial-and-step-regression.html#cb168-54" aria-hidden="true" tabindex="-1"></a>rec_poly <span class="ot">&lt;-</span> <span class="fu">recipe</span>(high <span class="sc">~</span> age, <span class="at">data =</span> Wage) <span class="sc">%&gt;%</span></span>
+<span id="cb168-55"><a href="polynomial-and-step-regression.html#cb168-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_poly</span>(age, <span class="at">degree =</span> <span class="dv">4</span>)</span>
+<span id="cb168-56"><a href="polynomial-and-step-regression.html#cb168-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-57"><a href="polynomial-and-step-regression.html#cb168-57" aria-hidden="true" tabindex="-1"></a>lr_spec <span class="ot">&lt;-</span> <span class="fu">logistic_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb168-58"><a href="polynomial-and-step-regression.html#cb168-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">&quot;glm&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb168-59"><a href="polynomial-and-step-regression.html#cb168-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">&quot;classification&quot;</span>)</span>
+<span id="cb168-60"><a href="polynomial-and-step-regression.html#cb168-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-61"><a href="polynomial-and-step-regression.html#cb168-61" aria-hidden="true" tabindex="-1"></a>lr_poly_wf <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb168-62"><a href="polynomial-and-step-regression.html#cb168-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(lr_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb168-63"><a href="polynomial-and-step-regression.html#cb168-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(rec_poly)</span>
+<span id="cb168-64"><a href="polynomial-and-step-regression.html#cb168-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-65"><a href="polynomial-and-step-regression.html#cb168-65" aria-hidden="true" tabindex="-1"></a>lr_poly_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(lr_poly_wf, <span class="at">data =</span> Wage)</span>
+<span id="cb168-66"><a href="polynomial-and-step-regression.html#cb168-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-67"><a href="polynomial-and-step-regression.html#cb168-67" aria-hidden="true" tabindex="-1"></a>classification_lines <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(</span>
+<span id="cb168-68"><a href="polynomial-and-step-regression.html#cb168-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(lr_poly_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>),</span>
+<span id="cb168-69"><a href="polynomial-and-step-regression.html#cb168-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict</span>(lr_poly_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
+<span id="cb168-70"><a href="polynomial-and-step-regression.html#cb168-70" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb168-71"><a href="polynomial-and-step-regression.html#cb168-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-72"><a href="polynomial-and-step-regression.html#cb168-72" aria-hidden="true" tabindex="-1"></a>classification_plot <span class="ot">&lt;-</span> classification_lines <span class="sc">%&gt;%</span></span>
+<span id="cb168-73"><a href="polynomial-and-step-regression.html#cb168-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age)) <span class="sc">+</span></span>
+<span id="cb168-74"><a href="polynomial-and-step-regression.html#cb168-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb168-75"><a href="polynomial-and-step-regression.html#cb168-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_High), <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb168-76"><a href="polynomial-and-step-regression.html#cb168-76" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb168-77"><a href="polynomial-and-step-regression.html#cb168-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_lower_High),</span>
+<span id="cb168-78"><a href="polynomial-and-step-regression.html#cb168-78" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb168-79"><a href="polynomial-and-step-regression.html#cb168-79" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb168-80"><a href="polynomial-and-step-regression.html#cb168-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_upper_High),</span>
+<span id="cb168-81"><a href="polynomial-and-step-regression.html#cb168-81" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb168-82"><a href="polynomial-and-step-regression.html#cb168-82" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb168-83"><a href="polynomial-and-step-regression.html#cb168-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb168-84"><a href="polynomial-and-step-regression.html#cb168-84" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> (high <span class="sc">==</span> <span class="st">&quot;High&quot;</span>) <span class="sc">/</span> <span class="dv">5</span>),</span>
+<span id="cb168-85"><a href="polynomial-and-step-regression.html#cb168-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Wage,</span>
+<span id="cb168-86"><a href="polynomial-and-step-regression.html#cb168-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;|&quot;</span>,</span>
+<span id="cb168-87"><a href="polynomial-and-step-regression.html#cb168-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">0</span>,</span>
+<span id="cb168-88"><a href="polynomial-and-step-regression.html#cb168-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span></span>
+<span id="cb168-89"><a href="polynomial-and-step-regression.html#cb168-89" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb168-90"><a href="polynomial-and-step-regression.html#cb168-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb168-91"><a href="polynomial-and-step-regression.html#cb168-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb168-92"><a href="polynomial-and-step-regression.html#cb168-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
+<span id="cb168-93"><a href="polynomial-and-step-regression.html#cb168-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb168-94"><a href="polynomial-and-step-regression.html#cb168-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb168-95"><a href="polynomial-and-step-regression.html#cb168-95" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb168-96"><a href="polynomial-and-step-regression.html#cb168-96" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Pr(Wage&gt;250 | Age)&quot;</span>,</span>
+<span id="cb168-97"><a href="polynomial-and-step-regression.html#cb168-97" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Classification&quot;</span>)</span>
+<span id="cb168-98"><a href="polynomial-and-step-regression.html#cb168-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-99"><a href="polynomial-and-step-regression.html#cb168-99" aria-hidden="true" tabindex="-1"></a>title_theme <span class="ot">&lt;-</span> cowplot<span class="sc">::</span><span class="fu">ggdraw</span>() <span class="sc">+</span></span>
+<span id="cb168-100"><a href="polynomial-and-step-regression.html#cb168-100" aria-hidden="true" tabindex="-1"></a>  cowplot<span class="sc">::</span><span class="fu">draw_label</span>(<span class="st">&quot;ISLR2 Wage Dataset 4th degree polynomial fits and 2x pointwise SEs&quot;</span>, <span class="at">x =</span> <span class="fl">0.05</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
+<span id="cb168-101"><a href="polynomial-and-step-regression.html#cb168-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb168-102"><a href="polynomial-and-step-regression.html#cb168-102" aria-hidden="true" tabindex="-1"></a>cowplot<span class="sc">::</span><span class="fu">plot_grid</span>(title_theme, </span>
+<span id="cb168-103"><a href="polynomial-and-step-regression.html#cb168-103" aria-hidden="true" tabindex="-1"></a>                   cowplot<span class="sc">::</span><span class="fu">plot_grid</span>(regression_plot, classification_plot),</span>
+<span id="cb168-104"><a href="polynomial-and-step-regression.html#cb168-104" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">rel_heights =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)) </span></code></pre></div>
 <pre><code>## Warning: Removed 8 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="bookclub-islr_files/figure-html/chapter7-1-1.png" width="672" /></p>
 <h4>
@@ -626,10 +671,10 @@ Details
 <li>Create new variables <span class="math inline">\(X_1 = X, X_2 = X^2\)</span> etc and then treat the problem the same as multiple linear regression.</li>
 </ul>
 <p>Under the hood, the expansion happens with the <code>poly</code> function</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="polynomial-and-step-regression.html#cb162-1"></a>Wage <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb162-2"><a href="polynomial-and-step-regression.html#cb162-2"></a><span class="st">  </span><span class="kw">select</span>(age) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb162-3"><a href="polynomial-and-step-regression.html#cb162-3"></a><span class="st">  </span><span class="kw">bind_cols</span>(<span class="kw">as_tibble</span>(<span class="kw">round</span>(<span class="kw">poly</span>(Wage<span class="op">$</span>age, <span class="dv">3</span>), <span class="dv">3</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb162-4"><a href="polynomial-and-step-regression.html#cb162-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="polynomial-and-step-regression.html#cb170-1" aria-hidden="true" tabindex="-1"></a>Wage <span class="sc">%&gt;%</span> </span>
+<span id="cb170-2"><a href="polynomial-and-step-regression.html#cb170-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age) <span class="sc">%&gt;%</span> </span>
+<span id="cb170-3"><a href="polynomial-and-step-regression.html#cb170-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(<span class="fu">as_tibble</span>(<span class="fu">round</span>(<span class="fu">poly</span>(Wage<span class="sc">$</span>age, <span class="dv">3</span>), <span class="dv">3</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb170-4"><a href="polynomial-and-step-regression.html#cb170-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 4
 ##     age    `1`    `2`    `3`
 ##   &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -641,10 +686,10 @@ Details
 ## 6    54  0.018 -0.002 -0.017</code></pre>
 <p>What R does, and what is a best practice, is to force an orthogonal expansion to avoid correlations in the new variables.</p>
 <p>This behavior is somewhat different than what might have been expected, possibly as</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="polynomial-and-step-regression.html#cb164-1"></a>Wage <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb164-2"><a href="polynomial-and-step-regression.html#cb164-2"></a><span class="st">  </span><span class="kw">select</span>(age) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb164-3"><a href="polynomial-and-step-regression.html#cb164-3"></a><span class="st">  </span><span class="kw">bind_cols</span>(<span class="kw">as_tibble</span>(<span class="kw">round</span>(<span class="kw">poly</span>(Wage<span class="op">$</span>age, <span class="dv">3</span>, <span class="dt">raw =</span> <span class="ot">TRUE</span>), <span class="dv">3</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb164-4"><a href="polynomial-and-step-regression.html#cb164-4"></a><span class="st">  </span><span class="kw">head</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="polynomial-and-step-regression.html#cb172-1" aria-hidden="true" tabindex="-1"></a>Wage <span class="sc">%&gt;%</span> </span>
+<span id="cb172-2"><a href="polynomial-and-step-regression.html#cb172-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age) <span class="sc">%&gt;%</span> </span>
+<span id="cb172-3"><a href="polynomial-and-step-regression.html#cb172-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(<span class="fu">as_tibble</span>(<span class="fu">round</span>(<span class="fu">poly</span>(Wage<span class="sc">$</span>age, <span class="dv">3</span>, <span class="at">raw =</span> <span class="cn">TRUE</span>), <span class="dv">3</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb172-4"><a href="polynomial-and-step-regression.html#cb172-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 4
 ##     age   `1`   `2`    `3`
 ##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
@@ -672,102 +717,102 @@ bad for extrapolation.</p></li>
 Step Functions
 </h4>
 <p>Another way of creating transformations of a variable — cut the variable into distinct regions.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="polynomial-and-step-regression.html#cb166-1"></a>rec_cut &lt;-<span class="st"> </span><span class="kw">recipe</span>(wage <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> Wage) <span class="op">%&gt;%</span></span>
-<span id="cb166-2"><a href="polynomial-and-step-regression.html#cb166-2"></a><span class="st">  </span><span class="kw">step_cut</span>(age, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">70</span>))</span>
-<span id="cb166-3"><a href="polynomial-and-step-regression.html#cb166-3"></a></span>
-<span id="cb166-4"><a href="polynomial-and-step-regression.html#cb166-4"></a>lm_spec &lt;-<span class="st"> </span><span class="kw">linear_reg</span>() <span class="op">%&gt;%</span></span>
-<span id="cb166-5"><a href="polynomial-and-step-regression.html#cb166-5"></a><span class="st">  </span><span class="kw">set_mode</span>(<span class="st">&quot;regression&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb166-6"><a href="polynomial-and-step-regression.html#cb166-6"></a><span class="st">  </span><span class="kw">set_engine</span>(<span class="st">&quot;lm&quot;</span>)</span>
-<span id="cb166-7"><a href="polynomial-and-step-regression.html#cb166-7"></a></span>
-<span id="cb166-8"><a href="polynomial-and-step-regression.html#cb166-8"></a>cut_wf &lt;-<span class="st"> </span><span class="kw">workflow</span>() <span class="op">%&gt;%</span></span>
-<span id="cb166-9"><a href="polynomial-and-step-regression.html#cb166-9"></a><span class="st">  </span><span class="kw">add_model</span>(lm_spec) <span class="op">%&gt;%</span></span>
-<span id="cb166-10"><a href="polynomial-and-step-regression.html#cb166-10"></a><span class="st">  </span><span class="kw">add_recipe</span>(rec_cut)</span>
-<span id="cb166-11"><a href="polynomial-and-step-regression.html#cb166-11"></a></span>
-<span id="cb166-12"><a href="polynomial-and-step-regression.html#cb166-12"></a>cut_fit &lt;-<span class="st"> </span><span class="kw">fit</span>(cut_wf, <span class="dt">data =</span> Wage)</span>
-<span id="cb166-13"><a href="polynomial-and-step-regression.html#cb166-13"></a></span>
-<span id="cb166-14"><a href="polynomial-and-step-regression.html#cb166-14"></a>regression_lines &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(</span>
-<span id="cb166-15"><a href="polynomial-and-step-regression.html#cb166-15"></a>  <span class="kw">augment</span>(cut_fit, <span class="dt">new_data =</span> age_range),</span>
-<span id="cb166-16"><a href="polynomial-and-step-regression.html#cb166-16"></a>  <span class="kw">predict</span>(cut_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
-<span id="cb166-17"><a href="polynomial-and-step-regression.html#cb166-17"></a>)</span>
-<span id="cb166-18"><a href="polynomial-and-step-regression.html#cb166-18"></a></span>
-<span id="cb166-19"><a href="polynomial-and-step-regression.html#cb166-19"></a>regression_plot &lt;-<span class="st"> </span>Wage <span class="op">%&gt;%</span></span>
-<span id="cb166-20"><a href="polynomial-and-step-regression.html#cb166-20"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(age, wage)) <span class="op">+</span></span>
-<span id="cb166-21"><a href="polynomial-and-step-regression.html#cb166-21"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.1</span>) <span class="op">+</span></span>
-<span id="cb166-22"><a href="polynomial-and-step-regression.html#cb166-22"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred), <span class="dt">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
-<span id="cb166-23"><a href="polynomial-and-step-regression.html#cb166-23"></a>            <span class="dt">size =</span> <span class="fl">1.5</span>,</span>
-<span id="cb166-24"><a href="polynomial-and-step-regression.html#cb166-24"></a>            <span class="dt">data =</span> regression_lines) <span class="op">+</span></span>
-<span id="cb166-25"><a href="polynomial-and-step-regression.html#cb166-25"></a><span class="st">  </span><span class="kw">geom_line</span>(</span>
-<span id="cb166-26"><a href="polynomial-and-step-regression.html#cb166-26"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> .pred_lower),</span>
-<span id="cb166-27"><a href="polynomial-and-step-regression.html#cb166-27"></a>    <span class="dt">data =</span> regression_lines,</span>
-<span id="cb166-28"><a href="polynomial-and-step-regression.html#cb166-28"></a>    <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="cb166-29"><a href="polynomial-and-step-regression.html#cb166-29"></a>    <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span></span>
-<span id="cb166-30"><a href="polynomial-and-step-regression.html#cb166-30"></a>  ) <span class="op">+</span></span>
-<span id="cb166-31"><a href="polynomial-and-step-regression.html#cb166-31"></a><span class="st">  </span><span class="kw">geom_line</span>(</span>
-<span id="cb166-32"><a href="polynomial-and-step-regression.html#cb166-32"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> .pred_upper),</span>
-<span id="cb166-33"><a href="polynomial-and-step-regression.html#cb166-33"></a>    <span class="dt">data =</span> regression_lines,</span>
-<span id="cb166-34"><a href="polynomial-and-step-regression.html#cb166-34"></a>    <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="cb166-35"><a href="polynomial-and-step-regression.html#cb166-35"></a>    <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span></span>
-<span id="cb166-36"><a href="polynomial-and-step-regression.html#cb166-36"></a>  ) <span class="op">+</span></span>
-<span id="cb166-37"><a href="polynomial-and-step-regression.html#cb166-37"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb166-38"><a href="polynomial-and-step-regression.html#cb166-38"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb166-39"><a href="polynomial-and-step-regression.html#cb166-39"></a>    <span class="dt">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
-<span id="cb166-40"><a href="polynomial-and-step-regression.html#cb166-40"></a>    <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb166-41"><a href="polynomial-and-step-regression.html#cb166-41"></a>    <span class="dt">strip.background =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb166-42"><a href="polynomial-and-step-regression.html#cb166-42"></a>    <span class="dt">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
-<span id="cb166-43"><a href="polynomial-and-step-regression.html#cb166-43"></a>  ) <span class="op">+</span></span>
-<span id="cb166-44"><a href="polynomial-and-step-regression.html#cb166-44"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Wage&quot;</span>,</span>
-<span id="cb166-45"><a href="polynomial-and-step-regression.html#cb166-45"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Regression&quot;</span>)</span>
-<span id="cb166-46"><a href="polynomial-and-step-regression.html#cb166-46"></a></span>
-<span id="cb166-47"><a href="polynomial-and-step-regression.html#cb166-47"></a>rec_cut &lt;-<span class="st"> </span><span class="kw">recipe</span>(high <span class="op">~</span><span class="st"> </span>age, <span class="dt">data =</span> Wage) <span class="op">%&gt;%</span></span>
-<span id="cb166-48"><a href="polynomial-and-step-regression.html#cb166-48"></a><span class="st">  </span><span class="kw">step_cut</span>(age, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">70</span>))</span>
-<span id="cb166-49"><a href="polynomial-and-step-regression.html#cb166-49"></a></span>
-<span id="cb166-50"><a href="polynomial-and-step-regression.html#cb166-50"></a>lr_spec &lt;-<span class="st"> </span><span class="kw">logistic_reg</span>() <span class="op">%&gt;%</span></span>
-<span id="cb166-51"><a href="polynomial-and-step-regression.html#cb166-51"></a><span class="st">  </span><span class="kw">set_engine</span>(<span class="st">&quot;glm&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb166-52"><a href="polynomial-and-step-regression.html#cb166-52"></a><span class="st">  </span><span class="kw">set_mode</span>(<span class="st">&quot;classification&quot;</span>)</span>
-<span id="cb166-53"><a href="polynomial-and-step-regression.html#cb166-53"></a></span>
-<span id="cb166-54"><a href="polynomial-and-step-regression.html#cb166-54"></a>cut_wf &lt;-<span class="st"> </span><span class="kw">workflow</span>() <span class="op">%&gt;%</span></span>
-<span id="cb166-55"><a href="polynomial-and-step-regression.html#cb166-55"></a><span class="st">  </span><span class="kw">add_model</span>(lr_spec) <span class="op">%&gt;%</span></span>
-<span id="cb166-56"><a href="polynomial-and-step-regression.html#cb166-56"></a><span class="st">  </span><span class="kw">add_recipe</span>(rec_cut)</span>
-<span id="cb166-57"><a href="polynomial-and-step-regression.html#cb166-57"></a></span>
-<span id="cb166-58"><a href="polynomial-and-step-regression.html#cb166-58"></a>cut_fit &lt;-<span class="st"> </span><span class="kw">fit</span>(cut_wf, <span class="dt">data =</span> Wage)</span>
-<span id="cb166-59"><a href="polynomial-and-step-regression.html#cb166-59"></a></span>
-<span id="cb166-60"><a href="polynomial-and-step-regression.html#cb166-60"></a>classification_lines &lt;-<span class="st"> </span><span class="kw">bind_cols</span>(</span>
-<span id="cb166-61"><a href="polynomial-and-step-regression.html#cb166-61"></a>  <span class="kw">augment</span>(cut_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;prob&quot;</span>),</span>
-<span id="cb166-62"><a href="polynomial-and-step-regression.html#cb166-62"></a>  <span class="kw">predict</span>(cut_fit, <span class="dt">new_data =</span> age_range, <span class="dt">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
-<span id="cb166-63"><a href="polynomial-and-step-regression.html#cb166-63"></a>)</span>
-<span id="cb166-64"><a href="polynomial-and-step-regression.html#cb166-64"></a></span>
-<span id="cb166-65"><a href="polynomial-and-step-regression.html#cb166-65"></a>classification_plot &lt;-<span class="st"> </span>classification_lines <span class="op">%&gt;%</span></span>
-<span id="cb166-66"><a href="polynomial-and-step-regression.html#cb166-66"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(age)) <span class="op">+</span></span>
-<span id="cb166-67"><a href="polynomial-and-step-regression.html#cb166-67"></a><span class="st">  </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>)) <span class="op">+</span></span>
-<span id="cb166-68"><a href="polynomial-and-step-regression.html#cb166-68"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_High), <span class="dt">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
-<span id="cb166-69"><a href="polynomial-and-step-regression.html#cb166-69"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_lower_High),</span>
-<span id="cb166-70"><a href="polynomial-and-step-regression.html#cb166-70"></a>            <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb166-71"><a href="polynomial-and-step-regression.html#cb166-71"></a>            <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb166-72"><a href="polynomial-and-step-regression.html#cb166-72"></a><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y =</span> .pred_upper_High),</span>
-<span id="cb166-73"><a href="polynomial-and-step-regression.html#cb166-73"></a>            <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
-<span id="cb166-74"><a href="polynomial-and-step-regression.html#cb166-74"></a>            <span class="dt">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="op">+</span></span>
-<span id="cb166-75"><a href="polynomial-and-step-regression.html#cb166-75"></a><span class="st">  </span><span class="kw">geom_jitter</span>(</span>
-<span id="cb166-76"><a href="polynomial-and-step-regression.html#cb166-76"></a>    <span class="kw">aes</span>(<span class="dt">y =</span> (high <span class="op">==</span><span class="st"> &quot;High&quot;</span>) <span class="op">/</span><span class="st"> </span><span class="dv">5</span>),</span>
-<span id="cb166-77"><a href="polynomial-and-step-regression.html#cb166-77"></a>    <span class="dt">data =</span> Wage,</span>
-<span id="cb166-78"><a href="polynomial-and-step-regression.html#cb166-78"></a>    <span class="dt">shape =</span> <span class="st">&quot;|&quot;</span>,</span>
-<span id="cb166-79"><a href="polynomial-and-step-regression.html#cb166-79"></a>    <span class="dt">height =</span> <span class="dv">0</span>,</span>
-<span id="cb166-80"><a href="polynomial-and-step-regression.html#cb166-80"></a>    <span class="dt">width =</span> <span class="fl">0.2</span></span>
-<span id="cb166-81"><a href="polynomial-and-step-regression.html#cb166-81"></a>  ) <span class="op">+</span></span>
-<span id="cb166-82"><a href="polynomial-and-step-regression.html#cb166-82"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb166-83"><a href="polynomial-and-step-regression.html#cb166-83"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb166-84"><a href="polynomial-and-step-regression.html#cb166-84"></a>    <span class="dt">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
-<span id="cb166-85"><a href="polynomial-and-step-regression.html#cb166-85"></a>    <span class="dt">panel.grid =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb166-86"><a href="polynomial-and-step-regression.html#cb166-86"></a>    <span class="dt">strip.background =</span> <span class="kw">element_blank</span>()</span>
-<span id="cb166-87"><a href="polynomial-and-step-regression.html#cb166-87"></a>  ) <span class="op">+</span></span>
-<span id="cb166-88"><a href="polynomial-and-step-regression.html#cb166-88"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Pr(Wage&gt;250 | Age)&quot;</span>,</span>
-<span id="cb166-89"><a href="polynomial-and-step-regression.html#cb166-89"></a>       <span class="dt">subtitle =</span> <span class="st">&quot;Classification&quot;</span>)</span>
-<span id="cb166-90"><a href="polynomial-and-step-regression.html#cb166-90"></a></span>
-<span id="cb166-91"><a href="polynomial-and-step-regression.html#cb166-91"></a>title_theme &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">ggdraw</span>() <span class="op">+</span></span>
-<span id="cb166-92"><a href="polynomial-and-step-regression.html#cb166-92"></a><span class="st">  </span>cowplot<span class="op">::</span><span class="kw">draw_label</span>(<span class="st">&quot;ISLR2 Wage Dataset Step Function fits and 2x pointwise SEs&quot;</span>, <span class="dt">x =</span> <span class="fl">0.05</span>, <span class="dt">hjust =</span> <span class="dv">0</span>)</span>
-<span id="cb166-93"><a href="polynomial-and-step-regression.html#cb166-93"></a></span>
-<span id="cb166-94"><a href="polynomial-and-step-regression.html#cb166-94"></a>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(title_theme, </span>
-<span id="cb166-95"><a href="polynomial-and-step-regression.html#cb166-95"></a>                   cowplot<span class="op">::</span><span class="kw">plot_grid</span>(regression_plot, classification_plot),</span>
-<span id="cb166-96"><a href="polynomial-and-step-regression.html#cb166-96"></a>                   <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="polynomial-and-step-regression.html#cb174-1" aria-hidden="true" tabindex="-1"></a>rec_cut <span class="ot">&lt;-</span> <span class="fu">recipe</span>(wage <span class="sc">~</span> age, <span class="at">data =</span> Wage) <span class="sc">%&gt;%</span></span>
+<span id="cb174-2"><a href="polynomial-and-step-regression.html#cb174-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_cut</span>(age, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">70</span>))</span>
+<span id="cb174-3"><a href="polynomial-and-step-regression.html#cb174-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="polynomial-and-step-regression.html#cb174-4" aria-hidden="true" tabindex="-1"></a>lm_spec <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb174-5"><a href="polynomial-and-step-regression.html#cb174-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">&quot;regression&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb174-6"><a href="polynomial-and-step-regression.html#cb174-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb174-7"><a href="polynomial-and-step-regression.html#cb174-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-8"><a href="polynomial-and-step-regression.html#cb174-8" aria-hidden="true" tabindex="-1"></a>cut_wf <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb174-9"><a href="polynomial-and-step-regression.html#cb174-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(lm_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb174-10"><a href="polynomial-and-step-regression.html#cb174-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(rec_cut)</span>
+<span id="cb174-11"><a href="polynomial-and-step-regression.html#cb174-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-12"><a href="polynomial-and-step-regression.html#cb174-12" aria-hidden="true" tabindex="-1"></a>cut_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(cut_wf, <span class="at">data =</span> Wage)</span>
+<span id="cb174-13"><a href="polynomial-and-step-regression.html#cb174-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-14"><a href="polynomial-and-step-regression.html#cb174-14" aria-hidden="true" tabindex="-1"></a>regression_lines <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(</span>
+<span id="cb174-15"><a href="polynomial-and-step-regression.html#cb174-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(cut_fit, <span class="at">new_data =</span> age_range),</span>
+<span id="cb174-16"><a href="polynomial-and-step-regression.html#cb174-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict</span>(cut_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
+<span id="cb174-17"><a href="polynomial-and-step-regression.html#cb174-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb174-18"><a href="polynomial-and-step-regression.html#cb174-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-19"><a href="polynomial-and-step-regression.html#cb174-19" aria-hidden="true" tabindex="-1"></a>regression_plot <span class="ot">&lt;-</span> Wage <span class="sc">%&gt;%</span></span>
+<span id="cb174-20"><a href="polynomial-and-step-regression.html#cb174-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, wage)) <span class="sc">+</span></span>
+<span id="cb174-21"><a href="polynomial-and-step-regression.html#cb174-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb174-22"><a href="polynomial-and-step-regression.html#cb174-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred), <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb174-23"><a href="polynomial-and-step-regression.html#cb174-23" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="fl">1.5</span>,</span>
+<span id="cb174-24"><a href="polynomial-and-step-regression.html#cb174-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> regression_lines) <span class="sc">+</span></span>
+<span id="cb174-25"><a href="polynomial-and-step-regression.html#cb174-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb174-26"><a href="polynomial-and-step-regression.html#cb174-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> .pred_lower),</span>
+<span id="cb174-27"><a href="polynomial-and-step-regression.html#cb174-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> regression_lines,</span>
+<span id="cb174-28"><a href="polynomial-and-step-regression.html#cb174-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb174-29"><a href="polynomial-and-step-regression.html#cb174-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb174-30"><a href="polynomial-and-step-regression.html#cb174-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb174-31"><a href="polynomial-and-step-regression.html#cb174-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb174-32"><a href="polynomial-and-step-regression.html#cb174-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> .pred_upper),</span>
+<span id="cb174-33"><a href="polynomial-and-step-regression.html#cb174-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> regression_lines,</span>
+<span id="cb174-34"><a href="polynomial-and-step-regression.html#cb174-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb174-35"><a href="polynomial-and-step-regression.html#cb174-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;blue&quot;</span></span>
+<span id="cb174-36"><a href="polynomial-and-step-regression.html#cb174-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb174-37"><a href="polynomial-and-step-regression.html#cb174-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb174-38"><a href="polynomial-and-step-regression.html#cb174-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb174-39"><a href="polynomial-and-step-regression.html#cb174-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
+<span id="cb174-40"><a href="polynomial-and-step-regression.html#cb174-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb174-41"><a href="polynomial-and-step-regression.html#cb174-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb174-42"><a href="polynomial-and-step-regression.html#cb174-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">&quot;plot&quot;</span></span>
+<span id="cb174-43"><a href="polynomial-and-step-regression.html#cb174-43" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb174-44"><a href="polynomial-and-step-regression.html#cb174-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Wage&quot;</span>,</span>
+<span id="cb174-45"><a href="polynomial-and-step-regression.html#cb174-45" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Regression&quot;</span>)</span>
+<span id="cb174-46"><a href="polynomial-and-step-regression.html#cb174-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-47"><a href="polynomial-and-step-regression.html#cb174-47" aria-hidden="true" tabindex="-1"></a>rec_cut <span class="ot">&lt;-</span> <span class="fu">recipe</span>(high <span class="sc">~</span> age, <span class="at">data =</span> Wage) <span class="sc">%&gt;%</span></span>
+<span id="cb174-48"><a href="polynomial-and-step-regression.html#cb174-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_cut</span>(age, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">70</span>))</span>
+<span id="cb174-49"><a href="polynomial-and-step-regression.html#cb174-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-50"><a href="polynomial-and-step-regression.html#cb174-50" aria-hidden="true" tabindex="-1"></a>lr_spec <span class="ot">&lt;-</span> <span class="fu">logistic_reg</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb174-51"><a href="polynomial-and-step-regression.html#cb174-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">&quot;glm&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb174-52"><a href="polynomial-and-step-regression.html#cb174-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">&quot;classification&quot;</span>)</span>
+<span id="cb174-53"><a href="polynomial-and-step-regression.html#cb174-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-54"><a href="polynomial-and-step-regression.html#cb174-54" aria-hidden="true" tabindex="-1"></a>cut_wf <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb174-55"><a href="polynomial-and-step-regression.html#cb174-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(lr_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb174-56"><a href="polynomial-and-step-regression.html#cb174-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(rec_cut)</span>
+<span id="cb174-57"><a href="polynomial-and-step-regression.html#cb174-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-58"><a href="polynomial-and-step-regression.html#cb174-58" aria-hidden="true" tabindex="-1"></a>cut_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(cut_wf, <span class="at">data =</span> Wage)</span>
+<span id="cb174-59"><a href="polynomial-and-step-regression.html#cb174-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-60"><a href="polynomial-and-step-regression.html#cb174-60" aria-hidden="true" tabindex="-1"></a>classification_lines <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(</span>
+<span id="cb174-61"><a href="polynomial-and-step-regression.html#cb174-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(cut_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>),</span>
+<span id="cb174-62"><a href="polynomial-and-step-regression.html#cb174-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">predict</span>(cut_fit, <span class="at">new_data =</span> age_range, <span class="at">type =</span> <span class="st">&quot;conf_int&quot;</span>)</span>
+<span id="cb174-63"><a href="polynomial-and-step-regression.html#cb174-63" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb174-64"><a href="polynomial-and-step-regression.html#cb174-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-65"><a href="polynomial-and-step-regression.html#cb174-65" aria-hidden="true" tabindex="-1"></a>classification_plot <span class="ot">&lt;-</span> classification_lines <span class="sc">%&gt;%</span></span>
+<span id="cb174-66"><a href="polynomial-and-step-regression.html#cb174-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age)) <span class="sc">+</span></span>
+<span id="cb174-67"><a href="polynomial-and-step-regression.html#cb174-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb174-68"><a href="polynomial-and-step-regression.html#cb174-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_High), <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb174-69"><a href="polynomial-and-step-regression.html#cb174-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_lower_High),</span>
+<span id="cb174-70"><a href="polynomial-and-step-regression.html#cb174-70" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb174-71"><a href="polynomial-and-step-regression.html#cb174-71" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb174-72"><a href="polynomial-and-step-regression.html#cb174-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> .pred_upper_High),</span>
+<span id="cb174-73"><a href="polynomial-and-step-regression.html#cb174-73" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb174-74"><a href="polynomial-and-step-regression.html#cb174-74" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb174-75"><a href="polynomial-and-step-regression.html#cb174-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(</span>
+<span id="cb174-76"><a href="polynomial-and-step-regression.html#cb174-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> (high <span class="sc">==</span> <span class="st">&quot;High&quot;</span>) <span class="sc">/</span> <span class="dv">5</span>),</span>
+<span id="cb174-77"><a href="polynomial-and-step-regression.html#cb174-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Wage,</span>
+<span id="cb174-78"><a href="polynomial-and-step-regression.html#cb174-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="st">&quot;|&quot;</span>,</span>
+<span id="cb174-79"><a href="polynomial-and-step-regression.html#cb174-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="dv">0</span>,</span>
+<span id="cb174-80"><a href="polynomial-and-step-regression.html#cb174-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.2</span></span>
+<span id="cb174-81"><a href="polynomial-and-step-regression.html#cb174-81" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb174-82"><a href="polynomial-and-step-regression.html#cb174-82" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb174-83"><a href="polynomial-and-step-regression.html#cb174-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb174-84"><a href="polynomial-and-step-regression.html#cb174-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.placement =</span> <span class="st">&quot;outside&quot;</span>,</span>
+<span id="cb174-85"><a href="polynomial-and-step-regression.html#cb174-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb174-86"><a href="polynomial-and-step-regression.html#cb174-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb174-87"><a href="polynomial-and-step-regression.html#cb174-87" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb174-88"><a href="polynomial-and-step-regression.html#cb174-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Pr(Wage&gt;250 | Age)&quot;</span>,</span>
+<span id="cb174-89"><a href="polynomial-and-step-regression.html#cb174-89" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Classification&quot;</span>)</span>
+<span id="cb174-90"><a href="polynomial-and-step-regression.html#cb174-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-91"><a href="polynomial-and-step-regression.html#cb174-91" aria-hidden="true" tabindex="-1"></a>title_theme <span class="ot">&lt;-</span> cowplot<span class="sc">::</span><span class="fu">ggdraw</span>() <span class="sc">+</span></span>
+<span id="cb174-92"><a href="polynomial-and-step-regression.html#cb174-92" aria-hidden="true" tabindex="-1"></a>  cowplot<span class="sc">::</span><span class="fu">draw_label</span>(<span class="st">&quot;ISLR2 Wage Dataset Step Function fits and 2x pointwise SEs&quot;</span>, <span class="at">x =</span> <span class="fl">0.05</span>, <span class="at">hjust =</span> <span class="dv">0</span>)</span>
+<span id="cb174-93"><a href="polynomial-and-step-regression.html#cb174-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-94"><a href="polynomial-and-step-regression.html#cb174-94" aria-hidden="true" tabindex="-1"></a>cowplot<span class="sc">::</span><span class="fu">plot_grid</span>(title_theme, </span>
+<span id="cb174-95"><a href="polynomial-and-step-regression.html#cb174-95" aria-hidden="true" tabindex="-1"></a>                   cowplot<span class="sc">::</span><span class="fu">plot_grid</span>(regression_plot, classification_plot),</span>
+<span id="cb174-96"><a href="polynomial-and-step-regression.html#cb174-96" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">rel_heights =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>)) </span></code></pre></div>
 <pre><code>## Warning: Removed 10 row(s) containing missing values (geom_path).</code></pre>
 <p><img src="bookclub-islr_files/figure-html/chapter7-3-1.png" width="672" /></p>
 <ul>
