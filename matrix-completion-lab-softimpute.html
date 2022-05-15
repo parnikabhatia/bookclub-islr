@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -550,14 +550,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="matrix-completion-lab-softimpute" class="section level2 unnumbered hasAnchor">
 <h2>Matrix Completion Lab: softImpute<a href="matrix-completion-lab-softimpute.html#matrix-completion-lab-softimpute" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>They created the <code>{softImpute}</code> package to do this, let’s use it!</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="matrix-completion-lab-softimpute.html#cb371-1" aria-hidden="true" tabindex="-1"></a>fit_svd <span class="ot">&lt;-</span> softImpute<span class="sc">::</span><span class="fu">softImpute</span>(</span>
-<span id="cb371-2"><a href="matrix-completion-lab-softimpute.html#cb371-2" aria-hidden="true" tabindex="-1"></a>  arrests_na, </span>
-<span id="cb371-3"><a href="matrix-completion-lab-softimpute.html#cb371-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;svd&quot;</span>,</span>
-<span id="cb371-4"><a href="matrix-completion-lab-softimpute.html#cb371-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">thresh =</span> <span class="fl">1e-16</span>,</span>
-<span id="cb371-5"><a href="matrix-completion-lab-softimpute.html#cb371-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxit =</span> <span class="dv">3000</span></span>
-<span id="cb371-6"><a href="matrix-completion-lab-softimpute.html#cb371-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb371-7"><a href="matrix-completion-lab-softimpute.html#cb371-7" aria-hidden="true" tabindex="-1"></a>arrests_imputed <span class="ot">&lt;-</span> softImpute<span class="sc">::</span><span class="fu">complete</span>(arrests_na, fit_svd, <span class="at">unscale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb371-8"><a href="matrix-completion-lab-softimpute.html#cb371-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(arrests_imputed[is_missing], arrests[is_missing])</span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="matrix-completion-lab-softimpute.html#cb372-1" aria-hidden="true" tabindex="-1"></a>fit_svd <span class="ot">&lt;-</span> softImpute<span class="sc">::</span><span class="fu">softImpute</span>(</span>
+<span id="cb372-2"><a href="matrix-completion-lab-softimpute.html#cb372-2" aria-hidden="true" tabindex="-1"></a>  arrests_na, </span>
+<span id="cb372-3"><a href="matrix-completion-lab-softimpute.html#cb372-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;svd&quot;</span>,</span>
+<span id="cb372-4"><a href="matrix-completion-lab-softimpute.html#cb372-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">thresh =</span> <span class="fl">1e-16</span>,</span>
+<span id="cb372-5"><a href="matrix-completion-lab-softimpute.html#cb372-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxit =</span> <span class="dv">3000</span></span>
+<span id="cb372-6"><a href="matrix-completion-lab-softimpute.html#cb372-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb372-7"><a href="matrix-completion-lab-softimpute.html#cb372-7" aria-hidden="true" tabindex="-1"></a>arrests_imputed <span class="ot">&lt;-</span> softImpute<span class="sc">::</span><span class="fu">complete</span>(arrests_na, fit_svd, <span class="at">unscale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb372-8"><a href="matrix-completion-lab-softimpute.html#cb372-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(arrests_imputed[is_missing], arrests[is_missing])</span></code></pre></div>
 <pre><code>## [1] 0.8793766</code></pre>
 </div>
             </section>

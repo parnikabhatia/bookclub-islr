@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -549,16 +549,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="k-means-lab-finalize" class="section level2 hasAnchor" number="12.4">
 <h2><span class="header-section-number">12.4</span> K-Means Lab: Finalize<a href="k-means-lab-finalize.html#k-means-lab-finalize" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="k-means-lab-finalize.html#cb376-1" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="sc">%&gt;%</span></span>
-<span id="cb376-2"><a href="k-means-lab-finalize.html#cb376-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(k <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb376-3"><a href="k-means-lab-finalize.html#cb376-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(model) <span class="sc">%&gt;%</span></span>
-<span id="cb376-4"><a href="k-means-lab-finalize.html#cb376-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pluck</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb376-5"><a href="k-means-lab-finalize.html#cb376-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(<span class="at">data =</span> x_df) <span class="sc">%&gt;%</span></span>
-<span id="cb376-6"><a href="k-means-lab-finalize.html#cb376-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">pred_cluster =</span> <span class="st">&quot;.cluster&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb376-7"><a href="k-means-lab-finalize.html#cb376-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> pred_cluster)) <span class="sc">+</span></span>
-<span id="cb376-8"><a href="k-means-lab-finalize.html#cb376-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb376-9"><a href="k-means-lab-finalize.html#cb376-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb376-10"><a href="k-means-lab-finalize.html#cb376-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="k-means-lab-finalize.html#cb377-1" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="sc">%&gt;%</span></span>
+<span id="cb377-2"><a href="k-means-lab-finalize.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(k <span class="sc">==</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb377-3"><a href="k-means-lab-finalize.html#cb377-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(model) <span class="sc">%&gt;%</span></span>
+<span id="cb377-4"><a href="k-means-lab-finalize.html#cb377-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pluck</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb377-5"><a href="k-means-lab-finalize.html#cb377-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">augment</span>(<span class="at">data =</span> x_df) <span class="sc">%&gt;%</span></span>
+<span id="cb377-6"><a href="k-means-lab-finalize.html#cb377-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">pred_cluster =</span> <span class="st">&quot;.cluster&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb377-7"><a href="k-means-lab-finalize.html#cb377-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> pred_cluster)) <span class="sc">+</span></span>
+<span id="cb377-8"><a href="k-means-lab-finalize.html#cb377-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb377-9"><a href="k-means-lab-finalize.html#cb377-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb377-10"><a href="k-means-lab-finalize.html#cb377-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-kmeans-lab-4-1.png" width="672" /></p>
 </div>
             </section>

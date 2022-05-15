@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -549,13 +549,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pca-lab-loadings" class="section level2 unnumbered hasAnchor">
 <h2>PCA Lab: Loadings<a href="pca-lab-loadings.html#pca-lab-loadings" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="pca-lab-loadings.html#cb364-1" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="sc">%&gt;%</span> </span>
-<span id="cb364-2"><a href="pca-lab-loadings.html#cb364-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">id =</span> <span class="st">&quot;pca&quot;</span>, <span class="at">type =</span> <span class="st">&quot;coef&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb364-3"><a href="pca-lab-loadings.html#cb364-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb364-4"><a href="pca-lab-loadings.html#cb364-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> terms) <span class="sc">+</span></span>
-<span id="cb364-5"><a href="pca-lab-loadings.html#cb364-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> component) <span class="sc">+</span></span>
-<span id="cb364-6"><a href="pca-lab-loadings.html#cb364-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb364-7"><a href="pca-lab-loadings.html#cb364-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="pca-lab-loadings.html#cb365-1" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="sc">%&gt;%</span> </span>
+<span id="cb365-2"><a href="pca-lab-loadings.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">id =</span> <span class="st">&quot;pca&quot;</span>, <span class="at">type =</span> <span class="st">&quot;coef&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb365-3"><a href="pca-lab-loadings.html#cb365-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb365-4"><a href="pca-lab-loadings.html#cb365-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> terms) <span class="sc">+</span></span>
+<span id="cb365-5"><a href="pca-lab-loadings.html#cb365-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> component) <span class="sc">+</span></span>
+<span id="cb365-6"><a href="pca-lab-loadings.html#cb365-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb365-7"><a href="pca-lab-loadings.html#cb365-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-pca-lab-loadings-1.png" width="672" /></p>
 </div>
             </section>

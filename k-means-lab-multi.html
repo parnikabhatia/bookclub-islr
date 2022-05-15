@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -549,18 +549,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="k-means-lab-multi" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">12.3</span> K-Means Lab: Multi<a href="k-means-lab-multi.html#k-means-lab-multi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="k-means-lab-multi.html#cb375-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb375-2"><a href="k-means-lab-multi.html#cb375-2" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">k =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb375-3"><a href="k-means-lab-multi.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb375-4"><a href="k-means-lab-multi.html#cb375-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(k, <span class="sc">~</span> <span class="fu">kmeans</span>(x_df, <span class="at">centers =</span> .x, <span class="at">nstart =</span> <span class="dv">20</span>)),</span>
-<span id="cb375-5"><a href="k-means-lab-multi.html#cb375-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">tot.withinss =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span> <span class="fu">glance</span>(.x)<span class="sc">$</span>tot.withinss)</span>
-<span id="cb375-6"><a href="k-means-lab-multi.html#cb375-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb375-7"><a href="k-means-lab-multi.html#cb375-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb375-8"><a href="k-means-lab-multi.html#cb375-8" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="sc">%&gt;%</span> </span>
-<span id="cb375-9"><a href="k-means-lab-multi.html#cb375-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(k, tot.withinss)) <span class="sc">+</span></span>
-<span id="cb375-10"><a href="k-means-lab-multi.html#cb375-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb375-11"><a href="k-means-lab-multi.html#cb375-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb375-12"><a href="k-means-lab-multi.html#cb375-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="k-means-lab-multi.html#cb376-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb376-2"><a href="k-means-lab-multi.html#cb376-2" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">k =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb376-3"><a href="k-means-lab-multi.html#cb376-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb376-4"><a href="k-means-lab-multi.html#cb376-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(k, <span class="sc">~</span> <span class="fu">kmeans</span>(x_df, <span class="at">centers =</span> .x, <span class="at">nstart =</span> <span class="dv">20</span>)),</span>
+<span id="cb376-5"><a href="k-means-lab-multi.html#cb376-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">tot.withinss =</span> purrr<span class="sc">::</span><span class="fu">map_dbl</span>(model, <span class="sc">~</span> <span class="fu">glance</span>(.x)<span class="sc">$</span>tot.withinss)</span>
+<span id="cb376-6"><a href="k-means-lab-multi.html#cb376-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb376-7"><a href="k-means-lab-multi.html#cb376-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb376-8"><a href="k-means-lab-multi.html#cb376-8" aria-hidden="true" tabindex="-1"></a>multi_kmeans <span class="sc">%&gt;%</span> </span>
+<span id="cb376-9"><a href="k-means-lab-multi.html#cb376-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(k, tot.withinss)) <span class="sc">+</span></span>
+<span id="cb376-10"><a href="k-means-lab-multi.html#cb376-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb376-11"><a href="k-means-lab-multi.html#cb376-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb376-12"><a href="k-means-lab-multi.html#cb376-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-kmeans-lab-3-1.png" width="672" /></p>
 </div>
             </section>

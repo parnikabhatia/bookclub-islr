@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -549,19 +549,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="k-means-lab-3-clusters" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> K-Means Lab: 3 Clusters<a href="k-means-lab-3-clusters.html#k-means-lab-3-clusters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="k-means-lab-3-clusters.html#cb374-1" aria-hidden="true" tabindex="-1"></a>x_df <span class="ot">&lt;-</span> <span class="fu">select</span>(x_df_labeled, <span class="sc">-</span>true_cluster)</span>
-<span id="cb374-2"><a href="k-means-lab-3-clusters.html#cb374-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
-<span id="cb374-3"><a href="k-means-lab-3-clusters.html#cb374-3" aria-hidden="true" tabindex="-1"></a>res_kmeans <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(</span>
-<span id="cb374-4"><a href="k-means-lab-3-clusters.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  x_df, </span>
-<span id="cb374-5"><a href="k-means-lab-3-clusters.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">centers =</span> <span class="dv">3</span>, <span class="at">nstart =</span> <span class="dv">20</span></span>
-<span id="cb374-6"><a href="k-means-lab-3-clusters.html#cb374-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb374-7"><a href="k-means-lab-3-clusters.html#cb374-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb374-8"><a href="k-means-lab-3-clusters.html#cb374-8" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(res_kmeans, <span class="at">data =</span> x_df) <span class="sc">%&gt;%</span></span>
-<span id="cb374-9"><a href="k-means-lab-3-clusters.html#cb374-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">pred_cluster =</span> <span class="st">&quot;.cluster&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb374-10"><a href="k-means-lab-3-clusters.html#cb374-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> pred_cluster)) <span class="sc">+</span></span>
-<span id="cb374-11"><a href="k-means-lab-3-clusters.html#cb374-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb374-12"><a href="k-means-lab-3-clusters.html#cb374-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb374-13"><a href="k-means-lab-3-clusters.html#cb374-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="k-means-lab-3-clusters.html#cb375-1" aria-hidden="true" tabindex="-1"></a>x_df <span class="ot">&lt;-</span> <span class="fu">select</span>(x_df_labeled, <span class="sc">-</span>true_cluster)</span>
+<span id="cb375-2"><a href="k-means-lab-3-clusters.html#cb375-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span>
+<span id="cb375-3"><a href="k-means-lab-3-clusters.html#cb375-3" aria-hidden="true" tabindex="-1"></a>res_kmeans <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(</span>
+<span id="cb375-4"><a href="k-means-lab-3-clusters.html#cb375-4" aria-hidden="true" tabindex="-1"></a>  x_df, </span>
+<span id="cb375-5"><a href="k-means-lab-3-clusters.html#cb375-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">centers =</span> <span class="dv">3</span>, <span class="at">nstart =</span> <span class="dv">20</span></span>
+<span id="cb375-6"><a href="k-means-lab-3-clusters.html#cb375-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb375-7"><a href="k-means-lab-3-clusters.html#cb375-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb375-8"><a href="k-means-lab-3-clusters.html#cb375-8" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(res_kmeans, <span class="at">data =</span> x_df) <span class="sc">%&gt;%</span></span>
+<span id="cb375-9"><a href="k-means-lab-3-clusters.html#cb375-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">pred_cluster =</span> <span class="st">&quot;.cluster&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb375-10"><a href="k-means-lab-3-clusters.html#cb375-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> pred_cluster)) <span class="sc">+</span></span>
+<span id="cb375-11"><a href="k-means-lab-3-clusters.html#cb375-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb375-12"><a href="k-means-lab-3-clusters.html#cb375-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb375-13"><a href="k-means-lab-3-clusters.html#cb375-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-kmeans-lab-2-1.png" width="672" /></p>
 </div>
             </section>

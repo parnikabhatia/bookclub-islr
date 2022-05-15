@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -550,19 +550,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="k-means-lab-setup" class="section level2 hasAnchor" number="12.1">
 <h2><span class="header-section-number">12.1</span> K-Means Lab: Setup<a href="k-means-lab-setup.html#k-means-lab-setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Based on <a href="https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/unsupervised-learning.html#kmeans-clustering">Emil Hvitfeldt’s tidymodels implementation</a></p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="k-means-lab-setup.html#cb373-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb373-2"><a href="k-means-lab-setup.html#cb373-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb373-3"><a href="k-means-lab-setup.html#cb373-3" aria-hidden="true" tabindex="-1"></a>x_df_labeled <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb373-4"><a href="k-means-lab-setup.html#cb373-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">75</span>, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>), <span class="at">each =</span> <span class="dv">25</span>)),</span>
-<span id="cb373-5"><a href="k-means-lab-setup.html#cb373-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">75</span>, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>), <span class="at">each =</span> <span class="dv">25</span>)),</span>
-<span id="cb373-6"><a href="k-means-lab-setup.html#cb373-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">true_cluster =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">each =</span> <span class="dv">25</span>)</span>
-<span id="cb373-7"><a href="k-means-lab-setup.html#cb373-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb373-8"><a href="k-means-lab-setup.html#cb373-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb373-9"><a href="k-means-lab-setup.html#cb373-9" aria-hidden="true" tabindex="-1"></a>x_df_labeled <span class="sc">%&gt;%</span></span>
-<span id="cb373-10"><a href="k-means-lab-setup.html#cb373-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> true_cluster)) <span class="sc">+</span></span>
-<span id="cb373-11"><a href="k-means-lab-setup.html#cb373-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb373-12"><a href="k-means-lab-setup.html#cb373-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb373-13"><a href="k-means-lab-setup.html#cb373-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="k-means-lab-setup.html#cb374-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb374-2"><a href="k-means-lab-setup.html#cb374-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-3"><a href="k-means-lab-setup.html#cb374-3" aria-hidden="true" tabindex="-1"></a>x_df_labeled <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb374-4"><a href="k-means-lab-setup.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">75</span>, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>), <span class="at">each =</span> <span class="dv">25</span>)),</span>
+<span id="cb374-5"><a href="k-means-lab-setup.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">75</span>, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">2</span>), <span class="at">each =</span> <span class="dv">25</span>)),</span>
+<span id="cb374-6"><a href="k-means-lab-setup.html#cb374-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">true_cluster =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">each =</span> <span class="dv">25</span>)</span>
+<span id="cb374-7"><a href="k-means-lab-setup.html#cb374-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb374-8"><a href="k-means-lab-setup.html#cb374-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb374-9"><a href="k-means-lab-setup.html#cb374-9" aria-hidden="true" tabindex="-1"></a>x_df_labeled <span class="sc">%&gt;%</span></span>
+<span id="cb374-10"><a href="k-means-lab-setup.html#cb374-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">color =</span> true_cluster)) <span class="sc">+</span></span>
+<span id="cb374-11"><a href="k-means-lab-setup.html#cb374-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb374-12"><a href="k-means-lab-setup.html#cb374-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb374-13"><a href="k-means-lab-setup.html#cb374-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-kmeans-lab-1-1.png" width="672" /></p>
 </div>
             </section>

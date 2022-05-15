@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -549,16 +549,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="pca-lab-variance" class="section level2 unnumbered hasAnchor">
 <h2>PCA Lab: Variance<a href="pca-lab-variance.html#pca-lab-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="pca-lab-variance.html#cb365-1" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="sc">%&gt;%</span> </span>
-<span id="cb365-2"><a href="pca-lab-variance.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">id =</span> <span class="st">&quot;pca&quot;</span>, <span class="at">type =</span> <span class="st">&quot;variance&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb365-3"><a href="pca-lab-variance.html#cb365-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(terms <span class="sc">==</span> <span class="st">&quot;cumulative percent variance&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb365-4"><a href="pca-lab-variance.html#cb365-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb365-5"><a href="pca-lab-variance.html#cb365-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> component, <span class="at">y =</span> value<span class="sc">/</span><span class="dv">100</span>) <span class="sc">+</span></span>
-<span id="cb365-6"><a href="pca-lab-variance.html#cb365-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb365-7"><a href="pca-lab-variance.html#cb365-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
-<span id="cb365-8"><a href="pca-lab-variance.html#cb365-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
-<span id="cb365-9"><a href="pca-lab-variance.html#cb365-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;cumulative percent variance&quot;</span>) <span class="sc">+</span></span>
-<span id="cb365-10"><a href="pca-lab-variance.html#cb365-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="pca-lab-variance.html#cb366-1" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="sc">%&gt;%</span> </span>
+<span id="cb366-2"><a href="pca-lab-variance.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(<span class="at">id =</span> <span class="st">&quot;pca&quot;</span>, <span class="at">type =</span> <span class="st">&quot;variance&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb366-3"><a href="pca-lab-variance.html#cb366-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(terms <span class="sc">==</span> <span class="st">&quot;cumulative percent variance&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb366-4"><a href="pca-lab-variance.html#cb366-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb366-5"><a href="pca-lab-variance.html#cb366-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> component, <span class="at">y =</span> value<span class="sc">/</span><span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb366-6"><a href="pca-lab-variance.html#cb366-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb366-7"><a href="pca-lab-variance.html#cb366-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb366-8"><a href="pca-lab-variance.html#cb366-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb366-9"><a href="pca-lab-variance.html#cb366-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;cumulative percent variance&quot;</span>) <span class="sc">+</span></span>
+<span id="cb366-10"><a href="pca-lab-variance.html#cb366-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="bookclub-islr_files/figure-html/12-pca-lab-variance-1.png" width="672" /></p>
 <ul>
 <li><code>step_pca</code> also has <code>num_comp</code> and <code>threshold</code> arguments.</li>

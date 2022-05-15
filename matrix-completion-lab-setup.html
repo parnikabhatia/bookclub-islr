@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -554,24 +554,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The code for this is in the book and not particularly interesting, but I’ve made the names suck less.</li>
 <li>I also don’t scale, because their package does this internally.</li>
 </ul>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="matrix-completion-lab-setup.html#cb366-1" aria-hidden="true" tabindex="-1"></a>arrests <span class="ot">&lt;-</span> <span class="fu">data.matrix</span>(USArrests)</span>
-<span id="cb366-2"><a href="matrix-completion-lab-setup.html#cb366-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb366-3"><a href="matrix-completion-lab-setup.html#cb366-3" aria-hidden="true" tabindex="-1"></a>n_omit <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb366-4"><a href="matrix-completion-lab-setup.html#cb366-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)</span>
-<span id="cb366-5"><a href="matrix-completion-lab-setup.html#cb366-5" aria-hidden="true" tabindex="-1"></a>target_rows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">50</span>), n_omit)</span>
-<span id="cb366-6"><a href="matrix-completion-lab-setup.html#cb366-6" aria-hidden="true" tabindex="-1"></a>target_cols <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, n_omit, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb366-7"><a href="matrix-completion-lab-setup.html#cb366-7" aria-hidden="true" tabindex="-1"></a>targets <span class="ot">&lt;-</span> <span class="fu">cbind</span>(target_rows, target_cols)</span>
-<span id="cb366-8"><a href="matrix-completion-lab-setup.html#cb366-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(targets, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="matrix-completion-lab-setup.html#cb367-1" aria-hidden="true" tabindex="-1"></a>arrests <span class="ot">&lt;-</span> <span class="fu">data.matrix</span>(USArrests)</span>
+<span id="cb367-2"><a href="matrix-completion-lab-setup.html#cb367-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb367-3"><a href="matrix-completion-lab-setup.html#cb367-3" aria-hidden="true" tabindex="-1"></a>n_omit <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb367-4"><a href="matrix-completion-lab-setup.html#cb367-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)</span>
+<span id="cb367-5"><a href="matrix-completion-lab-setup.html#cb367-5" aria-hidden="true" tabindex="-1"></a>target_rows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq</span>(<span class="dv">50</span>), n_omit)</span>
+<span id="cb367-6"><a href="matrix-completion-lab-setup.html#cb367-6" aria-hidden="true" tabindex="-1"></a>target_cols <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, n_omit, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb367-7"><a href="matrix-completion-lab-setup.html#cb367-7" aria-hidden="true" tabindex="-1"></a>targets <span class="ot">&lt;-</span> <span class="fu">cbind</span>(target_rows, target_cols)</span>
+<span id="cb367-8"><a href="matrix-completion-lab-setup.html#cb367-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(targets, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##      target_rows target_cols
 ## [1,]          37           3
 ## [2,]          47           1</code></pre>
-<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="matrix-completion-lab-setup.html#cb368-1" aria-hidden="true" tabindex="-1"></a>arrests_na <span class="ot">&lt;-</span> arrests</span>
-<span id="cb368-2"><a href="matrix-completion-lab-setup.html#cb368-2" aria-hidden="true" tabindex="-1"></a>arrests_na[targets] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb368-3"><a href="matrix-completion-lab-setup.html#cb368-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(arrests_na, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="matrix-completion-lab-setup.html#cb369-1" aria-hidden="true" tabindex="-1"></a>arrests_na <span class="ot">&lt;-</span> arrests</span>
+<span id="cb369-2"><a href="matrix-completion-lab-setup.html#cb369-2" aria-hidden="true" tabindex="-1"></a>arrests_na[targets] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb369-3"><a href="matrix-completion-lab-setup.html#cb369-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(arrests_na, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##         Murder Assault UrbanPop Rape
 ## Alabama   13.2      NA       58 21.2
 ## Alaska    10.0     263       NA 44.5</code></pre>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="matrix-completion-lab-setup.html#cb370-1" aria-hidden="true" tabindex="-1"></a>is_missing <span class="ot">&lt;-</span> <span class="fu">is.na</span>(arrests_na)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="matrix-completion-lab-setup.html#cb371-1" aria-hidden="true" tabindex="-1"></a>is_missing <span class="ot">&lt;-</span> <span class="fu">is.na</span>(arrests_na)</span></code></pre></div>
 </div>
             </section>
 

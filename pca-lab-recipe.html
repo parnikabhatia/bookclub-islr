@@ -23,7 +23,7 @@
 <meta name="author" content="The R4DS Online Learning Community" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -550,12 +550,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pca-lab-recipe" class="section level2 unnumbered hasAnchor">
 <h2>PCA Lab: Recipe<a href="pca-lab-recipe.html#pca-lab-recipe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Based on <a href="https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/unsupervised-learning.html#principal-components-analysis">Emil Hvitfeldt’s tidymodels implementation</a></p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="pca-lab-recipe.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb363-2"><a href="pca-lab-recipe.html#cb363-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb363-3"><a href="pca-lab-recipe.html#cb363-3" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="ot">&lt;-</span> recipes<span class="sc">::</span><span class="fu">recipe</span>(<span class="sc">~</span>., <span class="at">data =</span> USArrests) <span class="sc">%&gt;%</span></span>
-<span id="cb363-4"><a href="pca-lab-recipe.html#cb363-4" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">step_normalize</span>(recipes<span class="sc">::</span><span class="fu">all_numeric_predictors</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb363-5"><a href="pca-lab-recipe.html#cb363-5" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">step_pca</span>(recipes<span class="sc">::</span><span class="fu">all_numeric_predictors</span>(), <span class="at">id =</span> <span class="st">&quot;pca&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb363-6"><a href="pca-lab-recipe.html#cb363-6" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">prep</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="pca-lab-recipe.html#cb364-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb364-2"><a href="pca-lab-recipe.html#cb364-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb364-3"><a href="pca-lab-recipe.html#cb364-3" aria-hidden="true" tabindex="-1"></a>pca_rec <span class="ot">&lt;-</span> recipes<span class="sc">::</span><span class="fu">recipe</span>(<span class="sc">~</span>., <span class="at">data =</span> USArrests) <span class="sc">%&gt;%</span></span>
+<span id="cb364-4"><a href="pca-lab-recipe.html#cb364-4" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">step_normalize</span>(recipes<span class="sc">::</span><span class="fu">all_numeric_predictors</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb364-5"><a href="pca-lab-recipe.html#cb364-5" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">step_pca</span>(recipes<span class="sc">::</span><span class="fu">all_numeric_predictors</span>(), <span class="at">id =</span> <span class="st">&quot;pca&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb364-6"><a href="pca-lab-recipe.html#cb364-6" aria-hidden="true" tabindex="-1"></a>  recipes<span class="sc">::</span><span class="fu">prep</span>()</span></code></pre></div>
 </div>
             </section>
 
